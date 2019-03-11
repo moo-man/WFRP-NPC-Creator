@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFRP NPC Creator", "WFRP NPC Creator\WFRP NPC Creator.csproj", "{7BEDCAC2-36EC-468A-8226-C11370215F41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WFRP JSON Parser", "WFRP JSON Parser\WFRP JSON Parser.csproj", "{82CCB28D-7986-4067-B4C7-AD225675C7A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BEDCAC2-36EC-468A-8226-C11370215F41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BEDCAC2-36EC-468A-8226-C11370215F41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BEDCAC2-36EC-468A-8226-C11370215F41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BEDCAC2-36EC-468A-8226-C11370215F41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82CCB28D-7986-4067-B4C7-AD225675C7A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82CCB28D-7986-4067-B4C7-AD225675C7A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82CCB28D-7986-4067-B4C7-AD225675C7A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82CCB28D-7986-4067-B4C7-AD225675C7A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A199301-2891-4FCC-B0C9-ACB937EC7F97}
+	EndGlobalSection
+EndGlobal

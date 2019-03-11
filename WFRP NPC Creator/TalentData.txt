@@ -1,0 +1,1355 @@
+Accurate Shot
+Max: Ballistic Skill Bonus
+You are an exceptional shot and know where to shoot an enemy
+in order to in?ict maximum damage. You deal your Accurate
+Shot level in extra Damage with all ranged weapons.
+Acute Sense (Sense)
+Max: Initiative Bonus
+Test: Perception (Sense)
+One of your primary fve senses is highly developed, allowing you
+to spot what others miss. You may take Perception Tests to detect
+normally imperceptible details with the associated sense, as
+dictated by the GM. Tis could include: seeing an eagle beyond
+everyone else’s eyeshot, smelling an almost odourless poison,
+hearing the breath of an unmoving mouse within a wall, feeling a
+worn away letter in a carving, or tasting that two beers from the
+same brewer have been drawn from two di?erent barrels.
+Aethyric Attunement
+Max: Initiative Bonus
+Test: Channelling (Any)
+Your experience, talent or training lets you more safely manipulate
+the Winds of Magic. You do not su?er a Miscast if you roll a
+double on a successful Channel Test.
+Alley Cat
+Max: Initiative Bonus
+Test: Stealth (Urban)
+You are at home in shadowy backstreets. When using Stealth
+(Urban), you may reverse the dice of any failed Test if this will
+score a Success.
+Ambidextrous
+Max: 2
+You can use your o?-hand far better than most folk, either by
+training or innate talent. You only su?er a penalty of –10 to Tests
+relying solely on your secondary hand, not –20. If you have this
+Talent twice, you su?er no penalty at all.
+IV
+132Animal Afnity
+Max: Willpower Bonus
+Tests: Charm Animal
+Wild animals feel comfortable in your presence, and often follow
+your lead. All creatures with the Bestial Trait not trained to be
+belligerent will automatically be calm in your presence unless they
+have a reason not to be, such as pain, an attack, being naturally
+hyper-aggressive, or having nearby young.
+Arcane Magic (Lore)
+Max: 1
+You either study one of the 8 Arcane Lores of Magic — Beasts,
+Death, Fire, Heavens, Metal, Shadow, Light, or Life — or
+practice a lesser known Lore, such as Hedgecraft or Necromancy.
+You may now memorise spells from your chosen Lore for the
+following cost in XP.
+Number of Spells Currently Known XP Cost for a new spell
+Up to Intelligence Bonus × 1 100 XP
+Up to Intelligence Bonus × 2 200 XP
+Up to Intelligence Bonus × 3 300 XP
+Up to Intelligence Bonus × 4 400 XP
+...and so on.
+So, if your Intelligence Bonus is 4, it will cost you 100 XP for
+the frst spell, and the next 4, then 200 XP for the next 4, and
+so on. Full rules for learning new spells are provided in Chapter
+8: Magic. Under normal circumstances, you may not learn more
+than one Arcane Magic (Lore) Talent. Further, you may not
+learn the Bless or Invoke Talents when you have the Arcane
+Magic Talent. You can unlearn this Talent for 100 XP, but will
+immediately lose all of your spells if you do so.
+Argumentative
+Max: Fellowship Bonus
+Tests: Charm Tests when arguing and debating
+You are used to arguing your points and winning. If you roll
+a successful Charm Test to debate with an opponent, you can
+choose to either use your rolled SL, or the number rolled on your
+units die. So, a successful roll of 24 could be used for +4 SL.
+Artistic
+Max: Dexterity Bonus
+Tests: Art (Any)
+You have a natural talent for art, able to produce precise sketches
+with nothing but time and appropriate media. Tis ability has
+several in-game uses, ranging from creating Wanted Posters to
+sketching accurate journals, and has spot benefts as determined
+by the GM. Further to this, add Art (Any) to any Career you
+enter; if it is already in Career, you may instead purchase the Skill
+for 5 XP fewer per Advance.
+Attractive
+Max: Fellowship Bonus
+Tests: Charm Tests to in?uence those attracted to you
+Whether it’s your piercing eyes, your strong frame, or maybe the
+way you ?ash your perfect teeth, you know how to make the best
+use of what the gods gave you. When you successfully use Charm
+to in?uence those attracted to you, you can choose to either use
+your rolled SL, or the number rolled on your units die. So, a
+successful roll of 38 could be used for +8 SL.
+Battle Rage
+Max: Willpower Bonus
+Tests: Melee Tests when Frenzied
+You are better able to control your Frenzy in combat. You can end
+your Frenzy with a successful Cool Test at the end of the round.
+Beat Blade
+Max: Weapon Skill Bonus
+Tests: Melee for a Beat Blade
+You are trained to make sharp controlled blows to your
+opponent’s weapon, creating an opening for an attack or simply
+impeding an incoming attack. For your Action, you can choose
+to Beat Blade before rolling. Perform a Melee Test; if successful,
+your opponent loses –1 Advantage, and loses a further –1 per
+SL you score. Tis Test is not Opposed. Tis Talent is of no use
+if your opponent has no weapon, or has a larger Size than you
+(see page 341).
+Beneath Notice
+Max: Fellowship Bonus
+Tests: Stealth when in plain sight
+Te high and mighty pay no attention to your presence, knowing
+you are well beneath their notice. Assuming you are properly
+attired and not in an incongruous position, those of a higher
+Status Tier will normally ignore you unless your presence
+becomes inappropriate, which can make it very easy to listen into
+conversations you perhaps shouldn’t. Further, characters with a
+higher Status Tier than you gain no Advantage for striking or
+wounding you in combat, as there is nothing to be gained for
+defeating such a lowly cur.
+Berserk Charge
+Max: Strength Bonus
+Tests: Melee on a Round when you Charge
+You hurl yourself at your enemies with reckless abandon, using
+the force of your charge to add weight to your strikes. When you
+Charge, you gain +1 Damage to all Melee attacks per level in this
+Talent.
+Blather
+Max: Fellowship Bonus
+Tests: Charm to Blather
+Called ‘opening your mouth and letting your belly rumble’ in
+Nordland, or simply ‘bullshitting’ in Ostland, blathering involves
+talking rapidly and incessantly, or talking volubly and at-length,
+about inconsequential or nonsense matters, and is used to verbally
+confuse and confound a target. You use your Charm Skill to
+Blather. Attempt an Opposed Charm/Intelligence Test. Success
+gives your opponent a Stunned Condition. Further, for each
+level you have in Blather, your opponent gains another Stunned
+sKIlls and talents IV
+133Warhammer Fantasy roleplay
+Condition. Targets Stunned by Blather may do nothing other
+than stare at you dumbfounded as they try to catch-up with or
+understand what you are saying. Once the last Stunned Condition
+comes to an end, the target fnally gets a word in, and may not
+be best pleased with you — after all, you have been talking about
+nothing or nonsense for some time. Should you stop talking,
+your opponent immediately loses all Stunned Conditions caused
+by your Blather. Generally, you can only attempt to Blather at a
+character once per scene, or perhaps longer as determined by the
+GM, as the target soon wises up to your antics.
+Bless (Divine Lore)
+Max: 1
+You are watched over by one of the Gods and can empower simple
+prayers. You can now deploy the Blessings of your deity as listed
+in Chapter 7: Religion and Belief. Under normal circumstances,
+you may only ever know one Divine Lore for the Bless Talent..
+Bookish
+Max: Intelligence Bonus
+Test: Research
+You are as at home in a library as a seaman at sea or a farmer
+a-farming. When using Research, you may reverse the dice of any
+failed Test if this will score a success.
+Break and Enter
+Max: Strength Bonus
+Tests: Melee when forcing or breaking inanimate objects
+You are an expert at quickly breaking down doors and forcing
+entry. You may add +1 Damage for each level in this Talent when
+determining damage against inanimate objects such as windows,
+chests, doors, and similar.
+Briber
+Max: Fellowship Bonus
+Tests: Bribery
+You are an exceedingly skilled briber. Te GM should reduce
+the base cost of any required bribe by 10% per level you have in
+Briber, to a minimum of 10% of the original amount.
+Cardsharp
+Max: Intelligence Bonus
+Tests: Gamble and Sleight of Hand when playing card games
+You are used to playing, and winning, at cards, although your
+methods may involve a little cheating. When you successfully use
+Gamble or Sleight of Hand when playing cards, you can choose
+to either use your rolled SL, or the number rolled on your units
+die. So, a successful roll of 28 could be used for +8 SL. If you play
+a real card game to represent what is happening in-game, you
+may receive an extra number of cards per deal equal to your level
+in Cardsharp, then discard down to the appropriate hand-size
+before each round of play.
+Careful Strike
+Max: Initiative Bonus
+You are skilled at hitting your enemy exactly where you want to,
+either at range or in melee. You may modify your Hit Location result
+by up to +/–10 per time you have this Talent. So, if you had this
+Talent twice and hit location 34, the Right Arm, you could modify
+this down to 14, the Left Arm, or up to 54, the Body (see page
+159).
+Carouser
+Max: Toughness Bonus
+Tests: Charm at Parties, Gossip at Parties, Consume Alcohol
+You are a seasoned drinker and know how to party hard. You may
+reverse the dice of any failed Consume Alcohol Test if this will
+score a Success.
+Catfall
+Max: Agility Bonus
+Tests: Athletics when falling
+You are nimble and balanced like a cat, and are able to fall much
+greater distances unharmed than others might. Whenever you
+fall, you attempt an Athletics Test. If successful, reduce the
+distance fallen by 1 yard, +1 extra yard per +1 SL scored, for the
+purposes of calculating Damage.
+Cat-tongued
+Max: Fellowship Bonus
+Tests: Charm when lying
+Like Ranald the Trickster God, you blend truth and lies as if
+there were no di?erence. When using Charm to lie, listeners do
+not get to oppose your Charm with their Intuition to detect if
+there is something fshy in what you say.
+Chaos Magic (Lore)
+Max: Number of Spells available in chosen Chaos Magic Lore
+By accident or design you have lost a portion of your soul to one
+of the Dark Gods, and can now practice the foul magics of Chaos.
+Your ruinous patron immediately grants you access to a single spell
+from the chosen Lore (most commonly the Nurgle, Slaanesh, or
+Tzeentch Lores) and you gain a Corruption point as the spell
+infltrates your mind, never to be forgotten.
+Each time you take this Talent, which always costs 100 XP per time
+instead of the normal cost, you learn another spell from your chosen
+Lore and gain a Corruption point. For more about the available
+spells, see Chapter 8: Magic. Under normal circumstances, you
+may only ever know one Lore of Chaos Magic.
+Combat Aware
+Max: Initiative Bonus
+Tests: Perception during melee
+You are used to scanning the battlefeld to make snap decisions
+informed by the shifting tides of war. You may take a Challenging
+(+0) Perception Test to ignore Surprise, which is modifed by
+circumstance as normal.
+Combat Master
+Max: Agility Bonus
+Your accumulated years of combat experience allow you to keep
+lesser fghters at bay. For each level in this Talent, you count as
+one more person for the purposes of determining if one side outIV
+134numbers the other. Tis Talent only comes into play when you are
+out-numbered. See page 162 for the rules for out-numbering.
+Combat Re?exes
+Max: Initiative Bonus
+You react like a ?ash of lightning. Add 10 to your Initiative for
+each level in this Talent when determining Combat Initiative.
+Commanding Presence
+Max: Fellowship Bonus
+Tests: Leadership
+Your presence flls others with hushed awe and admiration. Such
+is your aura of authority, those with a lower Status may not resist
+your Leadership tests with their Willpower. Of course, enemies
+are still no more likely to respect or obey you, but the common
+folk rarely stand against you.
+Concoct
+Max: Intelligence Bonus
+Tests: Lore (Apothecary)
+You are skilled at making potions, philtres, and draughts on
+the go. You may take one free Crafting Endeavour to use Lore
+(Apothecary) without need of a Workshop. Other Crafting
+Endeavours use the normal rules.
+Contortionist
+Max: Agility Bonus
+Tests: Perform and Agility Tests when contorting helps
+You can bend and manipulate your body in a myriad of seemingly
+unnatural ways. Tis allows you to squeeze through unlikely gaps
+and bend your body in crazy ways, giving benefts determined by
+the GM, possibly with a successful Agility test.
+Coolheaded
+Max: 1
+You gain a permanent +5 bonus to your starting Willpower
+Characteristic this does not count towards your Advances.
+Crack the Whip
+Max: Dexterity Bonus
+Tests: Drive or Ride Tests when Fleeing or Running
+You know how to get the most out of your animals. When an
+animal you control is Fleeing or Running, it gains +1 Movement
+if you are using a whip.
+Craftsman (Trade)
+Max: Dexterity Bonus
+Tests: Trade (any one)
+You have true creative talent. Add the associated Trade Skill to any
+Career you enter. If the Trade Skill is already in your Career, you
+may instead purchase the Skill for 5 XP fewer per Advance.
+Criminal
+Max: None
+You are an active criminal making money from illegal sources,
+and you’re not always quiet about it. For the purposes of securing
+money, either when Earning during play or performing an
+Income Endeavour, refer to the following table:
+Career
+Level
+Bonus Money per time the
+Talent is taken
+1 +2d10 brass pennies
+2 +1d10 silver shillings
+3 +2d10 silver shillings
+4 +1 gold crown
+Because of your obvious criminal nature, others consider you
+lower Status than them unless they also have the Criminal Talent,
+where Status is compared as normal — perhaps you have gang
+tattoos, look shifty, or are just rough around the edges, it’s your
+choice. Because of this, local law enforcers are always suspicious
+of you and suspect your motivations, which only gets worse the
+more times you have this Talent, with the exact implications
+determined by the GM. Lawbreakers without the Criminal
+Talent earn signifcantly less coin but are not obviously the sort to
+be breaking the law, so maintain their Status. With GM consent,
+you may spend XP to remove levels of the Criminal Talent for the
+same XP it cost to buy.
+Deadeye Shot
+Max: 1
+You always hit an opponent right between the eyes… or wherever
+else you intended to hit. Instead of reversing the dice to determine
+which Hit Location is struck with your ranged weapons, you may
+pick a location.
+Dealmaker
+Max: Fellowship Bonus
+Tests: Haggle
+You are a skilled businessman who knows how to close a deal.
+When using the Haggle skill, you reduce or increase the price of
+the products by an extra 10%.
+Note: Te GM may put a lower limit on prices here to show a
+seller refusing to sell below cost.
+Detect Artefact
+Max: Initiative Bonus
+Tests: Intuition tests to detect magical artefacts
+You are able to sense when magic lies within an artefact. You
+may attempt an Intuition Test for any magical artefact touched.
+If successful, you sense the item is magical; further, each SL also
+provides a specifc special rule the item uses, if it has any. Normally,
+you may only attempt this Test once per artefact touched.
+Diceman
+Max: Intelligence Bonus
+Tests: Gamble and Sleight of Hand when playing dice games
+You are a dicing master, and all claims you cheat are clearly
+sKIlls and talents IV
+135Warhammer Fantasy roleplay
+wrong. When you successfully use Gamble or Sleight of Hand
+when playing with dice, you can choose to either use your rolled
+SL, or the number rolled on your units die. So, a successful roll of
+06 could be used for +6 SL. If you play any real-life dice games to
+represent in-game dice games, always roll extra dice equal to your
+Diceman level and choose the best results.
+Dirty Fighting
+Max: Weapon Skill Bonus
+Tests: Melee (Brawling)
+You have been taught all the dirty tricks of unarmed combat. You
+may choose to cause an extra +1 Damage for each level in Dirty
+Fighting with any successful Melee (Brawling) hit.
+Note: using this Talent will be seen as cheating in any formal
+bout.
+Disarm
+Max: Initiative Bonus
+Tests: Melee Tests concerning this Talent
+You are able to disarm an opponent with a careful ?ick of the
+wrist or a well-aimed blow to the hand. For your Action, you
+may attempt an Opposed Melee/Melee test. If you win, your
+opponent loses a held weapon, which ?ies 1d10 feet in a random
+direction (with further e?ects as determined by the GM). If you
+win by 2 SL, you can determine how far the weapon is ?ung
+instead of rolling randomly; if you win by 4 SL, you can also
+choose the direction the weapon goes in; if you win by 6 SL or
+more, you can take your opponent’s weapon if you have a free
+hand, plucking it from the air with a ?ourish. Tis Talent is of no
+use if your opponent has no weapon, or is a larger Size than you
+(see page 341).
+WE’RE DOOMED!
+the following are examples of doomings to inspire your own
+creations for the doomed talent:
+• From darkness cometh the raven.
+• Beasts of the feld hath eyes for thee.
+• plague and dark disease shall bring thee to thy knees.
+• absence makes thy heart grow weaker.
+• the sword shalt bring no justice, only thine end.
+• The bun! The pastry! The pie! lo, they are Morr’s
+dishes!
+• the drummer beats out thine end.
+• Thine end is not thine end!
+• though shalt sup deep of the cup of corruption.
+• high places bring a low end.
+Distract
+Max: Agility Bonus
+Tests: Athletics to Distract
+You are trained in simple movements to distract or startle your
+opponent, drawing eyes from your true intent. You may use your
+Move to perform a Distraction. Tis is resolved by an Opposed
+Athletics/Cool Test. If you win, your opponent can gain no
+Advantage until the end of the next Round.
+Doomed
+Max: 1
+At the age of 10, a Priest of Morr called a Doomsayer took you
+aside to foretell your death in an incense-laden, coming-of-age
+ritual called the Dooming. In conjunction with your GM, come up
+with a suitable Dooming. Should your character die in a fashion
+that matches your Dooming, your next character gains a bonus of
+half the total XP your dead character accrued during play.
+Drilled
+Max: Weapon Skill Bonus
+Tests: Melee Tests when beside an ally with Drilled
+You have been trained to fght shoulder-to-shoulder with other
+soldiers. If an enemy causes you to lose Advantage when standing
+beside an active ally with the Drilled Talent, you may keep 1 lost
+Advantage for each time you’ve taken the Drilled Talent.
+Dual Wielder
+Max: Agility Bonus
+Tests: Melee or Ranged when attacking with two weapons
+When armed with two weapons, you may attack with both for your
+Action. Roll to hit with the weapon held in your primary hand.
+If you hit, determine Damage as normal, but remember to keep
+your dice roll, as you will use it again. If the frst strike hits, once
+it is resolved, the weapon in your secondary hand can then target
+an available opponent of your choice using the same dice roll for
+the frst strike, but reversed. So, if you rolled 34 to hit with the frst
+weapon, you use 43 to hit with the second. Remember to modify
+this second roll by your o?-hand penalty (–20 unless you have the
+Ambidextrous Talent). Tis second attack is Opposed with a new
+defending roll, and damage for this second strike is calculated as
+normal. Te only exception to this is if you roll a Critical for your
+frst strike. If this happens, use the roll on the Critical Table to also
+act as the roll for the second attack. So, if you scored a critical to the
+head and rolled 56 on the Critical table for a Major Eye Wound,
+your second attack would then strike out with a to-hit value of 56.
+If you choose to attack with both weapons, all your defensive rolls
+until the start of your next Turn su?er a penalty of –10. You do
+not gain an Advantage when you successfully strike or Wound an
+opponent when Dual Wielding unless both attacks hit.
+Embezzle
+Max: Intelligence Bonus
+Tests: Intelligence (Embezzling)
+You are skilled at skimming money from your employers
+without being detected. Whenever you secure money when
+Earning (during play or performing an Income Endeavour),
+IV
+136you may attempt an Opposed Intelligence Test with your
+employer (assuming you have one). If you win, you skim 2d10
++ SL brass pennies, 1d10 + SL silver shillings, or 1 + SL gold
+crowns (depending upon the size of the business in question, as
+determined by the GM) without being detected. If your employer
+wins by 6+ SL, you gain the money, but your embezzling is
+detected; what then happens is left to the GM. Any other result
+means you have failed to embezzle any money.
+Enclosed Fighter
+Max: Agility Bonus
+Tests: Dodge in enclosed environments
+You have learned to make the most beneft out of fghting in
+enclosed spaces. You ignore penalties to Melee caused by confned
+spaces such as tunnels, the frontline, small fghting pits, and
+similar, and can use the Dodge Skill, even if it would normally be
+disallowed due to lack of space.
+Etiquette (Social Group)
+Max: Fellowship Bonus
+Tests: Charm and Gossip (Social Group)
+You can blend in socially with the chosen group so long as you
+are dressed and acting appropriately. Example social groups for
+this Talent are: Criminals, Cultists, Guilders, Nobles, Scholars,
+Servants, and Soldiers. If you do not have the Talent, those with
+it will note your discomfort in the unfamiliar environment. Tis
+is primarily a matter for roleplaying, but may confer a bonus to
+Fellowship Tests at the GM’s discretion.
+Fast Hands
+Max: Dexterity Bonus
+Tests: Sleight of Hand, Melee (Brawling) to touch an opponent
+You can move your hands with surprising dexterity. Bystanders
+get no passive Perception Tests to spot your use of the Sleight of
+Hand Skill, instead they only get to Oppose your Sleight of Hand
+Tests if they actively suspect and are looking for your movements.
+Further, attempts to use Melee (Brawling) to simply touch an
+opponent gain a bonus of +10 × your level in Fast Hands.
+Fast Shot
+Max: Agility Bonus
+Tests: Ranged when making a Fast Shot
+If you have a loaded ranged weapon, you can fre it outside the
+normal Initiative Order before any other combatant reacts in the
+following Round. You roll to hit using all the normal modifers.
+Employing Fast Shot requires both your Action and Move for
+your upcoming turn, and these will count as having been spent
+when your next turn arrives. If two or more characters use Fast
+Shot, the character who has taken this Talent most goes frst. If
+any characters have taken Fast Shot an equal number of times,
+both shots are fred simultaneously, and should both be handled
+at the same time.
+Fearless (Enemy)
+Max: Willpower Bonus
+Tests: Cool to oppose your Enemy’s Intimidate, Fear, and Terror
+You are either brave enough or crazy enough that fear of certain
+enemies has become a distant memory. With a single Average
+(+20%) Cool Test, you may ignore any Intimidate, Fear, or Terror
+e?ects from the specifed enemy when encountered. Typical
+enemies include Beastmen, Greenskins, Outlaws, Vampires,
+Watchmen, and Witches.
+Feint
+Max: Weapon Skill Bonus
+Tests: Melee (Fencing) for Feints
+You have trained how to make false attacks in close combat to
+fool your opponent. You may now make a Feint for your Action
+against any opponent using a weapon. Tis is resolved with an
+Opposed Melee (Fencing)/Melee Test. If you win, and you
+attack the same opponent before the end of the next Round, you
+may add the SL of your Feint to your attack roll.
+sKIlls and talents IVWarhammer Fantasy roleplay
+Field Dressing
+Max: Intelligence Bonus
+Tests: Heal during combat Rounds
+You are used to treating wounds quickly. If you fail a Heal Test
+when using Bandages, you may reverse the result if this will score
+a success; however, if you do so, you may not score more than +1
+SL as you focus on speed over accuracy.
+Fisherman
+Max: Initiative Bonus
+Tests: Any Test involving fshing
+You are a very capable fsherman and know all the best ways to
+land fsh. Assuming a large enough body of water is available,
+you are automatically assumed to be able to fsh enough to feed
+yourself and a number of others equal to your level in Fisherman,
+assuming you choose to spend at least an hour or so with a line
+and bait. You may secure more fsh in addition to this using the
+normal rules for foraging (see page 127).
+Flagellant
+Max: Toughness Bonus
+Tests: Any for resisting the Ruinous Powers
+You have dedicated your pain to the service of your God. Each
+day, you must spend half a bell (half an hour) praying as you
+maintain a number of Wounds su?ered equal to your level in
+Flagellent. Until you next sleep, if you have the Frenzy Talent you
+may enter Frenzy immediately without testing.
+Te Frenzy Talent is added to the Talent list of any career you
+are in. Should you fail to ?agellate yourself on any given day, or
+allow your castigated ?esh to be healed, you may not spend any
+Resilience or Resolve until you ?agellate yourself again.
+Flee!
+Max: Agility Bonus
+Tests: Athletics when Fleeing
+When your life is on the line you are capable of impressive bursts
+of speed. Your Movement Attribute counts as 1 higher when
+Fleeing (see page 165).
+Fleet Footed
+Max: 1
+You gain +1 to your Movement Attribute.
+Frenzy
+Max: 1
+You can Frenzy as described on page 190.
+Frightening
+Max: Strength Bonus
+Anyone sane thinks twice before approaching you. If you wish,
+you have a Fear Rating of 1 (see page 190). Add +1 to this
+number per extra time you have this Talent.
+Furious Assault
+Max: Agility Bonus
+Tests: Melee when making extra attacks
+Your blows follow one another in quick succession, raining down
+on your opponents with the fury of Ulric. Once per Round, if you
+hit an opponent in close combat, you may immediately spend an
+Advantage or your Move to make an extra attack (assuming you
+have your Move remaining).
+Gregarious
+Max: Fellowship Bonus
+Tests: Gossip Tests with travellers
+You just like talking to other folk and it seems they like talking
+to you. You may reverse any failed Gossip Test if this allows the
+Test to succeed.
+Gunner
+Max: Dexterity Bonus
+You can reload blackpowder weapons with practiced ease. Add
+SL equal to your level in Gunner to any Extended Test to reload
+a Blackpowder weapon.
+Hardy
+Max: Toughness Bonus
+You gain a permanent addition to your Wounds, equal to your
+Toughness Bonus. If your Toughness Bonus should increase, then
+the number of Wounds Hardy provides also increases.
+Hatred (Group)
+Max: Willpower Bonus
+Tests: Willpower (Resist Group)
+You are consumed with hatred for something in the Old World, as
+described on page 190. Each time you take this Talent you develop
+hatred for a new group. Examples you could take include: Beastmen,
+Greenskins, Monsters, Outlaws, Sigmarites, Undead, Witches.
+Holy Hatred
+Max: Fellowship Bonus
+Your prayers drip with the hatred you feel for your blasphemous
+enemies. You deal +1 Damage with Miracles for each level in this
+Talent.
+Holy Visions
+Max: Initiative Bonus
+Tests: Intuition Tests when on holy ground
+You clearly see the great works of the Gods all around you. You
+automatically know when you enter Holy Ground, and may take
+an Intuition Test to receive visions (often obscure, and seen through
+the paradigm of your cult or individual belief-system) regarding
+the local area if signifcant events have occurred there in the past.
+Hunter’s Eye
+Max: Initiative Bonus
+Tests: Any Test to trail or capture game
+You are a skilled hunter and know all the best techniques to
+fnd game. When travelling through well-stocked lands, you
+IV
+138are automatically assumed to be able to hunt down enough
+game to feed yourself and a number of others equal to your
+level in Hunter’s Eye, so long as you have time and the correct
+equipment. You may secure more food in addition to this using
+the normal rules for foraging (see page 127).
+Impassioned Zeal
+Max: Fellowship Bonus
+Tests: Charm when speaking about your cause
+When you talk about your cause, case, or religion, your words fll
+with passion and fervent zeal. You may double your Fellowship
+for the purposes of determining the number of people in?uenced
+by your Public Speaking (see page 142) when talking about your
+cause.
+Implacable
+Max: Toughness Bonus
+It takes a lot to fnish you o?. You can ignore the Wound loss
+from a Bleeding Condition. Each level in this Talent lets you
+ignore the Wound loss from an extra Bleeding Condition.
+In-fghter
+Max: Dexterity Bonus
+Tests: Melee when in-fghting, or to enter in-fghting
+You are skilled at drawing in close to an opponent. You su?er no
+penalties for fghting against an opponent with a longer weapon
+than you. Further, if you use the optional rules for In-fghting (see
+page 297), gain a bonus of +10 to hit your opponent.
+Inspiring
+Max: Fellowship Bonus
+Tests: Leadership during war
+Your rousing words and pleas can turn the tide of a battle. Refer
+to the following table to see how many people you can now
+in?uence with your Leadership Skill (see page 126) when at war.
+Talent Taken Number of soldiers in?uenced
+1 As normal × 5
+2 As normal × 10
+3 As normal × 20
+4 As normal × 50
+5 As normal × 100
+6 As normal × 200
+7 As normal × 500
+8 As normal × 1000
+9 All who can hear your inspiring voice
+Example: Abbess Birgitte van der Hoogenband’s monastery is
+under attack by Greenskins, and things are going badly. So, she
+decides to bolster her soldiers’ spirits with a Leadership Test,
+granting them +10 to all Psychology Tests. Her Leadership Test
+scores 3 SL. Given she has a Fellowship Bonus of 6, and she
+can in?uence her Fellowship Bonus + SL of her soldiers using
+Leadership, she bolsters 9 soldiers. However, as she has Inspiring 3,
+that number is multiplied by 20, meaning 180 of her soldiers take
+heart from her screamed encouragement to, ‘HOLD THE LINE!’
+Instinctive Diction
+Maximum: Initiative Bonus
+Tests: Language (Magick) when casting
+You instinctively understand the language of Magick, and are
+capable of articulating the most complex phrases rapidly without
+error. You do not su?er a Miscast if you roll a double on a
+successful Language (Magick) Test.
+Invoke (Divine Lore)
+Max: 1
+You are blessed by one of the Gods and can empower one of your
+Cult’s Miracles. Further, you may purchase extra miracles for 100
+XP per miracle you currently know. So, if you already know 3
+miracles, your next miracle costs 300 XP to purchase. Full rules
+for learning new miracles are provided in Chapter 7: Religion and
+Belief. Under normal circumstances, you may not learn more than
+one Invoke (Divine Lore) Talent. Further, you may not learn the
+Petty Magic or Arcane Magic Talents when you have the Invoke
+Talent. You can unlearn this Talent for 100 XP, but will lose all
+of your miracles if you do so, and will also garner the extreme
+disfavour of your God, with e?ects determined by your GM.
+Iron Jaw
+Max: Toughness Bonus
+Tests: Endurance tests to resist Stunned
+You are made of sturdy stu? and can weather even the strongest
+blows. Whenever you gain one or more Stunned Conditions, you
+may make an immediate Challenging (+0) Endurance Test to
+not take one of them, with each SL removing an extra Stunned
+Condition.
+sKIlls and talents IV
+139Warhammer Fantasy roleplay
+Iron Will
+Max: Willpower Bonus
+Tests: Cool Tests to oppose Intimidate
+You have an indomitable will of iron, and will never willingly
+bow down before another. Use of the Intimidate skill does not
+cause Fear in you, and will not stop you speaking out against the
+intimidating party.
+Jump Up
+Max: 1
+You are hard to keep down. You may perform a Challenging (+0)
+Athletics Test to immediately regain your feet whenever you gain
+a Prone Condition. Tis Athletics Test is often modifed by the
+Strength behind the blow that knocks you down: for every +10
+Strength the blow has over your Toughness, you su?er a penalty
+of –10 to the Athletics Test, and vice versa.
+Kingpin
+Max: 1
+You have earned an air of respectability despite your nefarious
+ways. You may ignore the Status loss of the Criminal Talent.
+Lightning Re?exes
+Max: 1
+You gain a permanent +5 bonus to your starting Agility
+Characteristic (this does not count towards your Advances).
+Linguistics
+Max: Intelligence Bonus
+Tests: Language (All)
+You have a natural afnity for languages. Given a month’s
+exposure to any Language, you count the associated Language
+Skill as a Basic Skill with a successful Intelligence Test (which
+can be attempted once per month). Note: Linguistics only works
+for languages used to frequently communicate with others, so
+does not work with Language (Magick).
+Lip Reading
+Max: Initiative Bonus
+Tests: Perception Tests concerning this Talent
+You can tell what people are saying by simply watching their lips;
+you do not need to hear what they are saying. If you have an
+unobstructed view of the speaker’s lower face, you can attempt a
+Perception Test to understand what they are saying.
+Luck
+Max: Fellowship Bonus
+Tey say when you were born, Ranald smiled. Your maximum
+Fortune Points now equal your current Fate points plus the
+number of times you’ve taken Luck.
+Magical Sense
+Max: Initiative Bonus
+Tests: Intuition Tests to detect Wizards
+You are able to sense the Winds of Magic in others. You may
+attempt an Average (+20) Intuition Test whenever you encounter
+a spellcaster. If you pass, you sense the target is a witch. Further,
+if you score an Astounding Success (+6), can also determine the
+target’s highest Channelling Specialisation.
+Magic Resistance
+Max: Toughness Bonus
+You are resistant to magic. Te SL of any spell a?ecting you is
+reduced by 2 per point you have in this Talent. Te SL of a spell
+is only modifed by the highest Magic Resistance Talent within
+its target area. Further, you may never learn the Arcane Magic,
+Bless, Invoke, Petty Magic, or Witch! Talents.
+Magnum Opus
+Max: None
+You are an undisputed master in your feld, able to create work
+of such incredible complexity others can but sit back and marvel
+at your genius. Each time you take this Talent you may create a
+single, extraordinary work of art with one of your Art or Trade
+Skills. Tis work is unrivalled in your feld, a unique piece that
+will always impress, giving bonuses as determined by the GM,
+most commonly to Fellowship Tests from those who have
+witnessed your astounding work. Selling the piece will net you
+at least ten times its normal value, and sometimes signifcantly
+more than this.
+Marksman
+Max: 1
+You gain a permanent +5 bonus to your starting Ballistic Skill
+(this does not count towards your Advances).
+Master of Disguise
+Max: Fellowship Bonus
+Tests: Entertain (Acting) when being someone else
+You are an expert at taking on the appearance and mannerisms
+of others. With nothing but posture changes, face twisting,
+and careful use of appropriate clothing, you no longer look like
+yourself without having to use a Disguise Kit.
+Master Orator
+Max: Fellowship Bonus
+You are skilled at fring up crowds. You gain a gain a SL bonus
+equal to your levels of Master Orator to any Charm Test when
+Public Speaking before a crowd.
+Master Tradesman (Trade)
+Max: Dexterity Bonus
+Tests: Any appropriate Extended Trade Tests
+You are exceptionally skilled at your specifed Trade skill. You
+reduce the required SL of any Extended Test using your Trade
+Skill by the level of your Master Tradesman Talent.
+Menacing
+Max: Strength Bonus
+Tests: Intimidate
+You have an imposing presence. When using the Intimidate
+Skill, gain a SL bonus equal to your levels of Menacing.
+IV
+140Mimic
+Max: Initiative Bonus
+Tests: Entertain (Acting) Tests where accents are important
+You have a good ear for accents and dialects, and can reproduce
+them accurately. You may replicate any accent you are exposed
+to for at least a day with an Initiative Test; this Test may be
+attempted once per day. Once passed, you may always mimic the
+accent, and locals will believe you to be one of their own.
+Night Vision
+Max: Initiative Bonus
+Tests: Perception tests in low-light conditions
+You can see very well in natural darkness. Assuming you have
+at least a faint source of light (such as starlight, moonlight, or
+bioluminescence) you can see clearly for 20 yards per level of
+Night Vision. Further, you can extend the e?ective illumination
+distance of any light sources by 20 yards per level of Night Vision.
+Nimble Fingered
+Max: 1
+You gain a permanent +5 bonus to your starting Dexterity (this
+does not count towards your Advances).
+Noble Blood
+Max: 1
+Tests: Any Test in?uenced by your Status
+You are either born into the nobility, or otherwise elevated to it
+by in-game events. Assuming you are dressed appropriately, you
+are always considered of higher Status than others unless they also
+have the Noble Blood Talent, where Status is compared as normal.
+Nose for Trouble
+Max: Initiative Bonus
+Tests: Any Test to spot Troublemakers
+You are used to getting into, and preferably out of, trouble. You
+may attempt an Intuition Test to spot those seeking to cause
+trouble or seeking to cause you harm, even if normally you would
+not be allowed a Test (because of Talents or a Spell, for example).
+Tis Test will likely be Opposed if others are hiding, and the GM
+may prefer to take this Test on your behalf in secret so you do
+not know the results should you fail. If any troublemakers you
+spot start combat, you may ignore any Surprised Condition they
+would normally in?ict.
+Numismatics
+Max: Initiative Bonus
+Tests: Evaluate to establish the worth of coins
+You are well versed with the di?erent coinage of the Old World,
+and are adept at determining their value. You can judge the true
+value of a coin by experience alone, not even requiring a Test.
+Further, you can identify forged coins with a Simple Evaluate
+Test; it is never Opposed by the SL of the Forger.
+Old Salt
+Max: Agility Bonus
+Tests: Sail (any Sea-worthy Vessels)
+You are an experienced seaman, and are very used to sea life. You
+can ignore all negative modifers to Tests at sea derived from poor
+weather, rolling ships, and similar. Further, you count as two seamen
+towards the minimum number of crew to pilot a sea-going vessel.
+Orientation
+Max: Initiative Bonus
+Tests: Navigation
+You have an instinctual feel for direction. You automatically
+know which direction is north with a glimpse at the stars, trees,
+or whatever other signs you are familiar with.
+Panhandle
+Max: Fellowship Bonus
+Tests: Charm (Begging)
+You are a skilled beggar, able to get even the most jaded individual
+to contribute to your cause. You can perform a Charm Test every
+half hour when Begging, not every hour (see page 120).
+sKIlls and talents IVWarhammer Fantasy roleplay
+Perfect Pitch
+Max: Initiative Bonus
+Tests: Entertain (Sing), Language (Tonal Languages, such as
+Elthárin, Cathayan, and Magick)
+You have perfect pitch, able to replicate notes perfectly and
+identify them without even making a Test. Further, add Entertain
+(Sing) to any Career you enter; if it is already in your Career, you
+may instead purchase the Skill for 5 XP fewer per Advance.
+Petty Magic
+Max: 1
+You have the spark to cast magic within you and have mastered
+techniques to control it at a basic level. When you take this
+Talent, you manifest, and permanently memorise, a number of
+spells equal to your Willpower Bonus. You can learn extra Petty
+spells for the following cost in XP.
+No. of Petty Spells Currently Known XP Cost for a new spell
+Up to Willpower Bonus × 1 50 XP
+Up to Willpower Bonus × 2 100 XP
+Up to Willpower Bonus × 3 150 XP
+Up to Willpower Bonus × 4 200 XP
+...and so on.
+So, if your Willpower Bonus is 3 and you had 3 Petty spells, it will
+cost you 50XP for the frst learned spell, then 100 XP for the next
+three, and so on. Full rules for learning new spells are provided in
+Chapter 8: Magic.
+Pharmacist
+Max: Intelligence Bonus
+Tests: Trade (Apothecary)
+You are highly skilled at pharmacy, better able than most to
+make pills, ointments, unguents, oils, creams, and more. You may
+reverse any failed Trade (Apothecary) test if this allows the Test
+to succeed.
+Pilot
+Max: Initiative Bonus
+Tests: Row or Sail Tests while navigating unsure waters
+You are skilled at leading vessels through dangerous waters. If you
+fail a Test to pass through dangerous waters, you may reverse the
+result if it will score a success; however, if you do so, you may not
+score more than +1 SL as you catch the incoming danger at the
+last moment.
+Public Speaker
+Max: Fellowship Bonus
+You are a skilled orator and know how to work large groups of
+people. Refer to the following table to see how many people you
+can now in?uence with your Charm Skill (see page 120) when
+Public Speaking.
+Talent Taken Number in?uenced
+1 As normal × 5
+2 As normal × 10
+3 As normal × 20
+4 As normal × 50
+5 As normal × 100
+6 As normal × 200
+7 As normal × 500
+8 As normal × 1000
+9 All who can hear your golden voice
+Pure Soul
+Max: Willpower Bonus
+Your soul is pure, quite resistant to the depredations of Chaos.
+You may gain extra Corruption points equal to your level of Pure
+Soul before having to Test to see if you become corrupt.
+Rapid Reload
+Max: Dexterity Bonus
+You can reload ranged weapons with practiced ease. You add SL
+equal to your level in Rapid Reload to any Test to reload a ranged
+weapon.
+Reaction Strike
+Max: Initiative Bonus
+Tests: Initiative Tests concerning this Talent
+Your fast reactions have allowed you to fell many opponents
+before they have even swung their blades. When you are
+Charged, you may attempt a Challenging (+0) Initiative Test
+to gain an immediate Free Attack outside the normal turn
+sequence. Tis attack is resolved with whatever weapon you are
+carrying in your primary hand. You may make as many Reaction
+Strikes in a Round as you have levels in this Talent, but can only
+attack each individual charger once each.
+Read/Write
+Max: 1
+You are one of the rare literate individuals in the Old World. You
+are assumed to be able to read and write (if appropriate) all of the
+Languages you can speak.
+Relentless
+Max: Agility Bonus
+When you have your mind set on a target, there is nothing anyone
+can do to stop you reaching them. If you use Advantage when
+Disengaging, you may keep a number of Advantage equal to your
+level of Relentless. Further, you may use Advantage to Disengage
+even if you have lower Advantage than your opponents.
+IV
+142Resistance (Treat)
+Max: Toughness Bonus
+Tests: All those to resist the associated Treat
+Your strong constitution allows you to more readily survive a
+specifc threat. You may automatically pass the frst Test to resist
+the specifed threat, such as Magic, Poison, Disease, Mutation,
+every session. If SL is important, use your Toughness Bonus as SL
+for the Test.
+Resolute
+Max: Strength Bonus
+You launch into attacks with grim determination. Add your level
+of Resolute to your Strength Bonus when you Charge.
+Reversal
+Max: Weapon Skill Bonus
+Tests: Melee when defending
+You are used to desperate combats, able to turn even the direst
+circumstances to your Advantage. If you win an Opposed Melee
+Test, instead of gaining +1 Advantage, you may take all your
+opponent’s Current Advantage. If you do this, you do not cause
+any Damage, even if it is your Turn in the Round.
+Riposte
+Max: Agility Bonus
+Tests: Melee when defending
+Conforming to ‘the best defence is o?ence’, you respond to an
+incoming attack with a lightning-fast counterstrike of your own.
+If your weapon has the Fast quality, you may cause Damage when
+you are attacked, just as if it was your Action. You can Riposte a
+number of attacks per round equal to your Riposte level.
+River Guide
+Max: Initiative Bonus
+Tests: Any Lore Test concerning river matters
+You know all the tricks for navigating dangerous rivers. You don’t
+need to Test for passing through dangerous stretches of water until
+the Difculty for doing so is –10 or lower — you automatically
+pass all Tests easier than this. Further, if you have the appropriate
+Lore (Local) Skill, you need never Test for navigating dangerous
+waters — you are assumed to know the route through.
+Robust
+Max: Toughness Bonus
+You are as tough as old boots and just soak up damage. You reduce
+all incoming Damage by an extra +1 per time you have taken the
+Robust Talent, even if the Damage cannot normally be reduced,
+but still su?er a minimum of 1 Wound from any Damage source.
+Roughrider
+Max: Agility Bonus
+Tests: Ride (Horse) when in combat
+You are at home in the saddle in even the most difcult of
+circumstances, and know how to get the best out of your mount
+during con?ict. Assuming you have the Ride skill, you can direct
+your mount to take an Action, not just a Move, without a Ride test.
+Rover
+Max: Agility Bonus
+Tests: Stealth Tests in a Rural environment
+You are at home roaming the wild places. When using Stealth
+in a rural environment, bystanders do not get passive Perception
+Tests to detect you; they can only spot you if they are specifcally
+on look-out, or watching for hidden spies.
+Savant (Lore)
+Max: Intelligence Bonus
+Tests: Lore (chosen Lore)
+You are exceptionally learned, and have a signifcant degree of
+specialised knowledge in a single feld of study. You automatically
+know a number of pieces of correct information equal to you
+Savant (Lore) level about a relevant issue without having to
+test your Lore Skill. Testing, as always, will provide yet more
+information as normal as determined by the GM.
+sKIlls and talents IVWarhammer Fantasy roleplay
+Savvy
+Max: 1
+You gain a permanent +5 bonus to your starting Intelligence
+Characteristic (this does not count towards your Advances).
+Scale Sheer Surface
+Max: Strength Bonus
+Tests: Climb
+You are an exceptional climber. You can attempt to climb even
+seemingly impossible surfaces such as sheer fortifcations, ice
+shelves, plastered walls, and similar, and you ignore any penalties
+to Climb Tests derived from the difculty of the surface climbed.
+Schemer
+Max: Intelligence Bonus
+Tests: Intelligence Tests concerning this Talent
+You are a master of politics and see conspiracy around every corner.
+Once per session, you may ask the GM one question regarding
+a political situation or entangled web of social connections; the
+GM will perform a secret Intelligence Test and provide you some
+observations regarding the situation based upon your SL.
+Sea Legs
+Max: Toughness Bonus
+Tests: All those taken to resist Sea Sickness
+You are used to the rolling motion of the oceans, and are very
+unlikely to get sea sick, even in the worst storms. Under normal
+conditions at sea, you need never Test to see if you become Sea
+Sick. At other times (such as a storm, or a magically induced bout
+of Sea Sickness), you can ignore any penalties to Tests to avoid
+Sea Sickness.
+Seasoned Traveller
+Max: Intelligence Bonus
+Tests: Any Lore Test concerning local detail
+You are an inquisitive soul who has travelled far and wide, learning
+all manner of local information. Add Lore (Local) to any Career
+you enter; if it is already in Career, you may purchase the Skill,
+both times — a di?erent Speciality each time, such as Altdorf,
+Vorbergland, or Ubersreik — for 5 XP fewer per Advance.
+Second Sight
+Max: Initiative Bonus
+Tests: Any Test to detect the Winds of Magic
+You can perceive the shifting Winds of Magic that course from
+the Chaos Gates at the poles of the world. You now have the
+Sight (see page 233).
+Secret Identity
+Max: Intelligence Bonus
+Tests: Entertain (Acting) Tests to support your secret identities
+You maintain a secret identity that allows you to appear richer,
+or perhaps poorer, than you actually are. With GM permission,
+choose any one Career. As long as you are dressed appropriately,
+you may use the Social Status of the chosen Career you
+masquerade as rather than your own for modifying Fellowship
+Tests, and can even ignore the Criminal Talent. However,
+maintaining this identity will require Entertain (Acting) rolls
+when you encounter those who may recognise your falsehood.
+You may create a new Secret Identity for each level you have in
+this Talent.
+Shadow
+Max: Agility Bonus
+Tests: Any Test involving Shadowing
+You are skilled at following people without being spotted. You
+may use the Shadowing rules on page 130 without doing a
+Combined Test. Instead you test against just your Perception or
+your Stealth Skill, whichever is higher.
+Sharp
+Max: 1
+You gain a permanent +5 bonus to your starting Initiative
+Characteristic (this does not count towards your Advances).
+IVSharpshooter
+Max: 1
+You can make aimed shots of exceptional accuracy. You ignore
+any negative Difculty modifers to Ranged Tests due to the size
+of your target.
+Shieldsman
+Max: Strength Bonus
+Tests: Any Test to defend with a shield
+You are skilled at using your shield to manoeuvre others in
+combat so you can take advantage of a desperate situation.
+When using a Shield to defend, you gain Advantage equal to
+the number of levels you have in Shieldsman if you lose the
+Opposed Test.
+Sixth Sense
+Max: Initiative Bonus
+Tests: Intuition Tests involving your Sixth Sense
+You get a strange feeling when you are threatened, and can react
+accordingly. Te GM may warn you if you are walking into
+danger; this will normally come after a secret Intuition Test
+on your behalf. Further, you may ignore Surprise if you pass an
+Intuition Test.
+Slayer
+Max: 1
+When determining Damage use your opponent’s Toughness
+Bonus as your Strength Bonus if it is higher; always determine
+this before any other rules modify your Strength or Strength
+Bonus. Further, if your target is larger than you, and your score a
+Critical (see page 159), multiply all melee Damage you cause by
+the number of steps larger your target is (so, 2 steps = ×2, 3 steps =
+×3, and so on); this multiplication is calculated after all modifers
+are applied. See page 341 for more about Size.
+Small
+Max: 1
+You are much shorter than most folk in the Old World. Te full
+rules for di?erent Sizes are found in Chapter 12: Bestiary on
+page 341.
+Sniper
+Max: 4
+Tests: Ranged (Long–Extreme Range)
+Distance is of no import to your shooting skills, and you are just
+as adept at picking o? far away targets as those nearby. You su?er
+no penalties for shooting at Long range, and half the penalties
+for Extreme range.
+Speedreader
+Max: Intelligence Bonus
+Tests: Research and Language Tests where speed of reading is
+important
+You read books at a voracious pace. You may reverse a failed
+Research Test if this will grant success. If the speed at which you
+read is important during combat, a successful Language Test lets
+you read and fully comprehend a number of pages per Round
+equal to your SL plus Speedreader level (minimum of 1, even if
+you fail the Test).
+Sprinter
+Max: Strength Bonus
+Tests: Athletics Tests concerning Running
+You are a swift runner. Your Movement Attribute counts as 1
+higher when Running.
+Step Aside
+Max: Agility Bonus
+Tests: Dodge Tests to activate this Talent
+You are skilled at being where enemy weapons are not. If you
+use Dodge to defend against an incoming attack and win the
+Opposed Test, you may move up to 2 yards as you dive away, and
+no longer count as Engaged. None of your opponents will gain a
+Free Attack when you do this.
+Stone Soup
+Max: Toughness Bonus
+Tests: Endurance Tests to resist hunger
+You are used to getting by with less, and know how to survive
+lean times. You can subsist on half the amount of food required
+without any negative penalties (bar feeling really hungry), and
+need only test for Starvation every 3 days, not 2 (see page 181).
+Stout-hearted
+Max: Willpower Bonus
+Tests: Cool Tests to remove Broken Conditions
+No matter how bad things get, you always seem to come back
+for more. You may attempt a Cool Test to remove a Broken
+Condition at the end of each of your Turns as well as at the end
+of the Round (see page 168 for more on this).
+Strider (Terrain)
+Max: Agility Bonus
+Tests: Athletics Tests to traverse the Terrain
+You are experienced in traversing difcult ground. You ignore all
+movement penalties when crossing over or through a specifed
+terrain. Typical specialities include: Coastal, Deserts, Marshes,
+Rocky, Tundra, Woodlands.
+Strike Mighty Blow
+Max: Strength Bonus
+You know how to hit hard! You deal your level of Strike Mighty
+Blow in extra Damage with melee weapons.
+sKIlls and talents IV
+145Warhammer Fantasy roleplay
+Strike to Injure
+Max: Initiative Bonus
+You are an expert at striking your enemies most vulnerable areas.
+You in?ict your level of Strike to Injure in additional Wounds
+when you cause a Critical Wound.
+Strike to Stun
+Max: Weapon Skill Bonus
+Tests: Melee Tests when Striking to Stun
+You know where to hit an opponent to bring him down fast. You
+ignore the ‘Called Shot’ penalty to strike the Head Hit Location
+when using a melee weapon with the Pummel Quality (see page
+298). Further, you count all improvised weapons as having the
+Pummel Quality.
+Strong Back
+Max: Strength Bonus
+Tests: Row and Swim
+You have a strong back that is used to hard work. You may add
+your levels in Strong Back to your SL in any Opposed Strength
+Tests, and can carry additional Encumbrance points of trappings
+(see page 293) equal to your level of Strong Back.
+Strong Legs
+Max: Strength Bonus
+You have strong legs able to carry you great distances when you
+jump. Add your Strong Legs level to your SL in any Athletics
+Tests involving Leaping (see page 166).
+Strong-minded
+Max: Willpower Bonus
+You are the epitome of determination and resolve. Add your level
+in Strong Minded to your maximum Resolve pool.
+Strong Swimmer
+Max: Strength Bonus
+Tests: Swim
+You are an especially strong swimmer and used to holding your
+breath for a long time underwater. Gain a bonus of your level in
+Strong Swimmer to your Toughness Bonus for the purposes of
+holding your breath.
+Sturdy
+Max: Strength Bonus
+Tests: Strength Tests when lifting
+You have a brawny physique, or are very used to carrying things.
+Increase the number of Encumbrance Points you can carry by
+your Sturdy level x 2.
+Suave
+Max: 1
+You gain a permanent +5 bonus to your starting Fellowship
+Characteristic (this does not count towards your Advances).
+Super Numerate
+Max: Intelligence Bonus
+Tests: Evaluate, Gamble
+You have a gift for calculation and can work out the solution to most
+mathematical problems with ease. You may use a simple calculator
+to represent what your PC is capable of mentally computing.
+Supportive
+Max: Fellowship Bonus
+Tests: Social Tests to in?uence a superior
+You know what to say and when to make the most impact
+upon your superiors. When you successfully use a social Skill to
+in?uence those with a higher Status tier, you can choose to either
+use your rolled SL, or the number rolled on your units die. So, a
+successful roll of 46 could be used for +6 SL.
+Sure Shot
+Max: Initiative Bonus
+You know how to fnd the weak spots in a target’s armour. When
+you hit a target with a Ranged weapon, you may ignore Armour
+Points equal to your Sure Shot level.
+Surgery
+Max: Intelligence Bonus
+Tests: Heal Tests outside combat rounds; i.e. when you have
+time to do it ‘properly’
+You are a surgeon, able to open and close the ?esh in order to
+heal others. You can treat any Critical Wound marked as needing
+Surgery. You can also perform surgery to resolve internal issues
+with an Extended Challenging (+0) Heal Test with a target
+SL determined by the GM (usually 5–10) depending upon the
+difculty of the procedure at hand. Tis will cause 1d10 Wounds
+and 1 Bleeding Condition per Test, meaning surgery has a high
+chance of killing a patient if the surgeon is not careful. After
+surgery, the patient must pass an Average (+20) Endurance Test
+or gain a Minor Infection (see page 187).
+Tenacious
+Max: Toughness Bonus
+Tests: Endurance Tests for enduring hardships
+You never give up, no matter how impossible your travails appear.
+You can double the length of time successful Endurance Tests
+allow you to endure a hardship. Tis includes enduring prolonged
+riding, exposure, rituals, and similar adversities.
+Tinker
+Max: Dexterity Bonus
+Tests: Trade Tests to repair broken items
+You are somewhat of a Johann-of-all-trades, able to repair almost
+anything. You count all non-magical Trade Skills as Basic when
+repairing broken items.
+Tower of Memories
+Max: Intelligence Bonus
+A recollection technique frst instigated by the Cult of Verena,
+reputedly from Elven practices taught by the Loremasters
+of Hoeth, Tower of Memories allows you to perfectly recall a
+IV
+146sequence of facts by storing them in an imaginary spire. You can
+recall a sequence as long as your Intelligence without having to
+make a Test. For every 10 more items you attempt to memorise,
+you must make an increasingly difcult Intelligence Test to
+recall the list correctly, starting at Very Easy (+60) for +10, Easy
+(+40) for +20, Average (+20) for +30, and so on. Beyond it’s
+obvious utility for Gamble Tests, where having this Talent adds
+a bonus of +20 to +60 depending upon how useful recalling
+sequences is to the game at hand, the GM can apply bonuses
+to other Tests as appropriate. Each time you take this Talent
+you may recall an extra sequence without having to forget a
+previously stored one.
+Trapper
+Max: Initiative Bonus
+Tests: Perception Tests to spot traps, Set Trap
+You are skilled at spotting and using traps. You may take a
+Perception Test to spot traps automatically without having to tell
+the GM of your intention; the GM may prefer to make some of
+these Tests on your behalf in private.
+Trick Riding
+Max: Agility Bonus
+Tests: Dodge Tests on Horseback, Ride (Horse)
+You are capable of amazing feats of agility on horseback. You
+can use any of your Performer Skills and unmodifed Dodge skill
+when on horseback. Further, when mounted, you can make your
+Move at the start of the Round instead of on your Turn.
+Tunnel Rat
+Max: Agility Bonus
+Tests: Stealth Tests when underground
+You are at home in tunnels, sewers, and other underground
+environments. When using Stealth in an underground environment,
+bystanders do not get passive Perception Tests to detect you; they
+can only spot you if they are specifcally on look-out, or watching
+for hidden others.
+Unshakable
+Max: Willpower Bonus
+Tests: Cool Tests to resist Blackpowder panic
+You are a jaded veteran who has survived more than one hail
+of shots from Blackpowder weapons. You need only take a Cool
+Test to resist a Broken Condition if you are successfully wounded
+by a Blackpowder weapon, not just if you are shot at.
+Very Resilient
+Max: 1
+You gain a permanent +5 bonus to your starting Toughness
+Characteristic (this does not count towards your Advances).
+Very Strong
+Max: 1
+You gain a permanent +5 bonus to your starting Strength
+Characteristic (this does not count towards your Advances).
+War Leader
+Max: Fellowship Bonus
+Skills: Leadership Tests during War
+Your stern gaze and inspiring words motivate your soldiers to
+fght on to the end. All subordinates able to see you may add
+your level in War Leader to their SL in one Willpower Test per
+Round. Tis bonus does not stack.
+War Wizard
+Max: 1
+You are trained to cast magic while in the thick of combat. On
+your Turn, you may cast one Spell with a Casting Number of 5 or
+less for free without using your Action. However, if you do this,
+you may not cast another spell this Turn.
+Warrior Born
+Max: 1
+You gain a permanent +5 bonus to your starting Weapon Skill
+Characteristic (doesn’t count as Advances).
+Waterman
+Max: Agility Bonus
+Tests: Sail Tests for river-going vessels
+You are an experienced freshwater sailor and are well-versed with
+river vessels. You can ignore all negatives to your Tests when
+onboard a barge derived from rolling waters, swaying vessels,
+unsure footing, and similar. Further, you count as two boatmen
+towards the minimum number of crew to pilot a river vessel.
+Wealthy
+Max: None
+You are fabulously wealthy, and are rarely ever short of coin.
+When Earning (including Income Endeavours) you secure +1
+GC per time you have this Talent.
+Well-prepared
+Max: Initiative Bonus
+You are used to anticipating the needs of others, and yourself. A
+number of times per session equal to your level of Well-Prepared,
+you may pull the trapping required for the current situation from
+your backpack (or similar) as long as it is Encumbrance 0, could
+feasibly been bought recently, and doesn’t stretch credibility too far.
+Tis could be anything from a ?ask of spirits to fortify a wounded
+comrade to a pfennig-whistle needed by a passing entertainer.
+Whenever you do this, you must deduct the cost for the prepared
+item from your purse, representing the coin you spent earlier.
+Witch!
+Max: Willpower Bonus
+You have learned magic through trial and error. Add Language
+(Magick) to any Career you enter; if it is already in your Career, you
+may purchase the Skill for 5 XP fewer per Advance. Further, you
+may spend 1 Resilience point to immediately cast any spell as if it
+were one of your Arcane Lore spells; you also instantly memorise
+that spell as one of your Arcane Lore spells for 0 XP. You can do
+this a number of times equal to your level in this Talent.
