@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +23,7 @@ namespace WFRP_NPC_Creator
             {"Very Resilient", new Tuple<Characteristics, int>(Characteristics.T, 5) },
             {"Nimble Fingered", new Tuple<Characteristics, int>(Characteristics.T, 5) }
         };
+        public static List<TalentInfo> TalentList = new List<TalentInfo>();
 
         public static readonly string[] RandomTalents = new string[] {
             "Acute Sense (any one)",
@@ -82,5 +85,64 @@ namespace WFRP_NPC_Creator
             return Advances > 1 ? Name + " " + Advances : Name;
         }
 
+    }
+
+    public class TalentInfo
+    {
+        public string Name { get; private set; }
+        public string Max { get; private set; }
+        public string Tests { get; private set; }
+        public bool isRelevant { get; private set; }
+
+
+        public TalentInfo(string name, string max, string tests, bool relevance)
+        {
+            Name = name;
+            Max = max;
+            Tests = tests;
+            isRelevant = relevance;
+        }
+
+        public int IntMax(Dictionary<Characteristics, int> characteristics)
+        {
+            int intMax;
+            if (Int32.TryParse(Max, out intMax))
+                return intMax;
+            else
+            {
+                if (Max.Contains("Bonus"))
+                {
+                    intMax = Convert.ToInt32(Math.Floor(characteristics[CharacteristicValueConverter.Convert[Max.Remove(Max.IndexOf(" Bonus"))]]/10.0));
+                }
+            }
+            return intMax;
+        }
+    }
+
+    static class TalentReader
+    {
+        public static bool read = false;
+        static TalentReader()
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("WFRP_NPC_Creator.TalentData.txt"));
+            string[] talentData = sr.ReadToEnd().Split('\n');
+            string max, name, tests;
+            for (int i = 0; i < talentData.Length; i++)
+            {
+                if (talentData[i].Length > 4 && talentData[i].Substring(0, 4) == "Max:")
+                {
+                    max = talentData[i].Substring(5).Trim();
+                    name = talentData[i - 5].Trim();
+                    if (talentData[i+1].Length > 6 && talentData[i + 1].Substring(0, 6) == "Tests:")
+                        tests = talentData[i + 1].Substring(7).Trim();
+                    else
+                        tests = "";
+                    Talent.TalentList.Add(new TalentInfo(name, max, tests, true));
+                }
+            }
+            sr.Close();
+
+        }
     }
 }

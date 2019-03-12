@@ -24,15 +24,7 @@ namespace WFRP_NPC_Creator
         {
             InitializeComponent();
             CareerJsonReader.read = true;
-            Human test1 = new Human();
-            Human test2 = new Human();
-            Human test3 = new Human();
-
-            test1.AddCareer("Squire", AdvanceLevel.Complete);
-            test1.AddCareer("Knight", AdvanceLevel.Complete);
-            test1.AddCareer("First Knight", AdvanceLevel.Complete);
-            test1.AddCareer("Knight of the Inner Circle", AdvanceLevel.Complete);
-            test1.PrintToConsole();
+            TalentReader.read = true;
 
         }
     }
