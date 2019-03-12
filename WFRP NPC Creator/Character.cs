@@ -43,10 +43,10 @@ namespace WFRP_NPC_Creator
             }
 
             System.Diagnostics.Debug.Write('\n');
-            foreach (Talent talent in Talents)
+            foreach (Talent talent in GetAllTalents())
             {
-                System.Diagnostics.Debug.Write(talent.TalentNameAndValue());
-                System.Diagnostics.Debug.Write(", ");
+                if (talent.IsRelevant())
+                    System.Diagnostics.Debug.Write(talent.TalentNameAndValue());
             }
             Console.WriteLine();
         }
@@ -124,6 +124,11 @@ namespace WFRP_NPC_Creator
                 return a.Name.CompareTo(b.Name);
             });
             return SkillList;
+        }
+
+        public List<Talent> GetAllTalents()
+        {
+
         }
 
         public int SkillValue(Skill skill)

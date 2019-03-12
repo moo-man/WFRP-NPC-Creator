@@ -68,16 +68,36 @@ namespace WFRP_NPC_Creator
 
         public string Name { get; private set; }
         public int Advances { get; private set; }
+        public Character Owner { get; private set; }
+        public TalentInfo Info { get; private set; }
 
-        public Talent(string name)
+        public Talent(string name, Character owner)
         {
             Name = name;
             Advances = 1;
+            Owner = owner;
+            Info = Talent.TalentList.Find(t => t.Name == Name);
         }
 
-        public void Advance()
+        public bool Advance()
         {
-            Advances++;
+            if (Advances >= Max())
+                return false;
+            else
+            {
+                Advances++;
+                return true;
+            }
+        }
+
+        public int Max()
+        {
+            return Info.IntMax(Owner.CharacteristicValues());
+        }
+
+        public bool IsRelevant()
+        {
+            return Info.isRelevant;
         }
 
         public string TalentNameAndValue()
@@ -128,17 +148,19 @@ namespace WFRP_NPC_Creator
             StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("WFRP_NPC_Creator.TalentData.txt"));
             string[] talentData = sr.ReadToEnd().Split('\n');
             string max, name, tests;
+            bool relevance;
             for (int i = 0; i < talentData.Length; i++)
             {
                 if (talentData[i].Length > 4 && talentData[i].Substring(0, 4) == "Max:")
                 {
                     max = talentData[i].Substring(5).Trim();
                     name = talentData[i - 5].Trim();
+                    relevance = talentData[i - 4].Trim() == "1";
                     if (talentData[i+1].Length > 6 && talentData[i + 1].Substring(0, 6) == "Tests:")
                         tests = talentData[i + 1].Substring(7).Trim();
                     else
                         tests = "";
-                    Talent.TalentList.Add(new TalentInfo(name, max, tests, true));
+                    Talent.TalentList.Add(new TalentInfo(name, max, tests, relevance));
                 }
             }
             sr.Close();
