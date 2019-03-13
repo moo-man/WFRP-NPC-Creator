@@ -100,6 +100,11 @@ namespace WFRP_NPC_Creator
             return Info.isRelevant;
         }
 
+        public static bool IsRelevant(string talentName)
+        {
+            return TalentList.Find(x => x.Name == talentName).isRelevant;
+        }
+
         public string TalentNameAndValue()
         {
             return Advances > 1 ? Name + " " + Advances : Name;
@@ -165,6 +170,28 @@ namespace WFRP_NPC_Creator
             }
             sr.Close();
 
+        }
+    }
+    class TalentEqualityComparer : IEqualityComparer<Talent>
+    {
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public bool Equals(Talent x, Talent y)
+        {
+            return x.Name == y.Name;
+        }
+
+        public int GetHashCode(Talent obj)
+        {
+            return obj.Name.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

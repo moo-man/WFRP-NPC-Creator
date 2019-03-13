@@ -36,17 +36,17 @@ namespace WFRP_NPC_Creator
                 Console.Write(CharacteristicValue(i) + "\t");
             }
             Console.WriteLine("\n______________________________________");
-            foreach (Skill sk in GetAllSkills())
+            foreach (string sk in GetAllSkills())
             {
-                if (sk.IsRelevant())
-                    System.Diagnostics.Debug.Write(SkillNameAndValue(sk) + " ");
+                if (Skill.IsRelevant(sk))
+                    System.Diagnostics.Debug.Write(SkillNameAndValue(sk) + ", ");
             }
 
             System.Diagnostics.Debug.Write('\n');
-            foreach (Talent talent in GetAllTalents())
+            foreach (string talent in GetAllTalents())
             {
-                if (talent.IsRelevant())
-                    System.Diagnostics.Debug.Write(talent.TalentNameAndValue());
+                if (Talent.IsRelevant(talent))
+                    System.Diagnostics.Debug.Write(TalentNameAndAdvances(talent) + ", ");
             }
             Console.WriteLine();
         }
@@ -86,7 +86,7 @@ namespace WFRP_NPC_Creator
             return TotalCharacteristicAdvances()[ch];
         }
 
-
+        #region Skills
         public int TotalSkillAdvances(Skill skill)
         {
             return TotalSkillAdvances(skill.Name);
@@ -110,7 +110,7 @@ namespace WFRP_NPC_Creator
             return totalValue;
         }
 
-        public List<Skill> GetAllSkills()
+        public string[] GetAllSkills()
         {
             List<Skill> SkillList = Skills;
             foreach (CareerAdvancement career in Careers)
@@ -123,12 +123,7 @@ namespace WFRP_NPC_Creator
             {
                 return a.Name.CompareTo(b.Name);
             });
-            return SkillList;
-        }
-
-        public List<Talent> GetAllTalents()
-        {
-
+            return SkillList.Select(sk => sk.Name).ToArray();
         }
 
         public int SkillValue(Skill skill)
@@ -137,13 +132,18 @@ namespace WFRP_NPC_Creator
         }
 
         public int SkillValue(string skillName)
-        {   
+        {
             return CharacteristicValue(Skill.CharacteristicLookUp(skillName)) + TotalSkillAdvances(skillName);
         }
 
         public string SkillNameAndValue(Skill skill)
         {
-            return skill.Name + " " + SkillValue(skill);
+            return SkillNameAndValue(skill.Name);
+        }
+
+        public string SkillNameAndValue(string skillName)
+        {
+            return skillName + " " + SkillValue(skillName);
         }
 
         protected virtual void AddSkill(string skillName, int advances)
@@ -164,6 +164,60 @@ namespace WFRP_NPC_Creator
             }
 
         }
+        #endregion
+
+
+        #region Talents
+        public string[] GetAllTalents()
+        {
+            List<Talent> TalentList = Talents;
+            foreach (CareerAdvancement career in Careers)
+            {
+                TalentList = TalentList.Concat(career.TalentsAdvanced).ToList();
+            }
+            TalentList = TalentList.Distinct(new TalentEqualityComparer()).ToList();
+
+            TalentList.Sort(delegate (Talent a, Talent b)
+            {
+                return a.Name.CompareTo(b.Name);
+            });
+            return TalentList.Select(t => t.Name).ToArray();
+        }
+
+        public int TotalTalentAdvances(Talent t)
+        {
+            return TotalTalentAdvances(t.Name);
+        }
+
+        public int TotalTalentAdvances(string tName)
+        {
+            int adv = 0;
+            Talent charTalent = Talents.Find(t => t.Name == tName);
+            if (charTalent != null)
+                adv = charTalent.Advances;
+
+            foreach (CareerAdvancement career in Careers)
+            {
+                Talent careerTalent = career.TalentsAdvanced.Find(t => t.Name == tName);
+                if (careerTalent != null)
+                    adv += careerTalent.Advances;
+            }
+
+            return adv;
+        }
+
+        public string TalentNameAndAdvances(string t)
+        {
+            try
+            {
+                return t + " " + TotalTalentAdvances(t);
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                return "";
+            }
+        }
 
         protected virtual void AddTalent(string talentName)
         {
@@ -173,7 +227,7 @@ namespace WFRP_NPC_Creator
                 talentAcquired.Advance();
             else
             {
-                Talents.Add(new Talent(talentName));
+                Talents.Add(new Talent(talentName, this));
                 Tuple<Characteristics, int> bonus;
                 Talent.TalentBonus.TryGetValue(talentName, out bonus);
 
@@ -198,105 +252,12 @@ namespace WFRP_NPC_Creator
             else return;
 
         }
+        #endregion
+       
 
         public virtual void AddCareer(string name, AdvanceLevel advancement = AdvanceLevel.None)
         {
-
             Careers.Add(new CareerAdvancement(this, Career.List.Find(c => c.Name == name), advancement));
-         /*   Career careerToAdd = Career.List.Find(x => x.Name == name);
-            Random advanceGen = new Random();
-            int advances;
-            switch (advancement)
-            {
-                case AdvanceLevel.Beginner:
-                    foreach (Characteristics characteristic in careerToAdd.CareerCharacteristics)
-                    {
-                        advances = advanceGen.Next(0, 4);
-                        if (characteristicAdvances[characteristic] < advances)
-                            characteristicAdvances[characteristic] += advances; // difference in advances?( to not go over)
-                    }
-
-                    foreach (string skill in careerToAdd.CareerSkills)
-                    {
-                        int skillAdvances = advanceGen.Next(0, 6);
-                        Skill currentSkill = skills.Find(sk => sk.Name == skill);
-
-                        if (currentSkill == null)
-                        {
-                            if (skillAdvances > 0)
-                                skills.Add(new Skill(skill, skillAdvances));
-                        }
-                        else if (currentSkill.Advances < skillAdvances)
-                            currentSkill.Advance(skillAdvances);
-                    }
-
-                    int numTalents = advanceGen.Next(0, 2);
-
-                    for (int i = 0; i < numTalents; i++)
-                    {
-                        //TODO: max
-                        AddTalent(careerToAdd.CareerTalents[advanceGen.Next(0, careerToAdd.CareerTalents.Length)]);
-                    }
-                    break;
-
-                case AdvanceLevel.Experienced:
-                    foreach (Characteristics characteristic in careerToAdd.CareerCharacteristics)
-                    {
-                        advances = advanceGen.Next(3, 6);
-                        if (characteristicAdvances[characteristic] < advances)
-                            characteristicAdvances[characteristic] += advances; // difference in advances?( to not go over)
-                    }
-
-                    foreach (string skill in careerToAdd.CareerSkills)
-                    {
-                        int skillAdvances = advanceGen.Next(3, 6);
-                        Skill currentSkill = skills.Find(sk => sk.Name == skill);
-
-                        if (currentSkill == null)
-                        {
-                            if (skillAdvances > 0)
-                                skills.Add(new Skill(skill, skillAdvances));
-                        }
-                        else if (currentSkill.Advances < skillAdvances)
-                            currentSkill.Advance(skillAdvances);
-                    }
-
-                    numTalents = advanceGen.Next(0, 5);
-
-                    for (int i = 0; i < numTalents; i++)
-                    {
-                        //TODO: max
-                        AddTalent(careerToAdd.CareerTalents[advanceGen.Next(0, careerToAdd.CareerTalents.Length)]);
-                    }
-                    break;
-
-                case AdvanceLevel.Complete:
-                    foreach (Characteristics characteristic in careerToAdd.CareerCharacteristics)
-                    {
-                        if (characteristicAdvances[characteristic] < 5)
-                            characteristicAdvances[characteristic] = 5; // difference in advances?( to not go over)
-                    }
-
-                    foreach (string skill in careerToAdd.CareerSkills)
-                    {
-                        Skill currentSkill = skills.Find(sk => sk.Name == skill);
-
-                        if (currentSkill == null)
-                            skills.Add(new Skill(skill, 5));
-                        else if (currentSkill.Advances < 5)
-                            currentSkill.Advance(5-currentSkill.Advances);
-                    }
-
-                    numTalents = advanceGen.Next(1, 5);
-
-                    for (int i = 0; i < numTalents; i++)
-                    {
-                        //TODO: max
-                        AddTalent(careerToAdd.CareerTalents[advanceGen.Next(0, careerToAdd.CareerTalents.Length)]);
-                    }
-                    break;
-            }
-            */
         }
 
 
@@ -308,6 +269,20 @@ namespace WFRP_NPC_Creator
 
     public class Human : Character
     {
+        public static string[] HumanSkills = {
+            "Animal Charm",
+            "Charm",
+            "Cool",
+            "Evaluate",
+            "Gossip",
+            "Haggle",
+            "Language (Bretonnian)",
+            "Language (Wastelander)",
+            "Leadership",
+            "Lore (Reikland)",
+            "Melee (Basic)",
+            "Ranged (Bow)" };
+
         public Human()
         {
             species = Species.Human;
@@ -326,6 +301,8 @@ namespace WFRP_NPC_Creator
 
         protected override void AdvanceSpeciesSkills()
         {
+
+
 
             // Only consider relevant ones: Cool, Melee (Basic), Ranged (Bow) (Reimplementation needed if all skills are considerede)
             // Randomly decide 5, 3, or 0
