@@ -301,48 +301,16 @@ namespace WFRP_NPC_Creator
 
         protected override void AdvanceSpeciesSkills()
         {
-
-
-
-            // Only consider relevant ones: Cool, Melee (Basic), Ranged (Bow) (Reimplementation needed if all skills are considerede)
-            // Randomly decide 5, 3, or 0
-
-            // 0 = 0, 1 = 3, 2 = 5
-            int adv = rand.Next(0, 3);
-
-            // Cool
-            switch (adv)
+            string[] skillListRandom = Human.HumanSkills.OrderBy(x => rand.Next()).ToArray();
+            int advanceNum = 0;
+            for (int i = 0; i < 5; i++)
             {
-                case 1:
-                    AddSkill("Cool", 3);
-                    break;
-                case 2:
-                    AddSkill("Cool", 5);
-                    break;
-            }
+                if (i < 3)
+                    advanceNum = 5;
+                else
+                    advanceNum = 3;
 
-            adv = rand.Next(0, 3);
-            // Cool
-            switch (adv)
-            {
-                case 1:
-                    AddSkill("Melee (Basic)", 3);
-                    break;
-                case 2:
-                    AddSkill("Melee (Basic)", 5);
-                    break;
-            }
-
-            adv = rand.Next(0, 3);
-            // Cool
-            switch (adv)
-            {
-                case 1:
-                    AddSkill("Ranged (Bow)", 3);
-                    break;
-                case 2:
-                    AddSkill("Ranged (Bow)", 5);
-                    break;
+                AddSkill(skillListRandom[i], advanceNum);
             }
         }
 
