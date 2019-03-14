@@ -58,13 +58,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdvanceBounds.cs" />
-    <Compile Include="Career.cs" />
-    <Compile Include="CareerFocusLookup.cs" />
-    <Compile Include="Dictionaries.cs" />
-    <Compile Include="Skill.cs" />
-    <Compile Include="Species.cs" />
-    <Compile Include="Talents.cs" />
+    <Compile Include="Model\AdvanceBounds.cs" />
+    <Compile Include="Model\Career.cs" />
+    <Compile Include="Model\CareerFocusLookup.cs" />
+    <Compile Include="Model\Dictionaries.cs" />
+    <Compile Include="Model\Skill.cs" />
+    <Compile Include="Model\Species.cs" />
+    <Compile Include="Model\Talents.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,8 +73,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Character.cs" />
-    <Compile Include="Enums.cs" />
+    <Compile Include="Model\Character.cs" />
+    <Compile Include="Model\Enums.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,8 +97,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="careers.json" />
+    <EmbeddedResource Include="Data\careers.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,7 +110,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TalentData.txt" />
+    <EmbeddedResource Include="Data\TalentData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

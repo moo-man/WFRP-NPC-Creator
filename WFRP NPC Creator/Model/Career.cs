@@ -80,6 +80,10 @@ namespace WFRP_NPC_Creator
                     advanceMax = 6;
                     break;
 
+                case AdvanceLevel.Beyond:
+                    advanceMin = AdvanceConstraints.BEYOND_MIN;
+                    advanceMax = AdvanceConstraints.BEYOND_MAX_EX;
+                    break;
                 default:
                     advanceMin = 0;
                     advanceMax = 1;
@@ -155,6 +159,11 @@ namespace WFRP_NPC_Creator
                     advanceMax = 3;
                     break;
 
+                case AdvanceLevel.Beyond:
+                    advanceMin = 2;
+                    advanceMax = 3;
+                    break;
+
                 default:
                     advanceMin = 0;
                     advanceMax = 0;
@@ -197,7 +206,7 @@ namespace WFRP_NPC_Creator
         static CareerJsonReader()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("WFRP_NPC_Creator.careers.json"));
+            StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("WFRP_NPC_Creator.Data.careers.json"));
 
             ClassList = JsonConvert.DeserializeObject(sr.ReadToEnd());
             sr.Close();

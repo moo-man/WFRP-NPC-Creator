@@ -164,7 +164,7 @@ namespace WFRP_NPC_Creator
         static TalentReader()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("WFRP_NPC_Creator.TalentData.txt"));
+            StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("WFRP_NPC_Creator.Data.TalentData.txt"));
             string[] talentData = sr.ReadToEnd().Split('\n');
             string max, name, tests;
             bool relevance;

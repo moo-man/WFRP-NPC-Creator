@@ -739,7 +739,7 @@
             ],
             "Talents": [
               "Arcane Magic (Any Arcane Lore)",
-              "Detect Artefact",
+              "Detect Artifact",
               "Fast Hands",
               "Sixth Sense"
             ],
@@ -1749,7 +1749,7 @@
               "Gossip",
               "Haggle",
               "Language (Classical)",
-              "Lore  (Politics)",
+              "Lore (Politics)",
               "Perception"
             ],
             "Talents": [
@@ -3292,7 +3292,7 @@
               "Lore (Astrology)"
             ],
             "Talents": [
-              "Detect Artefact",
+              "Detect Artifact",
               "Holy Visions",
               "Sixth Sense",
               "Well-prepared"

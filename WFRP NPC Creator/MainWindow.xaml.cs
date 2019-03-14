@@ -28,10 +28,13 @@ namespace WFRP_NPC_Creator
 
             Character Test = new Human();
 
-            Test.AddCareer("Squire", AdvanceLevel.Complete);
-            Test.AddCareer("Knight", AdvanceLevel.Complete);
-            Test.AddCareer("First Knight", AdvanceLevel.Complete);
-            Test.AddCareer("Knight of the Inner Circle", AdvanceLevel.Complete);
+            Test.AddCareer("Servant", AdvanceLevel.Complete);
+            Test.AddCareer("Advisor", AdvanceLevel.Complete);
+            Test.AddCareer("Wizard's Apprentice", AdvanceLevel.Complete);
+            Test.AddCareer("Wizard", AdvanceLevel.Complete);
+            Test.AddCareer("Master Wizard", AdvanceLevel.Beyond);
+
+
             Test.PrintToConsole(false);
             Test.PrintToConsole(true);
 

@@ -13,5 +13,8 @@ namespace WFRP_NPC_Creator
 
         public const int EXPERIENCED_MIN = 3;
         public const int EXPERIENCED_MAX_EX = 6;
+
+        public const int BEYOND_MIN = 6;
+        public const int BEYOND_MAX_EX = 9;
     }
 }

@@ -69,5 +69,31 @@ namespace WFRP_NPC_Creator.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accurate Shot
+        ///1
+        ///Friday, August 24, 2018
+        ///9:46 PM
+        ///
+        ///Max: Ballistic Skill Bonus 
+        ///
+        ///You are an exceptional shot and know where to shoot an enemy in order to in?ict maximum damage. You deal your Accurate Shot level in extra Damage with all ranged weapons.
+        ///
+        ///Acute Sense (Sense)
+        ///0
+        ///Friday, August 24, 2018
+        ///9:46 PM
+        ///
+        ///Max: Initiative Bonus
+        ///Test: Perception (Sense)
+        ///
+        ///One of your primary five senses is highly developed, allowing you to spot what others miss. You may take Perception Tests to detect normally i [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string TalentData {
+            get {
+                return ResourceManager.GetString("TalentData", resourceCulture);
+            }
+        }
     }
 }
