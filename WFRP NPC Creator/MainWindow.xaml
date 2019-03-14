@@ -6,7 +6,36 @@
         xmlns:local="clr-namespace:WFRP_NPC_Creator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="Test">
+				
+			</MenuItem>
+			<MenuItem Header="Test">
+
+			</MenuItem>
+		</Menu>
+		<Grid DockPanel.Dock="Bottom">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.5*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<TreeView Grid.Column="0">
+				<TreeViewItem Header="Test">
+					<TreeViewItem Header="Test"/>
+					<TreeViewItem Header="Test"/>
+					<TreeViewItem Header="Test"/>
+				</TreeViewItem>
+				<TreeViewItem Header="Test"/>
+				<TreeViewItem Header="Test"/>
+				<TreeViewItem Header="Test"/>
+			</TreeView>
+
+			<DataGrid Grid.Column="1">
+
+			</DataGrid>
+
+		</Grid>
+	</DockPanel>
 </Window>
