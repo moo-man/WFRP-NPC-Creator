@@ -28,7 +28,7 @@ namespace WFRP_NPC_Creator
             AddSpeciesTalents();
         }
 
-        public void PrintToConsole()
+        public void PrintToConsole(bool onlyRelevant)
         {
             Console.WriteLine("WS\tBS\tS\tT\tI\tAgi\tDex\tInt\tWP\tFel\n");
             for (Characteristics i = 0; i < (Characteristics)10; i++)
@@ -38,15 +38,19 @@ namespace WFRP_NPC_Creator
             Console.WriteLine("\n______________________________________");
             foreach (string sk in GetAllSkills())
             {
-                if (Skill.IsRelevant(sk))
+                if (!(onlyRelevant && !Skill.IsRelevant(sk))) // Print always if relevancy doesn't matter, but only print if relevant and relevancy does matter
                     System.Diagnostics.Debug.Write(SkillNameAndValue(sk) + ", ");
+
+
             }
 
             System.Diagnostics.Debug.Write('\n');
             foreach (string talent in GetAllTalents())
             {
-                if (Talent.IsRelevant(talent))
+                if (!(onlyRelevant && !Talent.IsRelevant(talent))) // Print always if relevancy doesn't matter, but only print if relevant and relevancy does matter
                     System.Diagnostics.Debug.Write(TalentNameAndAdvances(talent) + ", ");
+
+
             }
             Console.WriteLine();
         }
@@ -210,7 +214,8 @@ namespace WFRP_NPC_Creator
         {
             try
             {
-                return t + " " + TotalTalentAdvances(t);
+                int adv = TotalTalentAdvances(t);
+                return adv > 1 ? t + " " + TotalTalentAdvances(t) : t;
             }
             catch (Exception e)
             {
@@ -270,7 +275,7 @@ namespace WFRP_NPC_Creator
     public class Human : Character
     {
         public static string[] HumanSkills = {
-            "Animal Charm",
+            "Animal Care",
             "Charm",
             "Cool",
             "Evaluate",

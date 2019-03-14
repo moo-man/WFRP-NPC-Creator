@@ -47,12 +47,18 @@ namespace WFRP_NPC_Creator
         {
             Owner = owner;
             CareerTemplate = careerToAdd;
-            Random advanceGen = new Random();
-            int advances = 0;
             for (Characteristics i = 0; i < (Characteristics)10; i++)
                 CharacteristicAdvances.Add(i, 0);
 
+            AdvanceSkills(advancement, focus);
+            AdvanceTalents(advancement, focus);
+        }
+
+        private void AdvanceSkills(AdvanceLevel advancement, bool focus)
+        {
             int skillsLearned = 0;
+            int advances = 0;
+            Random advanceGen = new Random();
             double percentToLearn = 0.125;
             List<string> LearnedList = new List<string>();
             int advanceMin, advanceMax;
@@ -62,7 +68,7 @@ namespace WFRP_NPC_Creator
                 case AdvanceLevel.Beginner:
                     advanceMin = AdvanceConstraints.EXPERIENCED_MIN;
                     advanceMax = AdvanceConstraints.EXPERIENCED_MAX_EX;
-                    break;       
+                    break;
 
                 case AdvanceLevel.Experienced:
                     advanceMin = AdvanceConstraints.EXPERIENCED_MIN;
@@ -78,9 +84,9 @@ namespace WFRP_NPC_Creator
                     advanceMin = 0;
                     advanceMax = 1;
                     break;
-                 }
+            }
 
-            foreach (Characteristics ch in careerToAdd.CareerCharacteristics)
+            foreach (Characteristics ch in CareerTemplate.CareerCharacteristics)
             {
                 advances = advanceGen.Next(advanceMin, advanceMax) * CareerTemplate.Tier;
                 if (Owner.TotalCharacteristicAdvances(ch) < advances)
@@ -111,7 +117,7 @@ namespace WFRP_NPC_Creator
                     string possibleSkill = SkillPool[i];
 
                     // If we have not already learned the skill -> learn it by chance or learn it if we are focusing on relevant skills and it qualifies
-                    if (!LearnedList.Contains(possibleSkill) && 
+                    if (!LearnedList.Contains(possibleSkill) &&
                         (advanceGen.NextDouble() < percentToLearn || (focus && CareerTemplate.FocusSkills.Contains(possibleSkill)))) // Learn by chance or if focusing and skill should be focused
                     {
                         advances = advanceGen.Next(advanceMin, advanceMax) * CareerTemplate.Tier;
@@ -123,11 +129,63 @@ namespace WFRP_NPC_Creator
                             percentToLearn += 0.125;
                             LearnedList.Add(possibleSkill);
                         }
+                        else if (currentAdvances >= advances)
+                        {   // Prevent infinite loop if skill already learned
+                            skillsLearned++;
+                            percentToLearn += 0.125;
+                        }
                     }
                 }
             }
         }
 
+        private void AdvanceTalents(AdvanceLevel advancement, bool focus)
+        {
+            Random advanceGen = new Random();
+            int advanceMin, advanceMax, advances, talentsAdvanced = 0;
+            switch (advancement)
+            {
+                case AdvanceLevel.Experienced:
+                    advanceMin = 0;
+                    advanceMax = 2;
+                    break;
+
+                case AdvanceLevel.Complete:
+                    advanceMin = 1;
+                    advanceMax = 3;
+                    break;
+
+                default:
+                    advanceMin = 0;
+                    advanceMax = 0;
+                    break;
+            }
+
+            advances = advanceGen.Next(advanceMin, advanceMax);
+
+            //int relevantTalents = CareerTemplate.CareerTalents.Where(t => Talent.IsRelevant(t)).Count();
+
+            while (talentsAdvanced < advances)
+            {
+                Talent talentPick = new Talent(CareerTemplate.CareerTalents[advanceGen.Next(0, CareerTemplate.CareerTalents.Length)], Owner);
+                int currentAdvances = Owner.TotalTalentAdvances(talentPick);
+
+                /*// If focused and all relevant talents are taken
+                if (focus && talentsAdvanced == relevantTalents)
+                    focus = false;*/               
+
+                if (currentAdvances < talentPick.Max() && !(focus && !talentPick.IsRelevant())) // Don't consider it if we are focusing AND it's not relevant
+                {
+                    if (TalentsAdvanced.Contains(talentPick))
+                        TalentsAdvanced.Find(t => t.Name == talentPick.Name).Advance();
+                    else
+                        TalentsAdvanced.Add(talentPick);
+                    talentsAdvanced++;
+                }
+            }
+
+            
+        }
     }
 
     public static class CareerJsonReader

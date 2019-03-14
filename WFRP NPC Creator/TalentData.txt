@@ -315,7 +315,7 @@ Tests: Perform and Agility Tests when contorting helps
 You can bend and manipulate your body in a myriad of seemingly unnatural ways. This allows you to squeeze through unlikely gaps and bend your body in crazy ways, giving benefits determined by the GM, possibly with a successful Agility test.
 
 Coolheaded
-1
+0
 Friday, August 24, 2018
 9:48 PM
 
@@ -858,7 +858,7 @@ Max: 1
 You have earned an air of respectability despite your nefarious ways. You may ignore the Status loss of the Criminal Talent. 
 
 Lightning Reflexes
-1
+0
 Friday, August 24, 2018
 9:50 PM
 
@@ -924,7 +924,7 @@ Max: None
 You are an undisputed master in your field, able to create work of such incredible complexity others can but sit back and marvel at your genius. Each time you take this Talent you may create a single, extraordinary work of art with one of your Art or Trade Skills. Tis work is unrivalled in your field, a unique piece that will always impress, giving bonuses as determined by the GM, most commonly to Fellowship Tests from those who have witnessed your astounding work. Selling the piece will net you at least ten times its normal value, and sometimes significantly more than this. 
 
 Marksman
-1
+0
 Friday, August 24, 2018
 9:51 PM
 
@@ -992,7 +992,7 @@ Tests: Perception tests in low-light conditions
 You can see very well in natural darkness. Assuming you have at least a faint source of light (such as starlight, moonlight, or bioluminescence) you can see clearly for 20 yards per level of Night Vision. Further, you can extend the e?ective illumination distance of any light sources by 20 yards per level of Night Vision. 
 
 Nimble Fingered
-1
+0
 Friday, August 24, 2018
 9:51 PM
 
@@ -1265,7 +1265,7 @@ Tests: Lore (chosen Lore)
 You are exceptionally learned, and have a significant degree of specialized knowledge in a single field of study. You automatically know a number of pieces of correct information equal to you Savant (Lore) level about a relevant issue without having to test your Lore Skill. Testing, as always, will provide yet more information as normal as determined by the GM. 
 
 Savvy
-1
+0
 Friday, August 24, 2018
 9:53 PM
 
@@ -1344,7 +1344,7 @@ Tests: Any Test involving Shadowing
 You are skilled at following people without being spotted. You may use the Shadowing rules @@ on page 130 without doing a Combined Test. Instead you test against just your Perception or your Stealth Skill, whichever is higher. 
 
 Sharp
-1
+0
 Friday, August 24, 2018
 9:53 PM
 
@@ -1546,7 +1546,7 @@ Tests: Strength Tests when lifting
 You have a brawny physique, or are very used to carrying things. Increase the number of Encumbrance Points you can carry by your Sturdy level x 2 
 
 Suave
-1
+0
 Friday, August 24, 2018
 9:55 PM
 
@@ -1663,7 +1663,7 @@ Tests: Cool Tests to resist Blackpowder panic
 You are a jaded veteran who has survived more than one hail of shots from Blackpowder weapons. You need only take a Cool Test to resist a Broken Condition if you are successfully wounded by a Blackpowder weapon, not just if you are shot at 
 
 Very Resilient
-1
+0
 Friday, August 24, 2018
 9:55 PM
 
@@ -1700,7 +1700,7 @@ Max: 1
 You are trained to cast magic while in the thick of combat. On your Turn, you may cast one Spell with a Casting Number of 5 or less for free without using your Action. However, if you do this, you may not cast another spell this Turn. 
 
 Warrior Born
-1
+0
 Friday, August 24, 2018
 9:56 PM
 

@@ -76,7 +76,7 @@ namespace WFRP_NPC_Creator
             Name = name;
             Advances = 1;
             Owner = owner;
-            Info = Talent.TalentList.Find(t => t.Name == Name);
+            Info = TalentList.Find(t => t.Name == GenericName());
         }
 
         public bool Advance()
@@ -102,12 +102,26 @@ namespace WFRP_NPC_Creator
 
         public static bool IsRelevant(string talentName)
         {
-            return TalentList.Find(x => x.Name == talentName).isRelevant;
+            return TalentList.Find(x => x.Name == GenericName(talentName)).isRelevant;
         }
 
-        public string TalentNameAndValue()
+        public static string GenericName(string inputName)
         {
-            return Advances > 1 ? Name + " " + Advances : Name;
+            int parenIndex = inputName.IndexOf('(');
+
+            if (parenIndex == -1)
+            {
+                return inputName;
+            }
+            else
+            {
+                return inputName.Remove(parenIndex - 1);
+            }
+        }
+
+        public string GenericName()
+        {
+            return GenericName(Name);
         }
 
     }
@@ -165,7 +179,7 @@ namespace WFRP_NPC_Creator
                         tests = talentData[i + 1].Substring(7).Trim();
                     else
                         tests = "";
-                    Talent.TalentList.Add(new TalentInfo(name, max, tests, relevance));
+                    Talent.TalentList.Add(new TalentInfo(Talent.GenericName(name), max, tests, relevance));
                 }
             }
             sr.Close();

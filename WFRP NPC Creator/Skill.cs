@@ -108,56 +108,6 @@ namespace WFRP_NPC_Creator
             { "Trade" , false }
         };
 
-        /* static readonly Dictionary<string, bool> Relevance = new Dictionary<string, bool>()
-         {
-             { "Animal Care" , false},
-             { "Animal Training" , false },
-             { "Art" , false },
-             { "Athletics" , true },
-             { "Bribery" , false },
-             { "Channeling" , true },
-             { "Charm" , false },
-             { "Charm Animal" , false },
-             { "Climb" , true },
-             { "Consume Alcohol" , false },
-             { "Cool" , true },
-             { "Dodge" , true },
-             { "Drive" , true },
-             { "Endurance" , true },
-             { "Entertain" , false },
-             { "Evaluate" , true },
-             { "Gamble" ,  true },
-             { "Gossip" , false },
-             { "Haggle" , true },
-             { "Heal" ,  true },
-             { "Intimidate" , true },
-             { "Intuition" , true },
-             { "Language (Magick)" , true},
-             { "Language" , false },
-             { "Leadership" , false },
-             { "Lore" , false },
-             { "Melee" , true },
-             { "Navigation" , true },
-             { "Outdoor Survival" , true },
-             { "Perception" , true },
-             { "Perform" , false },
-             { "Pick Lock" , true },
-             { "Play" , false},
-             { "Pray" , true},
-             { "Ranged" , true },
-             { "Research" , false },
-             { "Ride" , true },
-             { "Row" , false },
-             { "Sail" , false },
-             { "Secret Signs" , false },
-             { "Set Trap" , false },
-             { "Sleight of Hand" , true },
-             { "Stealth" , true },
-             { "Swim" , true },
-             { "Track" , false },
-             { "Trade" , false }
-         };*/
-
         public string Name { get; private set; }
 
         public int Advances { get; private set; }
