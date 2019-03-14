@@ -43,15 +43,15 @@ namespace WFRP_NPC_Creator
         public Career CareerTemplate { get; private set; }
         public Character Owner { get; private set; }
 
-        public CareerAdvancement(Character owner, Career careerToAdd, AdvanceLevel advancement = AdvanceLevel.None, bool focus = true)
+        public CareerAdvancement(Character owner, Career careerToAdd, AdvanceLevel advancement = AdvanceLevel.None, bool skillFocus = true, bool talentFocus = true)
         {
             Owner = owner;
             CareerTemplate = careerToAdd;
             for (Characteristics i = 0; i < (Characteristics)10; i++)
                 CharacteristicAdvances.Add(i, 0);
 
-            AdvanceSkills(advancement, focus);
-            AdvanceTalents(advancement, focus);
+            AdvanceSkills(advancement, skillFocus);
+            AdvanceTalents(advancement, talentFocus);
         }
 
         private void AdvanceSkills(AdvanceLevel advancement, bool focus)
