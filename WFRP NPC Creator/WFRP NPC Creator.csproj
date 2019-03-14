@@ -66,6 +66,8 @@
     <Compile Include="Model\Species.cs" />
     <Compile Include="Model\Talents.cs" />
     <Compile Include="ViewModel\CareerTreeViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\SpeciesTreeViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

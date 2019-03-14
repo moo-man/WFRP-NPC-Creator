@@ -262,7 +262,7 @@ namespace WFRP_NPC_Creator
 
         public virtual void AddCareer(string name, AdvanceLevel advancement = AdvanceLevel.None)
         {
-            Careers.Add(new CareerAdvancement(this, Career.List.Find(c => c.Name == name), advancement));
+            Careers.Add(new CareerAdvancement(this, Career.GetCareerList().Find(c => c.Name == name), advancement));
         }
 
 

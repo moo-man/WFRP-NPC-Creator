@@ -8,22 +8,32 @@ using System.Threading.Tasks;
 
 namespace WFRP_NPC_Creator
 {
-    public class CareerTreeViewModel : INotifyPropertyChanged
+    public class CareerTreeViewModel : BaseViewModel
     {
         public ObservableCollection<CareerItemViewModel> Items { get; set; } = new ObservableCollection<CareerItemViewModel>();
 
         public CareerTreeViewModel()
         {
-            foreach (Career career in Career.List)
+            CareerItemViewModel ClassItem, CareerItem, TierItem;
+            foreach (CareerClass cClass in Career.ClassList)
             {
-                Items.Add(new CareerItemViewModel(career.Name));
+                ClassItem = new CareerItemViewModel(cClass.ClassName);
+                foreach (CareerPath cPath in cClass.CareerPaths)
+                {
+                    CareerItem = new CareerItemViewModel(cPath.PathName);
+                    foreach (Career career in cPath.Tiers)
+                    {
+                        TierItem = new CareerItemViewModel(career.Name);
+                        CareerItem.SubItems.Add(TierItem);
+                    }
+                    ClassItem.SubItems.Add(CareerItem);
+                }
+                Items.Add(ClassItem);
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
     }
 
-    public class CareerItemViewModel : INotifyPropertyChanged
+    public class CareerItemViewModel : BaseViewModel
     {
         public string Name { get; set; }
         public ObservableCollection<CareerItemViewModel> SubItems { get; set; } = new ObservableCollection<CareerItemViewModel>();
@@ -33,32 +43,6 @@ namespace WFRP_NPC_Creator
             Name = name;
         }
 
-        public bool IsExpanded
-        {
-            get
-            {
-                return SubItems.Count() > 0;
-            }
-            set
-            {
-                if (value == true)
-                    Expand();
-                else
-                    ClearChildren();
-            }
-        }
 
-        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
-
-
-        private void Expand()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ClearChildren()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

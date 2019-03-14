@@ -17,7 +17,7 @@
 		</Menu>
 		<Grid DockPanel.Dock="Bottom">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.5*"/>
+				<ColumnDefinition Width="0.8*"/>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>

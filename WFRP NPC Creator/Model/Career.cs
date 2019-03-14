@@ -11,7 +11,7 @@ namespace WFRP_NPC_Creator
 {
     public class Career
     {
-        public static List<Career> List = new List<Career>();
+        public static List<CareerClass> ClassList = new List<CareerClass>();
         public string Name { get; private set; }
         public int Tier { get; private set; }
         public Characteristics[] CareerCharacteristics { get; private set; }
@@ -32,6 +32,18 @@ namespace WFRP_NPC_Creator
             CareerTrappings = trappings;
             if (!CareerFocusLookup.ShouldFocus.TryGetValue(Name, out FocusSkills))
                 FocusSkills = new string[0];
+        }
+
+        public static List<Career> GetCareerList()
+        {
+            List<Career> flatList = new List<Career>();
+            foreach (CareerClass cClass in ClassList)
+                foreach (CareerPath cPath in cClass.CareerPaths)
+                    foreach (Career career in cPath.Tiers)
+                        flatList.Add(career);
+
+            return flatList.OrderBy(c => c.Name).ToList();
+
         }
     }
 
@@ -197,12 +209,43 @@ namespace WFRP_NPC_Creator
         }
     }
 
+    public class CareerClass
+    {
+        public string ClassName { get; set; }
+        public List<CareerPath> CareerPaths { get; set; } = new List<CareerPath>();
+
+        public CareerClass(string name)
+        {
+            ClassName = name;
+        }
+
+        public void AddCareerPath(CareerPath path)
+        {
+            CareerPaths.Add(path);
+        }
+    }
+
+    public class CareerPath
+    {
+
+        public string PathName { get; set; }
+        public List<Career> Tiers { get; set; } = new List<Career>();
+
+        public CareerPath(string pathName)
+        {
+            PathName = pathName;
+        }
+
+        public void AddTier(Career tier)
+        {
+            Tiers.Add(tier);
+        }
+    }
+
     public static class CareerJsonReader
     {
         public static bool read = false;
         static dynamic ClassList;
-        static List<dynamic> AllCareers;
-        static List<dynamic> AllCareerTiers;
         static CareerJsonReader()
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
@@ -211,14 +254,18 @@ namespace WFRP_NPC_Creator
             ClassList = JsonConvert.DeserializeObject(sr.ReadToEnd());
             sr.Close();
 
-            AllCareers = new List<dynamic>();
-            AllCareerTiers = new List<dynamic>();
+
+            CareerClass currentClass;
+            CareerPath currentPath;
+            Career currentTier;
 
             foreach (dynamic CareerClass in ClassList.Classes)
             {
+                currentClass = new CareerClass(CareerClass.Name);
                 foreach (dynamic career in CareerClass.First)
                 {
-                    AllCareers.Add(career);
+                    currentPath = new CareerPath(career.Name);
+
                     int tierCounter = 1;
                     List<string> skillList = new List<string>();
                     List<string> trappings = new List<string>();
@@ -226,8 +273,6 @@ namespace WFRP_NPC_Creator
                         try
                         {
                             string name = tier["Name"];
-                            AllCareerTiers.Add(tier);
-
                             List<string> talentList = new List<string>();
                             Characteristics c  = Characteristics.WS;
                             Characteristics[] characteristicAvailable = new Characteristics[tierCounter + 2];
@@ -256,16 +301,17 @@ namespace WFRP_NPC_Creator
                             {
                                 trappings.Add(trapping.Value);
                             }
-
-                            Career.List.Add(new Career(name, tierCounter, characteristicAvailable, skillList.ToArray(), talentList.ToArray(), trappings.ToArray()));
-
+                            currentTier = new Career(name, tierCounter, characteristicAvailable, skillList.ToArray(), talentList.ToArray(), trappings.ToArray());
+                            currentPath.AddTier(currentTier);
                             tierCounter++;
                         }
                         catch (Exception e)
                         {
 
                         }
+                    currentClass.AddCareerPath(currentPath);
                 }
+                Career.ClassList.Add(currentClass);
             }
         }
     }
