@@ -21,19 +21,18 @@
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
-			<TreeView Grid.Column="0">
-				<TreeViewItem Header="Test">
-					<TreeViewItem Header="Test"/>
-					<TreeViewItem Header="Test"/>
-					<TreeViewItem Header="Test"/>
-				</TreeViewItem>
-				<TreeViewItem Header="Test"/>
-				<TreeViewItem Header="Test"/>
-				<TreeViewItem Header="Test"/>
+
+
+			<TreeView Grid.Column="0" x:Name ="CareerView" ItemsSource="{Binding Items}">
+				<TreeView.ItemTemplate>
+					<HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
+						<TextBlock Text="{Binding Name}"/>
+					</HierarchicalDataTemplate>
+				</TreeView.ItemTemplate>
 			</TreeView>
 
 			<DataGrid Grid.Column="1">
-
+				
 			</DataGrid>
 
 		</Grid>

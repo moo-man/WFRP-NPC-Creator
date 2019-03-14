@@ -23,8 +23,12 @@ namespace WFRP_NPC_Creator
         public MainWindow()
         {
             InitializeComponent();
+
+
             CareerJsonReader.read = true;
             TalentReader.read = true;
+
+            this.DataContext = new CareerTreeViewModel();
 
             Character Test = new Human();
 
