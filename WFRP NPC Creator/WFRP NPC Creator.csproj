@@ -35,11 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -58,16 +64,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\AdvanceBounds.cs" />
-    <Compile Include="Model\Career.cs" />
-    <Compile Include="Model\CareerFocusLookup.cs" />
-    <Compile Include="Model\Dictionaries.cs" />
-    <Compile Include="Model\Skill.cs" />
-    <Compile Include="Model\Species.cs" />
-    <Compile Include="Model\Talents.cs" />
-    <Compile Include="ViewModel\CareerTreeViewModel.cs" />
-    <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\SpeciesTreeViewModel.cs" />
+    <Compile Include="Commands\DragCommand.cs" />
+    <Compile Include="Commands\SelectionChangedCommand.cs" />
+    <Compile Include="Models\AdvanceBounds.cs" />
+    <Compile Include="Models\Career.cs" />
+    <Compile Include="Models\CareerFocusLookup.cs" />
+    <Compile Include="Models\Dictionaries.cs" />
+    <Compile Include="Models\Skill.cs" />
+    <Compile Include="Models\Species.cs" />
+    <Compile Include="Models\Talents.cs" />
+    <Compile Include="ValueConverters\EnumToIntConverter.cs" />
+    <Compile Include="ValueConverters\EnumToArrayConverter.cs" />
+    <Compile Include="ViewModels\DataGridViewModel.cs" />
+    <Compile Include="ViewModels\DataRowViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\WindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,8 +88,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Character.cs" />
-    <Compile Include="Model\Enums.cs" />
+    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Enums.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -114,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Data\TalentData.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

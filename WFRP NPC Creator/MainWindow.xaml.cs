@@ -24,11 +24,10 @@ namespace WFRP_NPC_Creator
         {
             InitializeComponent();
 
-
             CareerJsonReader.read = true;
             TalentReader.read = true;
 
-            this.DataContext = new CareerTreeViewModel();
+            this.DataContext = new WindowViewModel();
 
             Character Test = new Human();
 
@@ -43,6 +42,17 @@ namespace WFRP_NPC_Creator
             Test.PrintToConsole(true);
 
 
+        }
+
+        private void item_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock item = (TextBlock)sender;
+            DragDrop.DoDragDrop(item, item.Text, DragDropEffects.Move);
+        }
+
+        private void DataGrid_Drop(object sender, DragEventArgs e)
+        {
+            (this.DataContext as WindowViewModel).AddGridRow(e.Data.GetData(DataFormats.Text).ToString());
         }
     }
 }

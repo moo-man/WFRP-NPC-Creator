@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WFRP_NPC_Creator"
+		xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
+        Title="MainWindow" Height="450" Width="1200">
+	<DockPanel>
 		<Menu DockPanel.Dock="Top">
 			<MenuItem Header="Test">
 				
@@ -17,22 +18,77 @@
 		</Menu>
 		<Grid DockPanel.Dock="Bottom">
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.8*"/>
+				<ColumnDefinition Width="0.65*"/>
 				<ColumnDefinition Width="*"/>
 				<ColumnDefinition Width="*"/>
 			</Grid.ColumnDefinitions>
 
 
-			<TreeView Grid.Column="0" x:Name ="CareerView" ItemsSource="{Binding Items}">
+			<TreeView Grid.Column="0" x:Name ="CareerView" ItemsSource="{Binding Tree.Items}">
+				<TreeView.ItemContainerStyle>
+					<Style TargetType="{x:Type TreeViewItem}">
+					</Style>
+				</TreeView.ItemContainerStyle>
 				<TreeView.ItemTemplate>
 					<HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
-						<TextBlock Text="{Binding Name}"/>
+						<TextBlock Text="{Binding Name}" MouseDown="item_MouseLeftButtonDown">
+							<!--<TextBlock.InputBindings>
+								<MouseBinding Command ="{Binding DragCommand}" MouseAction ="LeftClick"/>
+							</TextBlock.InputBindings>-->
+						</TextBlock>
 					</HierarchicalDataTemplate>
 				</TreeView.ItemTemplate>
 			</TreeView>
 
-			<DataGrid Grid.Column="1">
-				
+			<DataGrid Name ="CareerGrid" ItemsSource="{Binding DataGrid.Rows}" Grid.Column="1" AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
+				<DataGrid.Resources>
+					<local:EnumToArrayConverter x:Key="EnumToArrayConverter"/>
+					<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
+				</DataGrid.Resources>
+					<DataGrid.Columns>
+					<DataGridTextColumn Header="Career" Width="*" Binding ="{Binding Name}"/>
+					<!--<DataGridTemplateColumn Header="Advance Level" Width="Auto" ItemsSource ="{Binding Source={x:Type local:AdvanceLevel}, Converter={StaticResource EnumToArrayConverter}}" SelectedItemBinding="{Binding Path=ComboBoxSelection}"/>-->
+					<DataGridTemplateColumn Header="Advance Level">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding ComboBoxSelection}"/>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+						<DataGridTemplateColumn.CellEditingTemplate>
+							<DataTemplate>
+								<ComboBox ItemsSource="{Binding Source={x:Type local:AdvanceLevel}, Converter ={StaticResource EnumToArrayConverter}}"
+									SelectedItem="{Binding ComboBoxSelection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+									<i:Interaction.Triggers>
+										<i:EventTrigger EventName="SelectionChanged">
+											<i:InvokeCommandAction Command="{Binding AdvanceLevelChanged}" />
+										</i:EventTrigger>
+									</i:Interaction.Triggers>
+								</ComboBox>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellEditingTemplate>
+					</DataGridTemplateColumn>
+					<DataGridTemplateColumn Header="Characteristics" Width="*">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Button>Reroll</Button>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					<DataGridTemplateColumn Header="Skills" Width="*">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Button>Reroll</Button>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					<DataGridTemplateColumn Header="Talents" Width="*">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Button>Reroll</Button>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+				</DataGrid.Columns>
 			</DataGrid>
 
 		</Grid>
