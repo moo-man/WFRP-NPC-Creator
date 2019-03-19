@@ -12,28 +12,30 @@ namespace WFRP_NPC_Creator
         public DataGridViewModel DataGrid { get; set; } = new DataGridViewModel();
         public Character NPC;
 
-        public delegate void AdvanceChangedEventHandler(object sender, AdvanceChangedEventArgs e);
-
-        protected virtual void OnAdvanceChanged(AdvanceChangedEventArgs e)
-        {
-        }
-
-
         public WindowViewModel()
         {
+            DataGrid.CareerChanged += CareerChange;
             NPC = new Human();
         }
 
         public void AddGridRow(string careerName)
         {
             DataGrid.AddRow(careerName);
+            NPC.AddCareer(careerName);
+        }
+
+        public void CareerChange(object source, CareerChangedEventArgs e)
+        {
+            NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+            NPC.PrintToConsole(true);
         }
     }
 
-    public class AdvanceChangedEventArgs : EventArgs
-    {
-        public AdvanceLevel NewAdvanceLevel { get; set; }
-        public int dgRow { get; set; }
 
+    public class RowChangeEventArgs : EventArgs
+    {
+        public RowAction ChangeType { get; set; }
+        public AdvanceLevel AdvLevel { get; set; }
+        public int RowNum { get; set; }
     }
 }

@@ -28,6 +28,11 @@ namespace WFRP_NPC_Creator
             AddSpeciesTalents();
         }
 
+        public void ChangeCareerAdvancement(int careerIndex, AdvanceLevel newAdvLevel)
+        {
+            Careers[careerIndex].ChangeAdvancement(newAdvLevel);
+        }
+
         public void PrintToConsole(bool onlyRelevant)
         {
             Console.WriteLine("WS\tBS\tS\tT\tI\tAgi\tDex\tInt\tWP\tFel\n");

@@ -54,6 +54,7 @@ namespace WFRP_NPC_Creator
         public List<Talent> TalentsAdvanced { get; private set; } = new List<Talent>();
         public Career CareerTemplate { get; private set; }
         public Character Owner { get; private set; }
+        public AdvanceLevel Advancement { get; private set; }
 
         public CareerAdvancement(Character owner, Career careerToAdd, AdvanceLevel advancement = AdvanceLevel.None, bool skillFocus = true, bool talentFocus = true)
         {
@@ -62,12 +63,15 @@ namespace WFRP_NPC_Creator
             for (Characteristics i = 0; i < (Characteristics)10; i++)
                 CharacteristicAdvances.Add(i, 0);
 
-            AdvanceSkills(advancement, skillFocus);
-            AdvanceTalents(advancement, talentFocus);
+            Advancement = advancement;
+
+            AdvanceSkills(skillFocus);
+            AdvanceTalents(talentFocus);
         }
 
-        private void AdvanceSkills(AdvanceLevel advancement, bool focus)
+        private void AdvanceSkills(bool focus)
         {
+            SkillsAdvanced = new List<Skill>();
             int skillsLearned = 0;
             int advances = 0;
             Random advanceGen = new Random();
@@ -75,7 +79,7 @@ namespace WFRP_NPC_Creator
             List<string> LearnedList = new List<string>();
             int advanceMin, advanceMax;
 
-            switch (advancement)
+            switch (Advancement)
             {
                 case AdvanceLevel.Beginner:
                     advanceMin = AdvanceConstraints.EXPERIENCED_MIN;
@@ -104,6 +108,7 @@ namespace WFRP_NPC_Creator
 
             foreach (Characteristics ch in CareerTemplate.CareerCharacteristics)
             {
+                CharacteristicAdvances[ch] = 0;
                 advances = advanceGen.Next(advanceMin, advanceMax) * CareerTemplate.Tier;
                 if (Owner.TotalCharacteristicAdvances(ch) < advances)
                     CharacteristicAdvances[ch] += advances - Owner.TotalCharacteristicAdvances(ch);
@@ -155,11 +160,12 @@ namespace WFRP_NPC_Creator
             }
         }
 
-        private void AdvanceTalents(AdvanceLevel advancement, bool focus)
+        private void AdvanceTalents(bool focus)
         {
+            TalentsAdvanced = new List<Talent>();
             Random advanceGen = new Random();
             int advanceMin, advanceMax, advances, talentsAdvanced = 0;
-            switch (advancement)
+            switch (Advancement)
             {
                 case AdvanceLevel.Experienced:
                     advanceMin = 0;
@@ -206,6 +212,13 @@ namespace WFRP_NPC_Creator
             }
 
             
+        }
+
+        public void ChangeAdvancement(AdvanceLevel newAdvLevel)
+        {
+            Advancement = newAdvLevel;
+            AdvanceSkills(true);
+            AdvanceTalents(true);
         }
     }
 

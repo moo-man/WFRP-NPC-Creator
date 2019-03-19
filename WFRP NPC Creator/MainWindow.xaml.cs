@@ -38,7 +38,6 @@ namespace WFRP_NPC_Creator
             Test.AddCareer("Master Wizard", AdvanceLevel.Beyond);
 
 
-            Test.PrintToConsole(false);
             Test.PrintToConsole(true);
 
 

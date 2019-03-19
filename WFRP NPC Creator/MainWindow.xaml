@@ -46,14 +46,17 @@
 					<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
 				</DataGrid.Resources>
 					<DataGrid.Columns>
-					<DataGridTextColumn Header="Career" Width="*" Binding ="{Binding Name}"/>
-					<!--<DataGridTemplateColumn Header="Advance Level" Width="Auto" ItemsSource ="{Binding Source={x:Type local:AdvanceLevel}, Converter={StaticResource EnumToArrayConverter}}" SelectedItemBinding="{Binding Path=ComboBoxSelection}"/>-->
-					<DataGridTemplateColumn Header="Advance Level">
+					<DataGridTextColumn Header="Career" Width="*" IsReadOnly="True" Binding ="{Binding Name}"/>
+						
+						
+					<DataGridTemplateColumn Header="Advance Level" IsReadOnly="False">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
 								<TextBlock Text="{Binding ComboBoxSelection}"/>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
+						
+						
 						<DataGridTemplateColumn.CellEditingTemplate>
 							<DataTemplate>
 								<ComboBox ItemsSource="{Binding Source={x:Type local:AdvanceLevel}, Converter ={StaticResource EnumToArrayConverter}}"
@@ -67,6 +70,8 @@
 							</DataTemplate>
 						</DataGridTemplateColumn.CellEditingTemplate>
 					</DataGridTemplateColumn>
+						
+						
 					<DataGridTemplateColumn Header="Characteristics" Width="*">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
@@ -81,6 +86,8 @@
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
+						
+						
 					<DataGridTemplateColumn Header="Talents" Width="*">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
