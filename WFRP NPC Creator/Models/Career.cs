@@ -30,6 +30,7 @@ namespace WFRP_NPC_Creator
             CareerSkills = skills;
             CareerTalents = talents;
             CareerTrappings = trappings;
+
             if (!CareerFocusLookup.ShouldFocus.TryGetValue(Name, out FocusSkills))
                 FocusSkills = new string[0];
         }
@@ -56,6 +57,8 @@ namespace WFRP_NPC_Creator
         public Character Owner { get; private set; }
         public AdvanceLevel Advancement { get; private set; }
 
+        private Random rand = new Random();
+
         public CareerAdvancement(Character owner, Career careerToAdd, AdvanceLevel advancement = AdvanceLevel.None, bool skillFocus = true, bool talentFocus = true)
         {
             Owner = owner;
@@ -69,57 +72,33 @@ namespace WFRP_NPC_Creator
             AdvanceTalents(talentFocus);
         }
 
+        private void AdvanceCharacteristics()
+        {
+            int advances = 0;
+            foreach (Characteristics ch in CareerTemplate.CareerCharacteristics)
+            {
+                CharacteristicAdvances[ch] = 0;
+                advances = GenerateAdvanceNum(false) * CareerTemplate.Tier;
+                if (Owner.TotalCharacteristicAdvances(ch) < advances)
+                    CharacteristicAdvances[ch] += advances - Owner.TotalCharacteristicAdvances(ch);
+            }
+        }
+
         private void AdvanceSkills(bool focus)
         {
             SkillsAdvanced = new List<Skill>();
             int skillsLearned = 0;
             int advances = 0;
-            Random advanceGen = new Random();
+
             double percentToLearn = 0.125;
             List<string> LearnedList = new List<string>();
-            int advanceMin, advanceMax;
-
-            switch (Advancement)
-            {
-                case AdvanceLevel.Beginner:
-                    advanceMin = AdvanceConstraints.EXPERIENCED_MIN;
-                    advanceMax = AdvanceConstraints.EXPERIENCED_MAX_EX;
-                    break;
-
-                case AdvanceLevel.Experienced:
-                    advanceMin = AdvanceConstraints.EXPERIENCED_MIN;
-                    advanceMax = AdvanceConstraints.EXPERIENCED_MAX_EX;
-                    break;
-
-                case AdvanceLevel.Complete:
-                    advanceMin = 5;
-                    advanceMax = 6;
-                    break;
-
-                case AdvanceLevel.Beyond:
-                    advanceMin = AdvanceConstraints.BEYOND_MIN;
-                    advanceMax = AdvanceConstraints.BEYOND_MAX_EX;
-                    break;
-                default:
-                    advanceMin = 0;
-                    advanceMax = 1;
-                    break;
-            }
-
-            foreach (Characteristics ch in CareerTemplate.CareerCharacteristics)
-            {
-                CharacteristicAdvances[ch] = 0;
-                advances = advanceGen.Next(advanceMin, advanceMax) * CareerTemplate.Tier;
-                if (Owner.TotalCharacteristicAdvances(ch) < advances)
-                    CharacteristicAdvances[ch] += advances - Owner.TotalCharacteristicAdvances(ch);
-            }
 
 
             if (focus)
             {
                 foreach (string focusedSkill in CareerTemplate.FocusSkills)
                 {
-                    advances = advanceGen.Next(advanceMin, advanceMax) * CareerTemplate.Tier;
+                    advances = GenerateAdvanceNum(false) * CareerTemplate.Tier;
                     int currentAdvances = Owner.TotalSkillAdvances(focusedSkill);
                     if (currentAdvances < advances && advances != 0)
                     {
@@ -130,7 +109,7 @@ namespace WFRP_NPC_Creator
                     }
                 }
             }
-            string[] SkillPool = CareerTemplate.CareerSkills.OrderBy(sk => advanceGen.Next()).ToArray(); // Randomly order skill pool
+            string[] SkillPool = CareerTemplate.CareerSkills.OrderBy(sk => rand.Next()).ToArray(); // Randomly order skill pool
             while (skillsLearned != 8)
             {
                 for (int i = 0; i < SkillPool.Length && skillsLearned != 8; i++)
@@ -139,9 +118,9 @@ namespace WFRP_NPC_Creator
 
                     // If we have not already learned the skill -> learn it by chance or learn it if we are focusing on relevant skills and it qualifies
                     if (!LearnedList.Contains(possibleSkill) &&
-                        (advanceGen.NextDouble() < percentToLearn || (focus && CareerTemplate.FocusSkills.Contains(possibleSkill)))) // Learn by chance or if focusing and skill should be focused
+                        (rand.NextDouble() < percentToLearn || (focus && CareerTemplate.FocusSkills.Contains(possibleSkill)))) // Learn by chance or if focusing and skill should be focused
                     {
-                        advances = advanceGen.Next(advanceMin, advanceMax) * CareerTemplate.Tier;
+                        advances = GenerateAdvanceNum(false) * CareerTemplate.Tier;
                         int currentAdvances = Owner.TotalSkillAdvances(possibleSkill);
                         if (currentAdvances < advances && advances != 0)
                         {
@@ -160,40 +139,13 @@ namespace WFRP_NPC_Creator
             }
         }
 
-        private int GenerateAdvanceNum(bool talentAdvance)
-        {
-
-        }
-
         private void AdvanceTalents(bool focus)
         {
             TalentsAdvanced = new List<Talent>();
             Random advanceGen = new Random();
-            int advanceMin, advanceMax, advances, talentsAdvanced = 0;
-            switch (Advancement)
-            {
-                case AdvanceLevel.Experienced:
-                    advanceMin = 0;
-                    advanceMax = 2;
-                    break;
+            int talentsAdvanced = 0;
 
-                case AdvanceLevel.Complete:
-                    advanceMin = 1;
-                    advanceMax = 3;
-                    break;
-
-                case AdvanceLevel.Beyond:
-                    advanceMin = 2;
-                    advanceMax = 3;
-                    break;
-
-                default:
-                    advanceMin = 0;
-                    advanceMax = 0;
-                    break;
-            }
-
-            advances = advanceGen.Next(advanceMin, advanceMax);
+            int advances = GenerateAdvanceNum(true);
 
             //int relevantTalents = CareerTemplate.CareerTalents.Where(t => Talent.IsRelevant(t)).Count();
 
@@ -214,9 +166,70 @@ namespace WFRP_NPC_Creator
                         TalentsAdvanced.Add(talentPick);
                     talentsAdvanced++;
                 }
+            }           
+        }
+
+
+        private int GenerateAdvanceNum(bool talentAdvance)
+        {
+            int advanceMin, advanceMax;
+
+            if (!talentAdvance)
+            {
+                switch (Advancement)
+                {
+                    case AdvanceLevel.Beginner:
+                        advanceMin = AdvanceConstraints.EXPERIENCED_MIN;
+                        advanceMax = AdvanceConstraints.EXPERIENCED_MAX_EX;
+                        break;
+
+                    case AdvanceLevel.Experienced:
+                        advanceMin = AdvanceConstraints.EXPERIENCED_MIN;
+                        advanceMax = AdvanceConstraints.EXPERIENCED_MAX_EX;
+                        break;
+
+                    case AdvanceLevel.Complete:
+                        advanceMin = 5;
+                        advanceMax = 6;
+                        break;
+
+                    case AdvanceLevel.Beyond:
+                        advanceMin = AdvanceConstraints.BEYOND_MIN;
+                        advanceMax = AdvanceConstraints.BEYOND_MAX_EX;
+                        break;
+                    default:
+                        advanceMin = 0;
+                        advanceMax = 1;
+                        break;
+                }
+            }
+            else
+            {
+                switch (Advancement)
+                {
+                    case AdvanceLevel.Experienced:
+                        advanceMin = 0;
+                        advanceMax = 2;
+                        break;
+
+                    case AdvanceLevel.Complete:
+                        advanceMin = 1;
+                        advanceMax = 3;
+                        break;
+
+                    case AdvanceLevel.Beyond:
+                        advanceMin = 2;
+                        advanceMax = 3;
+                        break;
+
+                    default:
+                        advanceMin = 0;
+                        advanceMax = 0;
+                        break;
+                }
             }
 
-            
+            return rand.Next(advanceMin, advanceMax);
         }
 
         public void ChangeAdvancement(AdvanceLevel newAdvLevel)
