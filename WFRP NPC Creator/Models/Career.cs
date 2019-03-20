@@ -160,6 +160,11 @@ namespace WFRP_NPC_Creator
             }
         }
 
+        private int GenerateAdvanceNum(bool talentAdvance)
+        {
+
+        }
+
         private void AdvanceTalents(bool focus)
         {
             TalentsAdvanced = new List<Talent>();
@@ -218,6 +223,21 @@ namespace WFRP_NPC_Creator
         {
             Advancement = newAdvLevel;
             AdvanceSkills(true);
+            AdvanceTalents(true);
+        }
+
+        public void RerollSkills()
+        {
+            AdvanceSkills(true);
+        }
+
+        public void RerollCharacteristics()
+        {
+            AdvanceCharacteristics();
+        }
+
+        public void RerollTalents()
+        {
             AdvanceTalents(true);
         }
     }

@@ -33,6 +33,19 @@ namespace WFRP_NPC_Creator
             Careers[careerIndex].ChangeAdvancement(newAdvLevel);
         }
 
+        public void RerollCareerCharacteristics(int careerIndex)
+        {
+            Careers[careerIndex].RerollCharacteristics();
+        }
+        public void RerollCareerSkills(int careerIndex)
+        {
+            Careers[careerIndex].RerollSkills();
+        }
+        public void RerollCareerTalents(int careerIndex)
+        {
+            Careers[careerIndex].RerollTalents();
+        }
+
         public void PrintToConsole(bool onlyRelevant)
         {
             Console.WriteLine("WS\tBS\tS\tT\tI\tAgi\tDex\tInt\tWP\tFel\n");

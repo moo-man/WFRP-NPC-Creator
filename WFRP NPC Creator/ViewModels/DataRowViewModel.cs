@@ -10,6 +10,8 @@ namespace WFRP_NPC_Creator
     {
         public SelectionChangedCommand AdvanceLevelChanged { get; private set; }
 
+        public RerollCommand RerollClicked { get; private set; }
+
         public delegate void RowChangedEventHandler(object source, RowChangeEventArgs e);
 
         public event RowChangedEventHandler RowChanged;
@@ -23,7 +25,13 @@ namespace WFRP_NPC_Creator
         {
             Name = career.Name;
             AdvanceLevelChanged = new SelectionChangedCommand(ComboBoxChanged);
+            RerollClicked = new RerollCommand(Reroll);
             RowID = rowID;
+        }
+
+        protected void Reroll(RowAction change)
+        {
+            OnRowChanged(change);
         }
 
         protected void ComboBoxChanged()

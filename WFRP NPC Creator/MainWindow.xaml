@@ -75,28 +75,129 @@
 					<DataGridTemplateColumn Header="Characteristics" Width="*">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
-								<Button>Reroll</Button>
-							</DataTemplate>
-						</DataGridTemplateColumn.CellTemplate>
-					</DataGridTemplateColumn>
-					<DataGridTemplateColumn Header="Skills" Width="*">
-						<DataGridTemplateColumn.CellTemplate>
-							<DataTemplate>
-								<Button>Reroll</Button>
+								<Button Command="{Binding RerollClicked}" CommandParameter="{x:Static local:RowAction.RerollCharacteristic}">Reroll</Button>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
 						
+					<DataGridTemplateColumn Header="Skills" Width="*">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Button Command="{Binding RerollClicked}" CommandParameter="{x:Static local:RowAction.RerollSkill}">Reroll</Button>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
 						
 					<DataGridTemplateColumn Header="Talents" Width="*">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
-								<Button>Reroll</Button>
+								<Button Command="{Binding RerollClicked}" CommandParameter="{x:Static local:RowAction.RerollTalent}">Reroll</Button>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
 				</DataGrid.Columns>
 			</DataGrid>
+
+			<RichTextBox Grid.Column="2">
+				<FlowDocument>
+					<Table Padding="50" CellSpacing="0">
+						<Table.Columns>
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+							<TableColumn Width="25" />
+						</Table.Columns>
+						<TableRowGroup>
+							<TableRow>
+								<TableCell BorderBrush="Black" BorderThickness="1" >
+									<Paragraph TextAlignment = "Center">M</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">	   
+									<Paragraph TextAlignment = "Center">WS</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">	  
+									<Paragraph TextAlignment = "Center">BS</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">	   
+									<Paragraph TextAlignment = "Center">S</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">T</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">I</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">Agi</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">Dex</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">Int</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">WP</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">Fel</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">	   
+									<Paragraph TextAlignment = "Center">W</Paragraph>
+								</TableCell>
+							</TableRow>
+
+
+							<TableRow>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">23</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">23</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center">23</Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+								<TableCell BorderBrush="Black" BorderThickness="1">
+									<Paragraph TextAlignment = "Center"></Paragraph>
+								</TableCell>
+							</TableRow>
+						</TableRowGroup>
+					</Table>
+				</FlowDocument>
+			</RichTextBox>
 
 		</Grid>
 	</DockPanel>

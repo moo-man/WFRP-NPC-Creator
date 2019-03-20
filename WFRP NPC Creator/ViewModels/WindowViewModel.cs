@@ -26,8 +26,21 @@ namespace WFRP_NPC_Creator
 
         public void CareerChange(object source, CareerChangedEventArgs e)
         {
-            NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
-            NPC.PrintToConsole(true);
+            switch (e.change)
+            {
+                case RowAction.AdvanceChange:
+                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                    break;
+                case RowAction.RerollCharacteristic:
+                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                    break;
+                case RowAction.RerollSkill:
+                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                    break;
+                case RowAction.RerollTalent:
+                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                    break;
+            }
         }
     }
 
