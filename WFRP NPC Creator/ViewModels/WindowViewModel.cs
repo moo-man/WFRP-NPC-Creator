@@ -32,15 +32,16 @@ namespace WFRP_NPC_Creator
                     NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
                     break;
                 case RowAction.RerollCharacteristic:
-                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                    NPC.RerollCareerCharacteristics(e.careerIndex);
                     break;
                 case RowAction.RerollSkill:
-                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                    NPC.RerollCareerSkills(e.careerIndex);
                     break;
                 case RowAction.RerollTalent:
-                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                    NPC.RerollCareerTalents(e.careerIndex);
                     break;
             }
+            NPC.PrintToConsole(true);
         }
     }
 

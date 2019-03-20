@@ -68,6 +68,7 @@ namespace WFRP_NPC_Creator
 
             Advancement = advancement;
 
+            AdvanceCharacteristics();
             AdvanceSkills(skillFocus);
             AdvanceTalents(talentFocus);
         }
@@ -235,6 +236,7 @@ namespace WFRP_NPC_Creator
         public void ChangeAdvancement(AdvanceLevel newAdvLevel)
         {
             Advancement = newAdvLevel;
+            AdvanceCharacteristics();
             AdvanceSkills(true);
             AdvanceTalents(true);
         }
