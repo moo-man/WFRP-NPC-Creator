@@ -73,6 +73,29 @@ namespace WFRP_NPC_Creator
             Console.WriteLine();
         }
 
+
+
+        public string SkillsString(bool onlyRelevant)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (string sk in GetAllSkills())
+            {
+                if (!(onlyRelevant && !Skill.IsRelevant(sk))) // Print always if relevancy doesn't matter, but only print if relevant and relevancy does matter
+                    sb.Append(SkillNameAndValue(sk) + ", ");
+            }
+            return sb.ToString().Remove(sb.Length - 2, 2);
+        }
+        public string TalentsString(bool onlyRelevant)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (string talent in GetAllTalents())
+            {
+                if (!(onlyRelevant && !Talent.IsRelevant(talent))) // Print always if relevancy doesn't matter, but only print if relevant and relevancy does matter
+                    sb.Append(TalentNameAndAdvances(talent) + ", ");
+            }
+            return sb.ToString().Remove(sb.Length - 2, 2);
+        }
+
         public int CharacteristicValue(Characteristics ch)
         {
             return CharacteristicValues()[ch];

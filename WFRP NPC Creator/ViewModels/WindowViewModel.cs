@@ -18,14 +18,14 @@ namespace WFRP_NPC_Creator
         {
             DataGrid.CareerChanged += CareerChange;
             NPC = new Human();
-            UpdateTable();
+            UpdateStatBlock();
         }
 
         public void AddGridRow(string careerName)
         {
             DataGrid.AddRow(careerName);
             NPC.AddCareer(careerName);
-            UpdateTable();
+            UpdateStatBlock();
         }
 
         public void CareerChange(object source, CareerChangedEventArgs e)
@@ -45,17 +45,19 @@ namespace WFRP_NPC_Creator
                     NPC.RerollCareerTalents(e.careerIndex);
                     break;
             }
-            UpdateTable();
+            UpdateStatBlock();
         }
 
 
-        private void UpdateTable()
+        private void UpdateStatBlock()
         {
             int[] tableArray = new int[12];
             for (Characteristics i = 0; i < (Characteristics)10; i++)
                 tableArray[(int)i+1] = NPC.CharacteristicValue(i);
 
             RichText.UpdateTableValues(tableArray);
+            RichText.UpdateSkills(NPC.SkillsString(true));
+            RichText.UpdateTalents(NPC.TalentsString(true));
         }
     }
 

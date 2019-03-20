@@ -159,19 +159,19 @@
 							<TableRow>
 								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
 									<Paragraph>
-										<Run Text ="{Binding RichText.TableValues[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+										<Run Text ="{Binding RichText.TableValues[0], Mode=OneWay}"/>
 									</Paragraph>
 								</TableCell>
 
 								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
 									<Paragraph>
-										<TextBlock Text ="{Binding RichText.TableValues[1], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+										<Run Text ="{Binding RichText.TableValues[1], Mode=OneWay}"/>
 									</Paragraph>
 								</TableCell>
 
 								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
 									<Paragraph>
-										<Run Text ="{Binding RichText.TableValues[2], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+										<Run Text ="{Binding RichText.TableValues[2], Mode=OneWay}"/>
 									</Paragraph>
 								</TableCell>
 
@@ -232,6 +232,15 @@
 							</TableRow>
 						</TableRowGroup>
 					</Table>
+					<Paragraph>
+						<Run FontWeight="Bold">Skills:</Run>
+						<Run Text="{Binding RichText.SkillsString[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+					</Paragraph>
+
+					<Paragraph>
+						<Run FontWeight="Bold">Talents:</Run>
+						<Run Text="{Binding RichText.TalentsString[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+					</Paragraph>
 				</FlowDocument>
 			</RichTextBox>
 

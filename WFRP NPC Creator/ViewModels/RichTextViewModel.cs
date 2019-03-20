@@ -6,9 +6,10 @@ namespace WFRP_NPC_Creator
     {
         public ObservableCollection<int> TableValues { get; set; } = new ObservableCollection<int>();
 
-        public string SkillsString { get; private set; }
+        public ObservableCollection<string> SkillsString { get; set; } = new ObservableCollection<string>(new string[1]);
 
-        public string TalentsString { get; private set; }
+        public ObservableCollection<string> TalentsString { get; set; } = new ObservableCollection<string>(new string[1]);
+
 
         public RichTextViewModel()
         {
@@ -25,7 +26,14 @@ namespace WFRP_NPC_Creator
             }
         }
 
+        public void UpdateSkills(string newString)
+        {
+            SkillsString[0] = newString;
+        }
 
-
+        public void UpdateTalents(string newString)
+        {
+            TalentsString[0] = newString;
+        }
     }
 }
