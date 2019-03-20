@@ -10,18 +10,22 @@ namespace WFRP_NPC_Creator
     {
         public TreeViewModel Tree { get; set; } = new TreeViewModel();
         public DataGridViewModel DataGrid { get; set; } = new DataGridViewModel();
+
+        public RichTextViewModel RichText { get; set; } = new RichTextViewModel();
         public Character NPC;
 
         public WindowViewModel()
         {
             DataGrid.CareerChanged += CareerChange;
             NPC = new Human();
+            UpdateTable();
         }
 
         public void AddGridRow(string careerName)
         {
             DataGrid.AddRow(careerName);
             NPC.AddCareer(careerName);
+            UpdateTable();
         }
 
         public void CareerChange(object source, CareerChangedEventArgs e)
@@ -41,7 +45,17 @@ namespace WFRP_NPC_Creator
                     NPC.RerollCareerTalents(e.careerIndex);
                     break;
             }
-            NPC.PrintToConsole(true);
+            UpdateTable();
+        }
+
+
+        private void UpdateTable()
+        {
+            int[] tableArray = new int[12];
+            for (Characteristics i = 0; i < (Characteristics)10; i++)
+                tableArray[(int)i+1] = NPC.CharacteristicValue(i);
+
+            RichText.UpdateTableValues(tableArray);
         }
     }
 

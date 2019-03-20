@@ -157,42 +157,78 @@
 
 
 							<TableRow>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center">23</Paragraph>
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center">23</Paragraph>
+
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<TextBlock Text ="{Binding RichText.TableValues[1], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center">23</Paragraph>
+
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[2], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[3], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[4], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[5], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+								
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[6], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+								
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[7], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[8], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[9], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+								
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[10], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
-								<TableCell BorderBrush="Black" BorderThickness="1">
-									<Paragraph TextAlignment = "Center"></Paragraph>
+								
+								<TableCell TextAlignment="Center" BorderBrush="Black" BorderThickness="1">
+									<Paragraph>
+										<Run Text ="{Binding RichText.TableValues[11], Mode=OneWay}"/>
+									</Paragraph>
 								</TableCell>
+
 							</TableRow>
 						</TableRowGroup>
 					</Table>

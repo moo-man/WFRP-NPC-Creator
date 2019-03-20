@@ -78,6 +78,7 @@
     <Compile Include="ValueConverters\EnumToArrayConverter.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
     <Compile Include="ViewModels\DataRowViewModel.cs" />
+    <Compile Include="ViewModels\RichTextViewModel.cs" />
     <Compile Include="ViewModels\RowAction.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
