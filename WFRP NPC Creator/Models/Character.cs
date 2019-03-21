@@ -83,7 +83,8 @@ namespace WFRP_NPC_Creator
                 if (!(onlyRelevant && !Skill.IsRelevant(sk))) // Print always if relevancy doesn't matter, but only print if relevant and relevancy does matter
                     sb.Append(SkillNameAndValue(sk) + ", ");
             }
-            return sb.ToString().Remove(sb.Length - 2, 2);
+            return sb.Length > 0 ? sb.ToString().Remove(sb.Length - 2, 2) : sb.ToString();
+
         }
         public string TalentsString(bool onlyRelevant)
         {
@@ -93,7 +94,9 @@ namespace WFRP_NPC_Creator
                 if (!(onlyRelevant && !Talent.IsRelevant(talent))) // Print always if relevancy doesn't matter, but only print if relevant and relevancy does matter
                     sb.Append(TalentNameAndAdvances(talent) + ", ");
             }
-            return sb.ToString().Remove(sb.Length - 2, 2);
+
+            return sb.Length > 0 ? sb.ToString().Remove(sb.Length - 2, 2) : sb.ToString();
+
         }
 
         public int CharacteristicValue(Characteristics ch)

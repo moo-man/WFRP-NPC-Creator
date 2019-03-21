@@ -20,7 +20,7 @@
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="0.65*"/>
 				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="0.7*"/>
 			</Grid.ColumnDefinitions>
 
 
@@ -100,7 +100,7 @@
 
 			<RichTextBox Grid.Column="2">
 				<FlowDocument>
-					<Table Padding="50" CellSpacing="0">
+					<Table Padding="20 50 50 0" CellSpacing="0">
 						<Table.Columns>
 							<TableColumn Width="25" />
 							<TableColumn Width="25" />
@@ -232,12 +232,12 @@
 							</TableRow>
 						</TableRowGroup>
 					</Table>
-					<Paragraph>
+					<Paragraph Padding="20 0 50 0">
 						<Run FontWeight="Bold">Skills:</Run>
 						<Run Text="{Binding RichText.SkillsString[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 					</Paragraph>
 
-					<Paragraph>
+					<Paragraph Padding="20 0 50 0">
 						<Run FontWeight="Bold">Talents:</Run>
 						<Run Text="{Binding RichText.TalentsString[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 					</Paragraph>
