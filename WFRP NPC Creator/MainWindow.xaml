@@ -39,8 +39,20 @@
 					</HierarchicalDataTemplate>
 				</TreeView.ItemTemplate>
 			</TreeView>
+			<StackPanel Grid.Column="1" Orientation="Vertical">
 
-			<DataGrid Name ="CareerGrid" ItemsSource="{Binding DataGrid.Rows}" Grid.Column="1" AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
+				<DataGrid Height="50">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Name" Width="*" IsReadOnly="True"/>
+						<DataGridTextColumn Header="Species" Width="*" IsReadOnly="True"/>
+						<DataGridTextColumn Header="Characteristics" Width="*" IsReadOnly="True"/>
+						<DataGridTextColumn Header="Skills" Width="*" IsReadOnly="True"/>
+						<DataGridTextColumn Header="Talents" Width="*" IsReadOnly="True"/>
+					</DataGrid.Columns>
+				</DataGrid>
+
+
+				<DataGrid Name ="CareerGrid" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight}" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataGrid.Rows}"  AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
 				<DataGrid.Resources>
 					<local:EnumToArrayConverter x:Key="EnumToArrayConverter"/>
 					<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
@@ -97,7 +109,7 @@
 					</DataGridTemplateColumn>
 				</DataGrid.Columns>
 			</DataGrid>
-
+			</StackPanel>
 			<RichTextBox Grid.Column="2">
 				<FlowDocument>
 					<Table Padding="20 50 50 0" CellSpacing="0">

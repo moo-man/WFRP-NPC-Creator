@@ -159,7 +159,7 @@ namespace WFRP_NPC_Creator
                 if (focus && talentsAdvanced == relevantTalents)
                     focus = false;*/               
 
-                if (currentAdvances < talentPick.Max() && !(focus && !talentPick.IsRelevant())) // Don't consider it if we are focusing AND it's not relevant
+                if (currentAdvances < talentPick.Max())// && !(focus && !talentPick.IsRelevant())) // Don't consider it if we are focusing AND it's not relevant
                 {
                     if (TalentsAdvanced.Contains(talentPick))
                         TalentsAdvanced.Find(t => t.Name == talentPick.Name).Advance();
