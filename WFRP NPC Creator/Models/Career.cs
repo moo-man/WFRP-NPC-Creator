@@ -99,7 +99,7 @@ namespace WFRP_NPC_Creator
                 foreach (string focusedSkill in CareerTemplate.FocusSkills)
                 {
                     advances = GenerateAdvanceNum(false) * CareerTemplate.Tier;
-                    int currentAdvances = Owner.TotalSkillAdvances(focusedSkill);
+                    int currentAdvances = Owner.TotalSkillAdvancesToCareer(focusedSkill, this);
                     if (currentAdvances < advances && advances != 0)
                     {
                         SkillsAdvanced.Add(new Skill(focusedSkill, advances - currentAdvances));
@@ -121,7 +121,7 @@ namespace WFRP_NPC_Creator
                         (rand.NextDouble() < percentToLearn || (focus && CareerTemplate.FocusSkills.Contains(possibleSkill)))) // Learn by chance or if focusing and skill should be focused
                     {
                         advances = GenerateAdvanceNum(false) * CareerTemplate.Tier;
-                        int currentAdvances = Owner.TotalSkillAdvances(possibleSkill);
+                        int currentAdvances = Owner.TotalSkillAdvancesToCareer(possibleSkill, this);
                         if (currentAdvances < advances && advances != 0)
                         {
                             SkillsAdvanced.Add(new Skill(possibleSkill, advances - currentAdvances));

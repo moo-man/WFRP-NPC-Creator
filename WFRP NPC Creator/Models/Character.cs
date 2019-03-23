@@ -154,7 +154,14 @@ namespace WFRP_NPC_Creator
             if (characterSkill != null)
                 totalValue += characterSkill.Advances;
 
-           
+            foreach (CareerAdvancement career in Careers)
+            {
+                Skill skillAdvanced = career.SkillsAdvanced.Find(sk => sk.Name == skillName);
+                if (skillAdvanced != null)
+                    totalValue += skillAdvanced.Advances;
+            }
+
+            return totalValue;
         }
 
         /// <summary>
