@@ -17,6 +17,7 @@ namespace WFRP_NPC_Creator
         public WindowViewModel()
         {
             DataGrid.CareerChanged += CareerChange;
+            DataGrid.SpeciesChanged += SpeciesChange;
             NPC = new Human();
             UpdateStatBlock();
         }
@@ -28,26 +29,80 @@ namespace WFRP_NPC_Creator
             UpdateStatBlock();
         }
 
-        public void CareerChange(object source, CareerChangedEventArgs e)
+        public void CareerChange(object source, EventArgs e)
         {
-            switch (e.change)
+            CareerChangedEventArgs careerArgs = (CareerChangedEventArgs)e;
+            switch (careerArgs.change)
             {
-                case RowAction.AdvanceChange:
-                    NPC.ChangeCareerAdvancement(e.careerIndex, e.advLevel);
+                case RowAction.SelectionChange:
+                    NPC.ChangeCareerAdvancement(careerArgs.careerIndex, careerArgs.advLevel);
                     break;
                 case RowAction.RerollCharacteristic:
-                    NPC.RerollCareerCharacteristics(e.careerIndex);
+                    NPC.RerollCareerCharacteristics(careerArgs.careerIndex);
                     break;
                 case RowAction.RerollSkill:
-                    NPC.RerollCareerSkills(e.careerIndex);
+                    NPC.RerollCareerSkills(careerArgs.careerIndex);
                     break;
                 case RowAction.RerollTalent:
-                    NPC.RerollCareerTalents(e.careerIndex);
+                    NPC.RerollCareerTalents(careerArgs.careerIndex);
                     break;
             }
             UpdateStatBlock();
         }
 
+        public void SpeciesChange(object source, EventArgs e)
+        {
+            SpeciesChangedEventArgs speciesArgs = (SpeciesChangedEventArgs)e;
+            NPC.Name = speciesArgs.Name;
+            if (speciesArgs.change == RowAction.SelectionChange)
+            {
+                Character newNPC;
+                switch (speciesArgs.newSpecies)
+                {
+                    case Species.Human:
+                        newNPC = new Human();
+                        break;
+                     case Species.Dwarf:
+                         newNPC = new Dwarf();
+                         break;
+                    /* case Species.Halfling:
+                         newNPC = new Halfling();
+                         break;
+                     case Species.Welf:
+                         newNPC = new WoodElf();
+                         break;
+                     case Species.Helf:
+                         newNPC = new HighElf();
+                         break;*/
+                    default:
+                        return;
+                }
+                newNPC.Name = NPC.Name;
+                foreach (CareerAdvancement careerAdv in NPC.Careers)
+                    newNPC.AddCareer(careerAdv.CareerTemplate.Name, careerAdv.Advancement);
+                NPC = newNPC;
+            }
+
+            else
+            {
+                switch (speciesArgs.change)
+                {
+                    case RowAction.RerollCharacteristic:
+                        NPC.RollCharacteristics();
+                        break;
+                    case RowAction.RerollSkill:
+                        NPC.AdvanceSpeciesSkills();
+                        break;
+                    case RowAction.RerollTalent:
+                        NPC.AddSpeciesTalents();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            UpdateStatBlock();
+        }
 
         private void UpdateStatBlock()
         {
@@ -58,14 +113,18 @@ namespace WFRP_NPC_Creator
             RichText.UpdateTableValues(tableArray);
             RichText.UpdateSkills(NPC.SkillsString(true));
             RichText.UpdateTalents(NPC.TalentsString(true));
+            RichText.UpdateName(NPC.Name);
+            NPC.Validate();
         }
     }
 
 
     public class RowChangeEventArgs : EventArgs
     {
+        public RowType rType { get; set; }
         public RowAction ChangeType { get; set; }
         public AdvanceLevel AdvLevel { get; set; }
         public int RowNum { get; set; }
+        public Species SelectedSpecies { get; set; }
     }
 }

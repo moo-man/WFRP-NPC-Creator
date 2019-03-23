@@ -10,7 +10,8 @@ namespace WFRP_NPC_Creator
     {
         public static readonly Dictionary<Species, int> Movement = new Dictionary<Species, int>()
         {
-            { Species.Human,  4 }
+            { Species.Human,  4 },
+            {Species.Dwarf, 3 }
         };
 
         public static readonly Dictionary<Species, List<string[]>> SpeciesTalents = new Dictionary<Species, List<string[]>>()
@@ -20,12 +21,18 @@ namespace WFRP_NPC_Creator
                 new string[] {"Doomed"},
                 new string[] {"Savvy", "Suave"},
                 new string[] {"3"}
+            }},
+
+            {Species.Dwarf, new List<string[]>
+            {
+                new string[] {"Magic Resistance"},
+                new string[] {"Night Vision"},
+                new string[] {"Read/Write", "Relentless"},
+                new string[] {"Resolute", "Strong-minded"},
+                new string[] {"Sturdy"},
+                new string[] {"0"}
             }}
         };
 
-        static SpeciesStats()
-        {
-
-        }
     }
 }

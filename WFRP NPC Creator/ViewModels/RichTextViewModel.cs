@@ -10,11 +10,18 @@ namespace WFRP_NPC_Creator
 
         public ObservableCollection<string> TalentsString { get; set; } = new ObservableCollection<string>(new string[1]);
 
+        public ObservableCollection<string> Name { get; set; } = new ObservableCollection<string>(new string[1]);
+
 
         public RichTextViewModel()
         {
             TableValues = new ObservableCollection<int>(new int[12]);
 
+        }
+
+        public void UpdateName(string name)
+        {
+            Name[0] = name;
         }
 
         public void UpdateTableValues(int[] newTable)

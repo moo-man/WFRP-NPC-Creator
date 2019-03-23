@@ -6,43 +6,91 @@ using System.Threading.Tasks;
 
 namespace WFRP_NPC_Creator
 {
-    public class DataRowViewModel : BaseViewModel
+    public abstract class DataRowViewModel : BaseViewModel
     {
-        public SelectionChangedCommand AdvanceLevelChanged { get; private set; }
+        
+        public SelectionChangedCommand SelectionChanged { get; protected set; }
 
-        public RerollCommand RerollClicked { get; private set; }
+        public RerollCommand RerollClicked { get; protected set; }
 
         public delegate void RowChangedEventHandler(object source, RowChangeEventArgs e);
 
         public event RowChangedEventHandler RowChanged;
-
-        public string Name { get; private set; }
-
-        private int RowID;
-        public AdvanceLevel ComboBoxSelection { get; set; } = AdvanceLevel.None;
-
-        public DataRowViewModel(Career career, int rowID)
-        {
-            Name = career.Name;
-            AdvanceLevelChanged = new SelectionChangedCommand(ComboBoxChanged);
-            RerollClicked = new RerollCommand(Reroll);
-            RowID = rowID;
-        }
-
+        
         protected void Reroll(RowAction change)
         {
-            OnRowChanged(change);
+            OnRowChanged(CreateEventArgs(change));
         }
 
         protected void ComboBoxChanged()
         {
-            OnRowChanged(RowAction.AdvanceChange);
+            OnRowChanged(CreateEventArgs(RowAction.SelectionChange));
         }
 
-        protected virtual void OnRowChanged(RowAction change)
+        protected abstract RowChangeEventArgs CreateEventArgs(RowAction rowAction);
+
+
+        protected virtual void OnRowChanged(RowChangeEventArgs args)
         {
             if (RowChanged != null)
-                RowChanged(this, new RowChangeEventArgs { ChangeType = change, AdvLevel = ComboBoxSelection, RowNum = RowID});
+            {
+                RowChanged(this, args);
+            }
+        }
+    }
+
+
+    public class CareerRowViewModel : DataRowViewModel
+    {
+        public string Name { get; private set; }
+
+        private int RowID;
+
+        public AdvanceLevel AdvanceSelection { get; set; } = AdvanceLevel.None;
+
+
+        public CareerRowViewModel(Career career, int rowID)
+        {
+            Name = career.Name;
+            RerollClicked = new RerollCommand(Reroll);
+            RowID = rowID;
+            SelectionChanged = new SelectionChangedCommand(ComboBoxChanged);
+        }
+
+        protected override RowChangeEventArgs CreateEventArgs(RowAction rowAction)
+        {
+            return new RowChangeEventArgs
+            {
+                ChangeType = rowAction,
+                AdvLevel = AdvanceSelection,
+                RowNum = RowID,
+                rType = RowType.Career
+            };
+        }
+    }
+
+    public class SpeciesRowViewModel : DataRowViewModel
+    {
+        public string Name { get; set; }
+
+        public Species SpeciesSelection { get; set; } = Species.Human;
+
+        public SpeciesRowViewModel()
+        {
+            SpeciesSelection = Species.Human;
+            RerollClicked = new RerollCommand(Reroll);
+            SelectionChanged = new SelectionChangedCommand(ComboBoxChanged);
+
+        }
+
+        protected override RowChangeEventArgs CreateEventArgs(RowAction rowAction)
+        {
+            return new RowChangeEventArgs
+            {
+                ChangeType = rowAction,
+                rType = RowType.Species,
+                SelectedSpecies = SpeciesSelection
+            };
         }
     }
 }

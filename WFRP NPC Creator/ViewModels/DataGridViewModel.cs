@@ -6,49 +6,68 @@ namespace WFRP_NPC_Creator
 {
     public class DataGridViewModel : BaseViewModel
     {
-        public ObservableCollection<DataRowViewModel> Rows { get; set; } = new ObservableCollection<DataRowViewModel>();
+        public ObservableCollection<CareerRowViewModel> CareerRows { get; set; } = new ObservableCollection<CareerRowViewModel>();
         public List<int> RowIDs { get; set; } = new List<int>();
         private int id = 0;
 
+        public delegate void RowChangedEventHandler(object source, EventArgs e);
 
-        public delegate void CareerChangedEventHandler(object source, CareerChangedEventArgs e);
+        public event RowChangedEventHandler CareerChanged;
+        public event RowChangedEventHandler SpeciesChanged;
+        
 
-        public event CareerChangedEventHandler CareerChanged;
+        public ObservableCollection<SpeciesRowViewModel> SpeciesRow { get; set; } = new ObservableCollection<SpeciesRowViewModel>();
+
 
         public DataGridViewModel()
         {
-
+            SpeciesRow.Add(new SpeciesRowViewModel());
+            SpeciesRow[0].RowChanged += SpeciesEdit;
         }
 
         public void AddRow(string careerName)
         {
-            DataRowViewModel newDGRow = new DataRowViewModel(Career.GetCareerList().Find(c => c.Name == careerName), id);
+            CareerRowViewModel newDGRow = new CareerRowViewModel(Career.GetCareerList().Find(c => c.Name == careerName), id);
 
             newDGRow.RowChanged += CareerEdit;
 
-            Rows.Add(newDGRow);
+            CareerRows.Add(newDGRow);
             RowIDs.Add(id);
             id++;
         }
 
+
+        public void SpeciesEdit(object source, RowChangeEventArgs e)
+        {
+            OnSpeciesChanged(source as SpeciesRowViewModel, e);
+        }
+
+
         public void CareerEdit(object source, RowChangeEventArgs e)
         {
-            OnCareerChanged(source as DataRowViewModel, e);
+            OnCareerChanged(source as CareerRowViewModel, e);
         }
 
-        protected virtual void OnCareerChanged(DataRowViewModel row, RowChangeEventArgs rowChange)
+        protected virtual void OnCareerChanged(CareerRowViewModel row, RowChangeEventArgs rowChange)
         {
             if (CareerChanged != null)
-                CareerChanged(this, new CareerChangedEventArgs { careerIndex = Rows.IndexOf(row), advLevel = rowChange.AdvLevel, change = rowChange.ChangeType });
+                CareerChanged(this, new CareerChangedEventArgs
+                {
+                    careerIndex = CareerRows.IndexOf(row),
+                    advLevel = rowChange.AdvLevel,
+                    change = rowChange.ChangeType
+                });
         }
-        
-        public List<Tuple<string, AdvanceLevel>> GetRowData()
-        {
-            List<Tuple<string, AdvanceLevel>> data = new List<Tuple<string, AdvanceLevel>>();
-            foreach (DataRowViewModel row in Rows)
-                data.Add(new Tuple<string, AdvanceLevel>(row.Name, row.ComboBoxSelection));
 
-            return data;
+        protected virtual void OnSpeciesChanged(SpeciesRowViewModel speciesRowViewModel, RowChangeEventArgs rowChange)
+        {
+            if (SpeciesChanged != null)
+                SpeciesChanged(this, new SpeciesChangedEventArgs
+                {
+                    Name = speciesRowViewModel.Name,
+                    change = rowChange.ChangeType,
+                    newSpecies = rowChange.SelectedSpecies
+                });
         }
     }
 
@@ -57,5 +76,12 @@ namespace WFRP_NPC_Creator
         public int careerIndex;
         public RowAction change;
         public AdvanceLevel advLevel;
+    }
+
+    public class SpeciesChangedEventArgs : EventArgs
+    {
+        public string Name;
+        public RowAction change;
+        public Species newSpecies;
     }
 }

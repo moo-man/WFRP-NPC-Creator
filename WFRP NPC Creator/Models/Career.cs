@@ -78,10 +78,9 @@ namespace WFRP_NPC_Creator
             int advances = 0;
             foreach (Characteristics ch in CareerTemplate.CareerCharacteristics)
             {
-                CharacteristicAdvances[ch] = 0;
                 advances = GenerateAdvanceNum(false) * CareerTemplate.Tier;
-                if (Owner.TotalCharacteristicAdvances(ch) < advances)
-                    CharacteristicAdvances[ch] += advances - Owner.TotalCharacteristicAdvances(ch);
+                if (Owner.TotalCharacteristicAdvances(ch) - CharacteristicAdvances[ch] < advances)
+                    CharacteristicAdvances[ch] = advances - (Owner.TotalCharacteristicAdvances(ch) - CharacteristicAdvances[ch]);
             }
         }
 

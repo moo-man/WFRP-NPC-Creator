@@ -20,13 +20,13 @@ namespace WFRP_NPC_Creator
        Fel = 9
     }
     public enum Species
-    {
-        Human = 0,
-        Dwarf= 1,
-        Halfling = 2,
-        Welf = 3,
-        Helf = 4
-    }
+    {       
+        Human,
+        Dwarf,
+        Halfling,
+        Welf,
+        Helf
+    }        
 
     public enum AdvanceLevel
     {

@@ -9,7 +9,7 @@ namespace WFRP_NPC_Creator
     public enum RowAction
     {
         Delete,
-        AdvanceChange,
+        SelectionChange,
         RerollCharacteristic,
         RerollSkill,
         RerollTalent

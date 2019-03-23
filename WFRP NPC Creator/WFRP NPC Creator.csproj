@@ -71,17 +71,22 @@
     <Compile Include="Models\Career.cs" />
     <Compile Include="Models\CareerFocusLookup.cs" />
     <Compile Include="Models\Dictionaries.cs" />
+    <Compile Include="Models\Species Classes\Dwarf.cs" />
+    <Compile Include="Models\Species Classes\Human.cs" />
     <Compile Include="Models\Skill.cs" />
     <Compile Include="Models\Species.cs" />
     <Compile Include="Models\Talents.cs" />
+    <Compile Include="ValueConverters\SpeciesEnumConverter.cs" />
     <Compile Include="ValueConverters\EnumToIntConverter.cs" />
     <Compile Include="ValueConverters\EnumToArrayConverter.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
     <Compile Include="ViewModels\DataRowViewModel.cs" />
     <Compile Include="ViewModels\RichTextViewModel.cs" />
     <Compile Include="ViewModels\RowAction.cs" />
+    <Compile Include="ViewModels\RowType.cs" />
     <Compile Include="ViewModels\TreeViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Utility.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -8,14 +8,17 @@ namespace WFRP_NPC_Creator
 {
     public abstract class Character
     {
+        //protected static string[] SpeciesSkills;
         protected Dictionary<Characteristics, int> initialCharacteristics { get; private set; } = new Dictionary<Characteristics, int>();
         protected Species species;
         protected int movement;
         protected int wounds;
 
-        public List<CareerAdvancement> Careers { get; private set; } = new List<CareerAdvancement>();
-        public List<Skill> Skills { get; private set; } = new List<Skill>();
-        public List<Talent> Talents { get; private set; } = new List<Talent>();
+        public string Name { get; set; }
+
+        public List<CareerAdvancement> Careers { get; protected set; } = new List<CareerAdvancement>();
+        public List<Skill> Skills { get; protected set; } = new List<Skill>();
+        public List<Talent> Talents { get; protected set; } = new List<Talent>();
 
         public static Random rand = new Random();
         public Character()
@@ -26,6 +29,7 @@ namespace WFRP_NPC_Creator
             RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();
+
         }
 
         public void ChangeCareerAdvancement(int careerIndex, AdvanceLevel newAdvLevel)
@@ -86,6 +90,8 @@ namespace WFRP_NPC_Creator
             return sb.Length > 0 ? sb.ToString().Remove(sb.Length - 2, 2) : sb.ToString();
 
         }
+
+
         public string TalentsString(bool onlyRelevant)
         {
             StringBuilder sb = new StringBuilder();
@@ -148,8 +154,27 @@ namespace WFRP_NPC_Creator
             if (characterSkill != null)
                 totalValue += characterSkill.Advances;
 
-            foreach (CareerAdvancement career in Careers)
+           
+        }
+
+        /// <summary>
+        /// Gets the advancement as if the input career was the latest career
+        /// This is necessary to accurately reroll careers at the beginning
+        /// </summary>
+        /// <param name="career"></param>
+        /// <returns></returns>
+        public int TotalSkillAdvancesToCareer(string skillName, CareerAdvancement career)
+        {
+            int totalValue = 0;
+            Skill characterSkill = Skills.Find(sk => sk.Name == skillName);
+
+            if (characterSkill != null)
+                totalValue += characterSkill.Advances;
+
+            foreach (CareerAdvancement beforeCareer in Careers)
             {
+                if (beforeCareer == career)
+                    return totalValue;
                 Skill skillAdvanced = career.SkillsAdvanced.Find(sk => sk.Name == skillName);
                 if (skillAdvanced != null)
                     totalValue += skillAdvanced.Advances;
@@ -166,7 +191,7 @@ namespace WFRP_NPC_Creator
                 SkillList = SkillList.Concat(career.SkillsAdvanced).ToList();
             }
             SkillList = SkillList.Distinct(new SkillEqualityComparer()).ToList();
-                
+
             SkillList.Sort(delegate (Skill a, Skill b)
             {
                 return a.Name.CompareTo(b.Name);
@@ -302,7 +327,7 @@ namespace WFRP_NPC_Creator
 
         }
         #endregion
-       
+
 
         public virtual void AddCareer(string name, AdvanceLevel advancement = AdvanceLevel.None)
         {
@@ -310,72 +335,32 @@ namespace WFRP_NPC_Creator
         }
 
 
-        protected abstract void RollCharacteristics();
-        protected abstract void AdvanceSpeciesSkills();
-        protected abstract void AddSpeciesTalents();
+        public bool Validate()
+        {
+            int advCount;
+
+            foreach (CareerAdvancement career in Careers)
+            {
+                advCount = 0;
+                foreach (string sk in career.CareerTemplate.CareerSkills)
+                {
+                    if (TotalSkillAdvances(sk) >= 5 * career.CareerTemplate.Tier)
+                        advCount++;
+                }
+                if (advCount < 8)
+                {
+                    System.Diagnostics.Debug.Print(career.CareerTemplate.Name + " Invalid");
+                    return false;
+                }
+            }
+            return true;
+
+        }
+
+        public abstract void RollCharacteristics();
+        public abstract void AdvanceSpeciesSkills();
+        public abstract void AddSpeciesTalents();
+
 
     }
-
-    public class Human : Character
-    {
-        public static string[] HumanSkills = {
-            "Animal Care",
-            "Charm",
-            "Cool",
-            "Evaluate",
-            "Gossip",
-            "Haggle",
-            "Language (Bretonnian)",
-            "Language (Wastelander)",
-            "Leadership",
-            "Lore (Reikland)",
-            "Melee (Basic)",
-            "Ranged (Bow)" };
-
-        public Human()
-        {
-            species = Species.Human;
-            SpeciesStats.Movement.TryGetValue(species, out movement);
-;
-        }
-        protected override void RollCharacteristics()
-        {
-            for (Characteristics i = 0; i < (Characteristics)10; i++)
-            {
-                //initialCharacteristics[i] = 30;
-                initialCharacteristics[i] = 20 + rand.Next(1, 11) + rand.Next(1, 11);
-            }
-        }
-
-
-        protected override void AdvanceSpeciesSkills()
-        {
-            string[] skillListRandom = Human.HumanSkills.OrderBy(x => rand.Next()).ToArray();
-            int advanceNum = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                if (i < 3)
-                    advanceNum = 5;
-                else
-                    advanceNum = 3;
-
-                AddSkill(skillListRandom[i], advanceNum);
-            }
-        }
-
-        protected override void AddSpeciesTalents()
-        {
-            List<string[]> speciesTalentList = SpeciesStats.SpeciesTalents[Species.Human];
-
-            for (int i = 0; i < speciesTalentList.Count - 1; i++)
-            {
-                AddTalent(speciesTalentList[i][rand.Next(0, speciesTalentList[i].Length)]);
-            }
-
-            int randomTalentCount = Int32.Parse(speciesTalentList[speciesTalentList.Count - 1][0]);
-
-            for (int i = 0; i < randomTalentCount; i++)
-                AddTalent(Talent.RollRandomTalent());
-        }
-    } 
 }

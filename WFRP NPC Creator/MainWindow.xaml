@@ -32,27 +32,67 @@
 				<TreeView.ItemTemplate>
 					<HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
 						<TextBlock Text="{Binding Name}" MouseDown="item_MouseLeftButtonDown">
-							<!--<TextBlock.InputBindings>
-								<MouseBinding Command ="{Binding DragCommand}" MouseAction ="LeftClick"/>
-							</TextBlock.InputBindings>-->
 						</TextBlock>
 					</HierarchicalDataTemplate>
 				</TreeView.ItemTemplate>
 			</TreeView>
 			<StackPanel Grid.Column="1" Orientation="Vertical">
 
-				<DataGrid Height="50">
+				<DataGrid Name="SpeciesGrid" ItemsSource="{Binding DataGrid.SpeciesRow}" CanUserAddRows="False" AutoGenerateColumns="False">
+					<DataGrid.Resources>
+						<local:EnumToArrayConverter x:Key="SpeciesEnumConverter"/>
+					</DataGrid.Resources>
 					<DataGrid.Columns>
-						<DataGridTextColumn Header="Name" Width="*" IsReadOnly="True"/>
-						<DataGridTextColumn Header="Species" Width="*" IsReadOnly="True"/>
-						<DataGridTextColumn Header="Characteristics" Width="*" IsReadOnly="True"/>
-						<DataGridTextColumn Header="Skills" Width="*" IsReadOnly="True"/>
-						<DataGridTextColumn Header="Talents" Width="*" IsReadOnly="True"/>
+						<DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+						<DataGridTemplateColumn Header="Species" IsReadOnly="False">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding SpeciesSelection}"/>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+
+							<DataGridTemplateColumn.CellEditingTemplate>
+								<DataTemplate>
+									<ComboBox ItemsSource="{Binding Source={x:Type local:Species}, Converter ={StaticResource SpeciesEnumConverter}}"
+									SelectedItem="{Binding SpeciesSelection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+										<i:Interaction.Triggers>
+											<i:EventTrigger EventName="SelectionChanged">
+												<i:InvokeCommandAction Command="{Binding SelectionChanged}" />
+											</i:EventTrigger>
+										</i:Interaction.Triggers>
+									</ComboBox>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellEditingTemplate>
+						</DataGridTemplateColumn>
+
+						<DataGridTemplateColumn Header="Characteristics" Width="*">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Button Command="{Binding RerollClicked}" CommandParameter="{x:Static local:RowAction.RerollCharacteristic}">Reroll</Button>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+
+						<DataGridTemplateColumn Header="Skills" Width="*">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Button Command="{Binding RerollClicked}" CommandParameter="{x:Static local:RowAction.RerollSkill}">Reroll</Button>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+
+						<DataGridTemplateColumn Header="Talents" Width="*">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Button Command="{Binding RerollClicked}" CommandParameter="{x:Static local:RowAction.RerollTalent}">Reroll</Button>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
 					</DataGrid.Columns>
 				</DataGrid>
 
 
-				<DataGrid Name ="CareerGrid" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight}" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataGrid.Rows}"  AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
+				<DataGrid Name ="CareerGrid" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight}" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataGrid.CareerRows}"  AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
 				<DataGrid.Resources>
 					<local:EnumToArrayConverter x:Key="EnumToArrayConverter"/>
 					<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
@@ -64,7 +104,7 @@
 					<DataGridTemplateColumn Header="Advance Level" IsReadOnly="False">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
-								<TextBlock Text="{Binding ComboBoxSelection}"/>
+								<TextBlock Text="{Binding AdvanceSelection}"/>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 						
@@ -72,10 +112,10 @@
 						<DataGridTemplateColumn.CellEditingTemplate>
 							<DataTemplate>
 								<ComboBox ItemsSource="{Binding Source={x:Type local:AdvanceLevel}, Converter ={StaticResource EnumToArrayConverter}}"
-									SelectedItem="{Binding ComboBoxSelection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+									SelectedItem="{Binding AdvanceSelection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
 									<i:Interaction.Triggers>
 										<i:EventTrigger EventName="SelectionChanged">
-											<i:InvokeCommandAction Command="{Binding AdvanceLevelChanged}" />
+											<i:InvokeCommandAction Command="{Binding SelectionChanged}" />
 										</i:EventTrigger>
 									</i:Interaction.Triggers>
 								</ComboBox>
@@ -110,9 +150,15 @@
 				</DataGrid.Columns>
 			</DataGrid>
 			</StackPanel>
+			
+			
 			<RichTextBox Grid.Column="2">
 				<FlowDocument>
-					<Table Padding="20 50 50 0" CellSpacing="0">
+					<Paragraph Padding="20 20 0 0">
+						<Run FontWeight="Bold" 
+							 Text="{Binding RichText.Name[0], Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+					</Paragraph>
+					<Table Padding="20 0 50 0" CellSpacing="0">
 						<Table.Columns>
 							<TableColumn Width="25" />
 							<TableColumn Width="25" />
