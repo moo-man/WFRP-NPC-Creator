@@ -166,7 +166,7 @@ namespace WFRP_NPC_Creator
 
         /// <summary>
         /// Gets the advancement as if the input career was the latest career
-        /// This is necessary to accurately reroll careers at the beginning
+        /// This is necessary to accurately reroll earlier careers 
         /// </summary>
         /// <param name="career"></param>
         /// <returns></returns>
@@ -188,6 +188,27 @@ namespace WFRP_NPC_Creator
             }
 
             return totalValue;
+        }
+
+        /// <summary>
+        /// Similar to TotalSkillAdvancesToCareer(), this is used when rerolling characteristic advances of earlier careers
+        /// This adds all the characteristic advances of the input characteristic, starting at the first career, and ending before the input career
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="career"></param>
+        /// <returns></returns>
+        public int TotalCharacteristicAdvancesToCareer(Characteristics c, CareerAdvancement career)
+        {
+            int cAdvances = 0;
+
+            foreach (CareerAdvancement beforeCareer in Careers)
+            {
+                if (beforeCareer == career)
+                    return cAdvances;
+                cAdvances += beforeCareer.CharacteristicAdvances[c];
+            }
+
+            return cAdvances;
         }
 
         public string[] GetAllSkills()

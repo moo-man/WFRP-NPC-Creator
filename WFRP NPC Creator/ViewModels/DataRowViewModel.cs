@@ -57,6 +57,11 @@ namespace WFRP_NPC_Creator
             SelectionChanged = new SelectionChangedCommand(ComboBoxChanged);
         }
 
+        public void ManualUpdate(RowAction action)
+        {
+            OnRowChanged(CreateEventArgs(action));
+        }
+
         protected override RowChangeEventArgs CreateEventArgs(RowAction rowAction)
         {
             return new RowChangeEventArgs

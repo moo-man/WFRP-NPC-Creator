@@ -44,7 +44,24 @@ namespace WFRP_NPC_Creator
                         flatList.Add(career);
 
             return flatList.OrderBy(c => c.Name).ToList();
+        }
 
+        public static string[] GetLowerTiers(string careerName)
+        {
+            string[] lowerTiers = null;
+            foreach (CareerClass cClass in ClassList)
+                foreach (CareerPath cPath in cClass.CareerPaths)
+                    foreach (Career career in cPath.Tiers)
+                    {
+                        if (career.Name == careerName)
+                        {
+                            lowerTiers = new string[career.Tier - 1];
+                            for (int i = 0; i < lowerTiers.Length; i++)
+                                lowerTiers[i] = cPath.Tiers[i].Name;
+                            return lowerTiers;
+                        }
+                    }
+            return lowerTiers;
         }
     }
 
@@ -79,8 +96,8 @@ namespace WFRP_NPC_Creator
             foreach (Characteristics ch in CareerTemplate.CareerCharacteristics)
             {
                 advances = GenerateAdvanceNum(false) * CareerTemplate.Tier;
-                if (Owner.TotalCharacteristicAdvances(ch) - CharacteristicAdvances[ch] < advances)
-                    CharacteristicAdvances[ch] = advances - (Owner.TotalCharacteristicAdvances(ch) - CharacteristicAdvances[ch]);
+                if (Owner.TotalCharacteristicAdvancesToCareer(ch, this) < advances)
+                    CharacteristicAdvances[ch] = advances - Owner.TotalCharacteristicAdvancesToCareer(ch, this);
             }
         }
 

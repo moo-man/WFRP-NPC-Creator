@@ -28,21 +28,10 @@ namespace WFRP_NPC_Creator
             TalentReader.read = true;
 
             this.DataContext = new WindowViewModel();
-
-            Character Test = new Human();
-
-            Test.AddCareer("Servant", AdvanceLevel.Complete);
-            Test.AddCareer("Advisor", AdvanceLevel.Complete);
-            Test.AddCareer("Wizard's Apprentice", AdvanceLevel.Complete);
-            Test.AddCareer("Wizard", AdvanceLevel.Complete);
-            Test.AddCareer("Master Wizard", AdvanceLevel.Beyond);
-
-
-            Test.PrintToConsole(true);
-
-
         }
 
+        // ************************************************************************************************************************************
+        // What lies below does not follow MVVM architecture, but getting drag and drop to work with MVVM was so damn confusing I gave up on it
         private void item_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             TextBlock item = (TextBlock)sender;

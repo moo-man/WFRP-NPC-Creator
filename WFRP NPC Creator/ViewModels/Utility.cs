@@ -14,7 +14,7 @@ namespace WFRP_NPC_Creator
             {Species.Dwarf , "Dwarf" },
             {Species.Halfling , "Halfling" },
             {Species.Helf , "High Elf" },
-            {Species.Welf , "Welf" }
+            {Species.Welf , "Wood Elf" }
         };
     }
 }

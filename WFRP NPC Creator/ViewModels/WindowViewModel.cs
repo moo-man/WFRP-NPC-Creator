@@ -46,6 +46,9 @@ namespace WFRP_NPC_Creator
                 case RowAction.RerollTalent:
                     NPC.RerollCareerTalents(careerArgs.careerIndex);
                     break;
+                case RowAction.Add:
+                    NPC.AddCareer(careerArgs.careerName, careerArgs.advLevel);
+                    break;
             }
             UpdateStatBlock();
         }

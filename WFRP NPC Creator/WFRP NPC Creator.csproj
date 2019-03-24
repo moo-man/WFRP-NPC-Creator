@@ -67,10 +67,11 @@
     <Compile Include="Commands\DragCommand.cs" />
     <Compile Include="Commands\RerollCommand.cs" />
     <Compile Include="Commands\SelectionChangedCommand.cs" />
+    <Compile Include="View\IMsgBoxService.cs" />
     <Compile Include="Models\AdvanceBounds.cs" />
     <Compile Include="Models\Career.cs" />
     <Compile Include="Models\CareerFocusLookup.cs" />
-    <Compile Include="Models\Dictionaries.cs" />
+    <Compile Include="Models\CharacteristicConvert.cs" />
     <Compile Include="Models\Species Classes\Dwarf.cs" />
     <Compile Include="Models\Species Classes\Human.cs" />
     <Compile Include="Models\Skill.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="ValueConverters\EnumToArrayConverter.cs" />
     <Compile Include="ViewModels\DataGridViewModel.cs" />
     <Compile Include="ViewModels\DataRowViewModel.cs" />
+    <Compile Include="View\MsgBoxService.cs" />
     <Compile Include="ViewModels\RichTextViewModel.cs" />
     <Compile Include="ViewModels\RowAction.cs" />
     <Compile Include="ViewModels\RowType.cs" />
@@ -135,8 +137,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Data\TalentData.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
