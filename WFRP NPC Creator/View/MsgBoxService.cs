@@ -11,7 +11,7 @@ namespace WFRP_NPC_Creator
     {
         public bool YesNoBox(string message, string caption)
         {
-            MessageBoxResult result = MessageBox.Show(message, caption, MessageBoxButton.YesNoCancel);
+            MessageBoxResult result = MessageBox.Show(message, caption, MessageBoxButton.YesNo);
             return result.HasFlag(MessageBoxResult.Yes);
         }
 

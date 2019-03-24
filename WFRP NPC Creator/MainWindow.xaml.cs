@@ -35,7 +35,9 @@ namespace WFRP_NPC_Creator
         private void item_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             TextBlock item = (TextBlock)sender;
-            DragDrop.DoDragDrop(item, item.Text, DragDropEffects.Move);
+
+            if ((bool)item.Tag) // If leaf (selectable)
+                DragDrop.DoDragDrop(item, item.Text, DragDropEffects.Move);
         }
 
         private void DataGrid_Drop(object sender, DragEventArgs e)

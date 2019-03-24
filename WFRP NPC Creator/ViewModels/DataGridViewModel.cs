@@ -34,7 +34,7 @@ namespace WFRP_NPC_Creator
             string[] lowerTiers = Career.GetLowerTiers(careerName);
             List<string> lowerTiersToAdd = new List<string>();
 
-            if (lowerTiers.Length > 1)
+            if (lowerTiers.Length > 0)
             {
                 foreach (string lowerCareer in lowerTiers)
                 {
@@ -46,8 +46,9 @@ namespace WFRP_NPC_Creator
                     }
                     if (!contains)
                         lowerTiersToAdd.Add(lowerCareer);
+
                 }
-                if (lowerTiersToAdd.Count > 1)
+                if (lowerTiersToAdd.Count > 0)
                     if (messageService.YesNoBox("Add lower tier careers?", "Add Lower Tiers"))
                     {
                         foreach (string career in lowerTiersToAdd)
@@ -63,6 +64,7 @@ namespace WFRP_NPC_Creator
 
                         }
                     }
+
             }
 
             CareerRowViewModel newDGRow = new CareerRowViewModel(Career.GetCareerList().Find(c => c.Name == careerName), id);

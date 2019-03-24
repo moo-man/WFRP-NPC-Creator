@@ -31,7 +31,7 @@
 				</TreeView.ItemContainerStyle>
 				<TreeView.ItemTemplate>
 					<HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
-						<TextBlock Text="{Binding Name}" MouseDown="item_MouseLeftButtonDown">
+						<TextBlock Tag="{Binding Selectable}" Text="{Binding Name}" MouseDown="item_MouseLeftButtonDown">
 						</TextBlock>
 					</HierarchicalDataTemplate>
 				</TreeView.ItemTemplate>

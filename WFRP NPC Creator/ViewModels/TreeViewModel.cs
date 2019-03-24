@@ -26,7 +26,7 @@ namespace WFRP_NPC_Creator
                     CareerItem = new TreeItemViewModel(cPath.PathName);
                     foreach (Career career in cPath.Tiers)
                     {
-                        TierItem = new TreeItemViewModel(career.Name);
+                        TierItem = new TreeItemViewModel(career.Name, true);
                         CareerItem.SubItems.Add(TierItem);
                     }
                     ClassItem.SubItems.Add(CareerItem);
@@ -43,9 +43,12 @@ namespace WFRP_NPC_Creator
         public string Name { get; set; }
         public ObservableCollection<TreeItemViewModel> SubItems { get; set; } = new ObservableCollection<TreeItemViewModel>();
 
-        public TreeItemViewModel(string name)
+        public bool Selectable { get; set; }
+
+        public TreeItemViewModel(string name, bool selectable = false)
         {
             Name = name;
+            Selectable = selectable;
             //DragItemCommand = new DragCommand(BeginDrag);
         }
 
