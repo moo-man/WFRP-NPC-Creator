@@ -24,7 +24,7 @@
 			</Grid.ColumnDefinitions>
 
 
-			<TreeView Grid.Column="0" x:Name ="CareerView" ItemsSource="{Binding Tree.Items}">
+			<TreeView Grid.Column="0" x:Name ="CareerView" Focusable="False" ItemsSource="{Binding Tree.Items}">
 				<TreeView.ItemContainerStyle>
 					<Style TargetType="{x:Type TreeViewItem}">
 					</Style>

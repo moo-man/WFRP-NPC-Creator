@@ -27,7 +27,6 @@ namespace WFRP_NPC_Creator
             SpeciesRow[0].RowChanged += SpeciesEdit;
 
             messageService = new MsgBoxService();
-            messageService.ShowNotification("Test");
         }
 
         public void AddRow(string careerName)
