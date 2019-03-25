@@ -93,12 +93,33 @@
 
 
 				<DataGrid Name ="CareerGrid" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight}" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataGrid.CareerRows}"  AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
-				<DataGrid.Resources>
-					<local:EnumToArrayConverter x:Key="EnumToArrayConverter"/>
-					<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
-				</DataGrid.Resources>
+					<DataGrid.Resources>
+						<local:EnumToArrayConverter x:Key="EnumToArrayConverter"/>
+						<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
+
+						<ContextMenu x:Key="DGContextMenu"
+									 DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
+
+							<ContextMenu.Items>
+								<MenuItem
+									Header="Remove"
+									
+									Command="{Binding DataGrid.RemoveCareer}"
+									CommandParameter="{Binding RowID}"
+									/>
+							</ContextMenu.Items>
+						</ContextMenu>
+					</DataGrid.Resources>
+
+					<DataGrid.RowStyle>
+						<Style TargetType="DataGridRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
+							<Setter Property="ContextMenu" Value="{StaticResource DGContextMenu}"/>
+						</Style>
+					</DataGrid.RowStyle>
 					<DataGrid.Columns>
-					<DataGridTextColumn Header="Career" Width="*" IsReadOnly="True" Binding ="{Binding Name}"/>
+						
+						
+					<DataGridTextColumn Header="Career" Width="*" IsReadOnly="True" CanUserSort="False" Binding ="{Binding Name}"/>
 						
 						
 					<DataGridTemplateColumn Header="Advance Level" IsReadOnly="False">

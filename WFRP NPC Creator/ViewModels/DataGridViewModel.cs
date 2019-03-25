@@ -7,7 +7,7 @@ namespace WFRP_NPC_Creator
     public class DataGridViewModel : BaseViewModel
     {
         private IMsgBoxService messageService;
-        
+
         public ObservableCollection<CareerRowViewModel> CareerRows { get; set; } = new ObservableCollection<CareerRowViewModel>();
         public List<int> RowIDs { get; set; } = new List<int>();
         private int id = 0;
@@ -16,15 +16,19 @@ namespace WFRP_NPC_Creator
 
         public event RowChangedEventHandler CareerChanged;
         public event RowChangedEventHandler SpeciesChanged;
-        
+
 
         public ObservableCollection<SpeciesRowViewModel> SpeciesRow { get; set; } = new ObservableCollection<SpeciesRowViewModel>();
+
+        public RemoveCommand RemoveCareer { get; protected set; }
 
 
         public DataGridViewModel()
         {
             SpeciesRow.Add(new SpeciesRowViewModel());
             SpeciesRow[0].RowChanged += SpeciesEdit;
+
+            RemoveCareer = new RemoveCommand(RemoveRow);
 
             messageService = new MsgBoxService();
         }
@@ -74,6 +78,10 @@ namespace WFRP_NPC_Creator
             id++;
         }
 
+        private void RemoveRow(int rowID)
+        {
+
+        }
 
         public void SpeciesEdit(object source, RowChangeEventArgs e)
         {
