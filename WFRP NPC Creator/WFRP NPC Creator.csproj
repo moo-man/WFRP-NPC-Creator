@@ -77,6 +77,8 @@
     <Compile Include="Models\Species Classes\Wood Elf.cs" />
     <Compile Include="Models\Species Classes\High Elf.cs" />
     <Compile Include="Models\Species Classes\Halfling.cs" />
+    <Compile Include="ViewModels\Settings.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="View\IMsgBoxService.cs" />
     <Compile Include="Models\AdvanceBounds.cs" />
     <Compile Include="Models\Career.cs" />

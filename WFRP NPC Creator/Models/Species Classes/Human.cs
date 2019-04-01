@@ -24,5 +24,14 @@ namespace WFRP_NPC_Creator
                 initialCharacteristics[i] = 20 + rand.Next(1, 11) + rand.Next(1, 11);
             }
         }
+
+        public override void TakeAverageCharacteristics()
+        {
+            for (Characteristics i = 0; i < (Characteristics)10; i++)
+            {
+                //initialCharacteristics[i] = 30;
+                initialCharacteristics[i] = 20 + 10;
+            }
+        }
     } 
 }

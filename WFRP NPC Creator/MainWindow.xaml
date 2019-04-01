@@ -9,11 +9,10 @@
         Title="MainWindow" Height="450" Width="1200">
 	<DockPanel>
 		<Menu DockPanel.Dock="Top">
-			<MenuItem Header="Test">
-				
-			</MenuItem>
-			<MenuItem Header="Test">
-
+			<MenuItem Header="Options">
+				<MenuItem Header="Average Species Characteristics" IsChecked="{Binding SVM.AverageCharacteristicsChecked, Mode=TwoWay}" IsCheckable="True"/>
+				<MenuItem Header="Show Only Relevant Skills" IsChecked="{Binding SVM.OnlyRelevantSkillsChecked, Mode=TwoWay}" IsCheckable="True"/>
+				<MenuItem Header="Show Only Relevant Talents" IsChecked="{Binding SVM.OnlyRelevantTalentsChecked, Mode=TwoWay}" IsCheckable="True"/>
 			</MenuItem>
 		</Menu>
 		<Grid DockPanel.Dock="Bottom">
@@ -97,7 +96,7 @@
 						<local:EnumToArrayConverter x:Key="EnumToArrayConverter"/>
 						<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
 
-						<ContextMenu x:Key="DGContextMenu"
+						<!--<ContextMenu x:Key="DGContextMenu"
 									 DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
 
 							<ContextMenu.Items>
@@ -108,14 +107,14 @@
 									CommandParameter="{Binding RowID}"
 									/>
 							</ContextMenu.Items>
-						</ContextMenu>
+						</ContextMenu>-->
 					</DataGrid.Resources>
 
-					<DataGrid.RowStyle>
+					<!--<DataGrid.RowStyle>
 						<Style TargetType="DataGridRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
 							<Setter Property="ContextMenu" Value="{StaticResource DGContextMenu}"/>
 						</Style>
-					</DataGrid.RowStyle>
+					</DataGrid.RowStyle>-->
 					<DataGrid.Columns>
 						
 						

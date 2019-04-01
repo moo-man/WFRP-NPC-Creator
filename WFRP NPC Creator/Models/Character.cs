@@ -41,6 +41,8 @@ namespace WFRP_NPC_Creator
         {
             Careers[careerIndex].RerollSkills();
         }
+
+
         public void RerollCareerTalents(int careerIndex)
         {
             Careers[careerIndex].RerollTalents();
@@ -364,6 +366,8 @@ namespace WFRP_NPC_Creator
         }
 
         public abstract void RollCharacteristics();
+        public abstract void TakeAverageCharacteristics();
+
         public virtual void AdvanceSpeciesSkills()
         {
             Skills = new List<Skill>();
@@ -379,6 +383,8 @@ namespace WFRP_NPC_Creator
                 AddSkill(skillListRandom[i], advanceNum);
             }
         }
+
+
 
         public virtual void AddSpeciesTalents()
         {

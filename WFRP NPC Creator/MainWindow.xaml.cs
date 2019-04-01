@@ -44,5 +44,10 @@ namespace WFRP_NPC_Creator
         {
             (this.DataContext as WindowViewModel).AddGridRow(e.Data.GetData(DataFormats.Text).ToString());
         }
+
+        private void MenuItem_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

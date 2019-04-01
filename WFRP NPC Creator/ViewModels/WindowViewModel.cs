@@ -12,13 +12,30 @@ namespace WFRP_NPC_Creator
         public DataGridViewModel DataGrid { get; set; } = new DataGridViewModel();
 
         public RichTextViewModel RichText { get; set; } = new RichTextViewModel();
+
+        public SettingsViewModel SVM { get; set; } = new SettingsViewModel();
+
         public Character NPC;
 
         public WindowViewModel()
         {
             DataGrid.CareerChanged += CareerChange;
             DataGrid.SpeciesChanged += SpeciesChange;
+            SVM.SettingsChanged += SettingsChanged;
             NPC = new Human();
+            UpdateStatBlock();
+        }
+
+        private void SettingsChanged(object sender, SettingsViewModel.ChangedSetting change)
+        {
+            switch (change)
+            {
+                case SettingsViewModel.ChangedSetting.AverageCharacteristics:
+                    NPC.TakeAverageCharacteristics();
+                    break;
+                default:
+                    break;
+            }
             UpdateStatBlock();
         }
 
@@ -91,7 +108,8 @@ namespace WFRP_NPC_Creator
                 switch (speciesArgs.change)
                 {
                     case RowAction.RerollCharacteristic:
-                        NPC.RollCharacteristics();
+                        if (!Settings.UseAverageSpeciesCharacteristics)
+                            NPC.RollCharacteristics();
                         break;
                     case RowAction.RerollSkill:
                         NPC.AdvanceSpeciesSkills();
@@ -115,8 +133,8 @@ namespace WFRP_NPC_Creator
                 tableArray[(int)i+1] = newValues[i];
 
             RichText.UpdateTableValues(tableArray);
-            RichText.UpdateSkills(NPC.SkillsString(true));
-            RichText.UpdateTalents(NPC.TalentsString(true));
+            RichText.UpdateSkills(NPC.SkillsString(Settings.ShowOnlyRelevantSkills));
+            RichText.UpdateTalents(NPC.TalentsString(Settings.ShowOnlyRelevantTalents));
             RichText.UpdateName(NPC.Name);
             NPC.Validate();
         }
