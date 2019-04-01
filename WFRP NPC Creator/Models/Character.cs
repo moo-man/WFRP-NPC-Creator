@@ -26,10 +26,6 @@ namespace WFRP_NPC_Creator
             for (Characteristics i = 0; i < (Characteristics)10; i++)
                 initialCharacteristics.Add(i, 0);
 
-            RollCharacteristics();
-            AdvanceSpeciesSkills();
-            AddSpeciesTalents();
-
         }
 
         public void ChangeCareerAdvancement(int careerIndex, AdvanceLevel newAdvLevel)
@@ -118,6 +114,12 @@ namespace WFRP_NPC_Creator
             {
                 values[i] = initialCharacteristics[i];
                 values[i] += advances[i];
+            }
+
+            foreach (string t in GetAllTalents())
+            {
+                if (Talent.TalentBonus.Keys.Contains(t))
+                    values[Talent.TalentBonus[t].Item1] += Talent.TalentBonus[t].Item2;
             }
 
             return values;
@@ -328,31 +330,7 @@ namespace WFRP_NPC_Creator
             if (talentAcquired != null)
                 talentAcquired.Advance();
             else
-            {
                 Talents.Add(new Talent(talentName, this));
-                Tuple<Characteristics, int> bonus;
-                Talent.TalentBonus.TryGetValue(talentName, out bonus);
-
-                if (bonus != null)
-                    initialCharacteristics[bonus.Item1] += bonus.Item2;
-            }
-        }
-
-        protected virtual void RemoveTalent(string talentName)
-        {
-            Talent talentToRemove = Talents.Find(x => x.Name == talentName);
-
-            if (talentToRemove != null)
-            {
-                Talents.Remove(talentToRemove);
-                Tuple<Characteristics, int> bonus;
-                Talent.TalentBonus.TryGetValue(talentName, out bonus);
-
-                if (bonus != null)
-                    initialCharacteristics[bonus.Item1] -= bonus.Item2;
-            }
-            else return;
-
         }
         #endregion
 
@@ -386,9 +364,37 @@ namespace WFRP_NPC_Creator
         }
 
         public abstract void RollCharacteristics();
-        public abstract void AdvanceSpeciesSkills();
-        public abstract void AddSpeciesTalents();
+        public virtual void AdvanceSpeciesSkills()
+        {
+            Skills = new List<Skill>();
+            string[] skillListRandom = SpeciesStats.SpeciesSkills[species].OrderBy(x => rand.Next()).ToArray();
+            int advanceNum = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                if (i < 3)
+                    advanceNum = 5;
+                else
+                    advanceNum = 3;
 
+                AddSkill(skillListRandom[i], advanceNum);
+            }
+        }
+
+        public virtual void AddSpeciesTalents()
+        {
+            Talents = new List<Talent>();
+            List<string[]> speciesTalentList = SpeciesStats.SpeciesTalents[species];
+
+            for (int i = 0; i < speciesTalentList.Count - 1; i++)
+            {
+                AddTalent(speciesTalentList[i][rand.Next(0, speciesTalentList[i].Length)]);
+            }
+
+            int randomTalentCount = Int32.Parse(speciesTalentList[speciesTalentList.Count - 1][0]);
+
+            for (int i = 0; i < randomTalentCount; i++)
+                AddTalent(Talent.RollRandomTalent());
+        }
 
     }
 }

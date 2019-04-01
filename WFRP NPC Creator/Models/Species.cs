@@ -17,6 +17,88 @@ namespace WFRP_NPC_Creator
             {Species.Welf, 5}
         };
 
+        public static readonly Dictionary<Species, string[]> SpeciesSkills = new Dictionary<Species, string[]>()
+        {
+            {Species.Human, new string[]
+            {
+                "Animal Care",
+                "Charm",
+                "Cool",
+                "Evaluate",
+                "Gossip",
+                "Haggle",
+                "Language (Bretonnian)",
+                "Language (Wastelander)",
+                "Leadership",
+                "Lore (Reikland)",
+                "Melee (Basic)",
+                "Ranged (Bow)"
+            }},
+
+            { Species.Dwarf, new string[]
+            {
+                "Consume Alcohol",
+                "Cool",
+                "Endurance",
+                "Entertain (Storytelling)",
+                "Evaluate",
+                "Intimidate",
+                "Language (Khazalid)",
+                "Lore (Dwarfs)",
+                "Lore (Geology)",
+                "Lore (Metallurgy)",
+                "Melee (Basic)",
+                "Trade (any one)"
+            }},
+            { Species.Halfling, new string[]
+            {
+                "Charm",
+                "Consume Alcohol",
+                "Dodge",
+                "Gamble",
+                "Haggle",
+                "Intuition",
+                "Language (Mootish)",
+                "Lore (Reikland)",
+                "Lore (Perception)",
+                "Sleight of Hand",
+                "Stealth (Any)",
+                "Trade (Cook)"
+            }},
+            { Species.Helf, new string[]
+            {
+                "Cool",
+                "Entertain (Sing)",
+                "Evaluate",
+                "Language (Eltharin)",
+                "Leadership",
+                "Melee (Basic)",
+                "Navigation",
+                "Perception",
+                "Play (any one)",
+                "Ranged (Bow)",
+                "Sail",
+                "Swim"
+            }},
+            { Species.Welf, new string[]
+            {
+                "Athletics",
+                "Climb",
+                "Endurance",
+                "Entertain (Sing)",
+                "Intimidate",
+                "Language (Eltharin)",
+                "Melee (Basic)",
+                "Outdoor Survival",
+                "Perception",
+                "Ranged (Bow)",
+                "Stealth (Rural)",
+                "Track"
+            }}
+        };
+
+
+
         public static readonly Dictionary<Species, List<string[]>> SpeciesTalents = new Dictionary<Species, List<string[]>>()
         {
             {Species.Human, new List<string[]>
@@ -49,7 +131,9 @@ namespace WFRP_NPC_Creator
                 new string[] {"Coolheaded", "Savvy"},
                 new string[] {"Night Vision"},
                 new string[] {"Second Sight", "Sixth Sense"},
-                new string[] {"Read/Write"}
+                new string[] {"Read/Write"},
+                new string[] {"0"}
+
             }},
             {Species.Welf, new List<string[]>
             {
@@ -57,7 +141,8 @@ namespace WFRP_NPC_Creator
                 new string[] {"Hardy", "Second Sight"},
                 new string[] {"Night Vision"},
                 new string[] {"Read/Write", "Very Resilient"},
-                new string[] {"Rover"}
+                new string[] {"Rover"},
+                new string[] {"0"}
             }}
         };
 

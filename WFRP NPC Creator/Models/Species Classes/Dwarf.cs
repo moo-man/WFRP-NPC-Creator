@@ -8,41 +8,14 @@ namespace WFRP_NPC_Creator
 {
     public class Dwarf : Character
     {
-        public static string[] SpeciesSkills = {
-            "Consume Alcohol",
-            "Cool",
-            "Endurance",
-            "Entertain (Storytelling)",
-            "Evaluate",
-            "Intimidate",
-            "Language (Khazalid)",
-            "Lore (Dwarfs)",
-            "Lore (Geology)",
-            "Lore (Metallurgy)",
-            "Melee (Basic)",
-            "Trade (any one)"
-        };
 
         public Dwarf()
         {
             species = Species.Dwarf;
             SpeciesStats.Movement.TryGetValue(species, out movement);
-        }
-
-        public override void AdvanceSpeciesSkills()
-        {
-            Skills = new List<Skill>();
-            string[] skillListRandom = SpeciesSkills.OrderBy(x => rand.Next()).ToArray();
-            int advanceNum = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                if (i < 3)
-                    advanceNum = 5;
-                else
-                    advanceNum = 3;
-
-                AddSkill(skillListRandom[i], advanceNum);
-            }
+            RollCharacteristics();
+            AdvanceSpeciesSkills();
+            AddSpeciesTalents();
         }
 
         public override void RollCharacteristics()
@@ -60,20 +33,5 @@ namespace WFRP_NPC_Creator
 
         }
 
-        public override void AddSpeciesTalents()
-        {
-            Talents = new List<Talent>();
-            List<string[]> speciesTalentList = SpeciesStats.SpeciesTalents[species];
-
-            for (int i = 0; i < speciesTalentList.Count - 1; i++)
-            {
-                AddTalent(speciesTalentList[i][rand.Next(0, speciesTalentList[i].Length)]);
-            }
-
-            int randomTalentCount = Int32.Parse(speciesTalentList[speciesTalentList.Count - 1][0]);
-
-            for (int i = 0; i < randomTalentCount; i++)
-                AddTalent(Talent.RollRandomTalent());
-        }
     }
 }

@@ -68,7 +68,7 @@ namespace WFRP_NPC_Creator
                      case Species.Dwarf:
                          newNPC = new Dwarf();
                          break;
-                    /* case Species.Halfling:
+                     case Species.Halfling:
                          newNPC = new Halfling();
                          break;
                      case Species.Welf:
@@ -76,7 +76,7 @@ namespace WFRP_NPC_Creator
                          break;
                      case Species.Helf:
                          newNPC = new HighElf();
-                         break;*/
+                         break;
                     default:
                         return;
                 }
@@ -110,8 +110,9 @@ namespace WFRP_NPC_Creator
         private void UpdateStatBlock()
         {
             int[] tableArray = new int[12];
+            Dictionary<Characteristics, int> newValues = NPC.CharacteristicValues();
             for (Characteristics i = 0; i < (Characteristics)10; i++)
-                tableArray[(int)i+1] = NPC.CharacteristicValue(i);
+                tableArray[(int)i+1] = newValues[i];
 
             RichText.UpdateTableValues(tableArray);
             RichText.UpdateSkills(NPC.SkillsString(true));

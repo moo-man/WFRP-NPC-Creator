@@ -167,9 +167,7 @@ namespace WFRP_NPC_Creator
             //int relevantTalents = CareerTemplate.CareerTalents.Where(t => Talent.IsRelevant(t)).Count();
 
             while (talentsAdvanced < advances)
-            {
-
-     
+            {     
                     Talent talentPick = new Talent(CareerTemplate.CareerTalents[advanceGen.Next(0, CareerTemplate.CareerTalents.Length)], Owner);
 
                     int currentAdvances = Owner.TotalTalentAdvances(talentPick);

@@ -8,41 +8,14 @@ namespace WFRP_NPC_Creator
 {
     public class HighElf : Character
     {
-        public static string[] SpeciesSkills = {
-            "Cool",
-            "Entertain (Sing)",
-            "Evaluate",
-            "Language (Eltharin)",
-            "Leadership",
-            "Melee (Basic)",
-            "Navigation",
-            "Perception",
-            "Play (any one)",
-            "Ranged (Bow)",
-            "Sail",
-            "Swim"
-        };
 
         public HighElf()
         {
-            species = Species.Halfling;
+            species = Species.Helf;
             SpeciesStats.Movement.TryGetValue(species, out movement);
-        }
-
-        public override void AdvanceSpeciesSkills()
-        {
-            Skills = new List<Skill>();
-            string[] skillListRandom = SpeciesSkills.OrderBy(x => rand.Next()).ToArray();
-            int advanceNum = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                if (i < 3)
-                    advanceNum = 5;
-                else
-                    advanceNum = 3;
-
-                AddSkill(skillListRandom[i], advanceNum);
-            }
+            RollCharacteristics();
+            AdvanceSpeciesSkills();
+            AddSpeciesTalents();
         }
 
         public override void RollCharacteristics()
@@ -57,23 +30,6 @@ namespace WFRP_NPC_Creator
             initialCharacteristics[Characteristics.Int] =   30 + rand.Next(1, 11) + rand.Next(1, 11);
             initialCharacteristics[Characteristics.WP] =    30 + rand.Next(1, 11) + rand.Next(1, 11);
             initialCharacteristics[Characteristics.Fel] =   20 + rand.Next(1, 11) + rand.Next(1, 11);
-
-        }
-
-        public override void AddSpeciesTalents()
-        {
-            Talents = new List<Talent>();
-            List<string[]> speciesTalentList = SpeciesStats.SpeciesTalents[species];
-
-            for (int i = 0; i < speciesTalentList.Count - 1; i++)
-            {
-                AddTalent(speciesTalentList[i][rand.Next(0, speciesTalentList[i].Length)]);
-            }
-
-            int randomTalentCount = Int32.Parse(speciesTalentList[speciesTalentList.Count - 1][0]);
-
-            for (int i = 0; i < randomTalentCount; i++)
-                AddTalent(Talent.RollRandomTalent());
         }
     }
 }
