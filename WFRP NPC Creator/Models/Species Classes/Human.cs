@@ -10,7 +10,7 @@ namespace WFRP_NPC_Creator
         public Human()
         {
             species = Species.Human;
-            SpeciesStats.Movement.TryGetValue(species, out movement);
+            SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
             RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();

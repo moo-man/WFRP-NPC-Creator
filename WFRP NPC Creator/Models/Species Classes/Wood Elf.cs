@@ -12,7 +12,7 @@ namespace WFRP_NPC_Creator
         public WoodElf()
         {
             species = Species.Welf;
-            SpeciesStats.Movement.TryGetValue(species, out movement);
+            SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
             RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();

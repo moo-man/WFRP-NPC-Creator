@@ -12,7 +12,7 @@ namespace WFRP_NPC_Creator
         public HighElf()
         {
             species = Species.Helf;
-            SpeciesStats.Movement.TryGetValue(species, out movement);
+            SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
             RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();

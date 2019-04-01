@@ -28,6 +28,13 @@ namespace WFRP_NPC_Creator
             TalentReader.read = true;
 
             this.DataContext = new WindowViewModel();
+
+            foreach (Career career in Career.GetCareerList())
+            {
+                foreach (string talent in career.CareerTalents)
+                    if (Talent.TalentList.Find(t => t.Name == Talent.GenericName(talent)) == null)
+                        System.Diagnostics.Debug.WriteLine(talent + " not found");
+            }
         }
 
         // ************************************************************************************************************************************

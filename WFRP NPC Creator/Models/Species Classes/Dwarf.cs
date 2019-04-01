@@ -12,7 +12,7 @@ namespace WFRP_NPC_Creator
         public Dwarf()
         {
             species = Species.Dwarf;
-            SpeciesStats.Movement.TryGetValue(species, out movement);
+            SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
             RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();

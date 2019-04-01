@@ -121,7 +121,6 @@ namespace WFRP_NPC_Creator
                         break;
                 }
             }
-
             UpdateStatBlock();
         }
 
@@ -131,6 +130,9 @@ namespace WFRP_NPC_Creator
             Dictionary<Characteristics, int> newValues = NPC.CharacteristicValues();
             for (Characteristics i = 0; i < (Characteristics)10; i++)
                 tableArray[(int)i+1] = newValues[i];
+
+            tableArray[0] = NPC.CalculateMovement();
+            tableArray[11] = NPC.CalculateWounds();
 
             RichText.UpdateTableValues(tableArray);
             RichText.UpdateSkills(NPC.SkillsString(Settings.ShowOnlyRelevantSkills));

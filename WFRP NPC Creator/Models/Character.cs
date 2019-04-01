@@ -11,8 +11,8 @@ namespace WFRP_NPC_Creator
         //protected static string[] SpeciesSkills;
         protected Dictionary<Characteristics, int> initialCharacteristics { get; private set; } = new Dictionary<Characteristics, int>();
         protected Species species;
-        protected int movement;
-        protected int wounds;
+        protected int BaseMovement;
+        public int Wounds { get; private set;}
 
         public string Name { get; set; }
 
@@ -137,6 +137,40 @@ namespace WFRP_NPC_Creator
                     chAdvances[i] += career.CharacteristicAdvances[i];
             }
             return chAdvances;
+        }
+
+        public int CalculateWounds()
+        {
+            string[] talents = GetAllTalents();
+            Dictionary<Characteristics, int> characteristics = CharacteristicValues();
+
+            int TB = (int)Math.Floor(characteristics[Characteristics.T] / 10.0);
+            int SB = (int)Math.Floor(characteristics[Characteristics.S] / 10.0);
+            int WPB = (int)Math.Floor(characteristics[Characteristics.WP] / 10.0);
+
+            Wounds = (TB * 2 + WPB);
+
+            if (!talents.Contains("Small"))
+                Wounds += SB;
+
+            if (talents.Contains("Hardy"))
+            {
+                int hardyCount = TotalTalentAdvances("Hardy");
+                for (int i = 0; i < hardyCount; i++)
+                    Wounds += TB;
+            }
+
+            return Wounds;
+        }
+
+        public int CalculateMovement()
+        {
+            string[] talents = GetAllTalents();
+            int movement = BaseMovement;
+            if (talents.Contains("Fleet Footed"))
+                movement += TotalTalentAdvances("Fleet Footed");
+            return movement;
+                
         }
 
         public int TotalCharacteristicAdvances(Characteristics ch)
