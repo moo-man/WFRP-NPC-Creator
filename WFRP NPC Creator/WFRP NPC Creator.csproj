@@ -74,6 +74,9 @@
     <Compile Include="Commands\RerollCommand.cs" />
     <Compile Include="Commands\RemoveCommand.cs" />
     <Compile Include="Commands\SelectionChangedCommand.cs" />
+    <Compile Include="Models\Species Classes\Wood Elf.cs" />
+    <Compile Include="Models\Species Classes\High Elf.cs" />
+    <Compile Include="Models\Species Classes\Halfling.cs" />
     <Compile Include="View\IMsgBoxService.cs" />
     <Compile Include="Models\AdvanceBounds.cs" />
     <Compile Include="Models\Career.cs" />

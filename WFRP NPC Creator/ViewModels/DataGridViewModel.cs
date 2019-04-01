@@ -35,47 +35,55 @@ namespace WFRP_NPC_Creator
 
         public void AddRow(string careerName)
         {
-            string[] lowerTiers = Career.GetLowerTiers(careerName);
-            List<string> lowerTiersToAdd = new List<string>();
-
-            if (lowerTiers.Length > 0)
+            try
             {
-                foreach (string lowerCareer in lowerTiers)
+                string[] lowerTiers = Career.GetLowerTiers(careerName);
+                List<string> lowerTiersToAdd = new List<string>();
+
+                if (lowerTiers.Length > 0)
                 {
-                    bool contains = false;
-                    foreach (CareerRowViewModel row in CareerRows)
+                    foreach (string lowerCareer in lowerTiers)
                     {
-                        if (row.Name == lowerCareer)
-                            contains = true;
+                        bool contains = false;
+                        foreach (CareerRowViewModel row in CareerRows)
+                        {
+                            if (row.Name == lowerCareer)
+                                contains = true;
+                        }
+                        if (!contains)
+                            lowerTiersToAdd.Add(lowerCareer);
+
                     }
-                    if (!contains)
-                        lowerTiersToAdd.Add(lowerCareer);
+                    if (lowerTiersToAdd.Count > 0)
+                        if (messageService.YesNoBox("Add lower tier careers?", "Add Lower Tiers"))
+                        {
+                            foreach (string career in lowerTiersToAdd)
+                            {
+                                CareerRowViewModel lowerRow = new CareerRowViewModel(Career.GetCareerList().Find(c => c.Name == career), id);
+                                lowerRow.RowChanged += CareerEdit;
+                                lowerRow.AdvanceSelection = AdvanceLevel.Complete;
+                                CareerRows.Add(lowerRow);
+                                RowIDs.Add(id);
+                                id++;
+
+                                lowerRow.ManualUpdate(RowAction.Add);
+
+                            }
+                        }
 
                 }
-                if (lowerTiersToAdd.Count > 0)
-                    if (messageService.YesNoBox("Add lower tier careers?", "Add Lower Tiers"))
-                    {
-                        foreach (string career in lowerTiersToAdd)
-                        {
-                            CareerRowViewModel lowerRow = new CareerRowViewModel(Career.GetCareerList().Find(c => c.Name == career), id);
-                            lowerRow.RowChanged += CareerEdit;
-                            lowerRow.AdvanceSelection = AdvanceLevel.Complete;
-                            CareerRows.Add(lowerRow);
-                            RowIDs.Add(id);
-                            id++;
 
-                            lowerRow.ManualUpdate(RowAction.Add);
-
-                        }
-                    }
-
+                CareerRowViewModel newDGRow = new CareerRowViewModel(Career.GetCareerList().Find(c => c.Name == careerName), id);
+                newDGRow.RowChanged += CareerEdit;
+                CareerRows.Add(newDGRow);
+                RowIDs.Add(id);
+                id++;
             }
 
-            CareerRowViewModel newDGRow = new CareerRowViewModel(Career.GetCareerList().Find(c => c.Name == careerName), id);
-            newDGRow.RowChanged += CareerEdit;
-            CareerRows.Add(newDGRow);
-            RowIDs.Add(id);
-            id++;
+            catch (Exception e)
+            {
+                messageService.ShowNotification(e.Message);
+            }
         }
 
         private void RemoveRow(int rowID)

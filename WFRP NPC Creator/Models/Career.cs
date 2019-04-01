@@ -168,21 +168,25 @@ namespace WFRP_NPC_Creator
 
             while (talentsAdvanced < advances)
             {
-                Talent talentPick = new Talent(CareerTemplate.CareerTalents[advanceGen.Next(0, CareerTemplate.CareerTalents.Length)], Owner);
-                int currentAdvances = Owner.TotalTalentAdvances(talentPick);
 
-                /*// If focused and all relevant talents are taken
-                if (focus && talentsAdvanced == relevantTalents)
-                    focus = false;*/               
+     
+                    Talent talentPick = new Talent(CareerTemplate.CareerTalents[advanceGen.Next(0, CareerTemplate.CareerTalents.Length)], Owner);
 
-                if (currentAdvances < talentPick.Max())// && !(focus && !talentPick.IsRelevant())) // Don't consider it if we are focusing AND it's not relevant
-                {
-                    if (TalentsAdvanced.Contains(talentPick))
-                        TalentsAdvanced.Find(t => t.Name == talentPick.Name).Advance();
-                    else
-                        TalentsAdvanced.Add(talentPick);
-                    talentsAdvanced++;
-                }
+                    int currentAdvances = Owner.TotalTalentAdvances(talentPick);
+
+                    /*// If focused and all relevant talents are taken
+                    if (focus && talentsAdvanced == relevantTalents)
+                        focus = false;*/
+
+                    if (currentAdvances < talentPick.Max())// && !(focus && !talentPick.IsRelevant())) // Don't consider it if we are focusing AND it's not relevant
+                    {
+                        if (TalentsAdvanced.Contains(talentPick))
+                            TalentsAdvanced.Find(t => t.Name == talentPick.Name).Advance();
+                        else
+                            TalentsAdvanced.Add(talentPick);
+                        talentsAdvanced++;
+                    }
+
             }           
         }
 

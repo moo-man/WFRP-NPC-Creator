@@ -21,7 +21,7 @@ namespace WFRP_NPC_Creator
             {"Lightning Reflexes", new Tuple<Characteristics, int>(Characteristics.Agi, 5) },
             {"Coolheaded", new Tuple<Characteristics, int>(Characteristics.WP, 5) },
             {"Very Resilient", new Tuple<Characteristics, int>(Characteristics.T, 5) },
-            {"Nimble Fingered", new Tuple<Characteristics, int>(Characteristics.T, 5) }
+            {"Nimble Fingered", new Tuple<Characteristics, int>(Characteristics.Dex, 5) }
         };
         public static List<TalentInfo> TalentList = new List<TalentInfo>();
 
@@ -77,6 +77,9 @@ namespace WFRP_NPC_Creator
             Advances = 1;
             Owner = owner;
             Info = TalentList.Find(t => t.Name == GenericName());
+
+            if (Info == null)
+                throw new Exception("Talent not found (" + name + ")");
         }
 
         public bool Advance()
