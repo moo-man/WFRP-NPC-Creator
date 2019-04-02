@@ -92,6 +92,8 @@ namespace WFRP_NPC_Creator
 
         private void AdvanceCharacteristics()
         {
+            for (Characteristics i = 0; i < (Characteristics)10; i++)
+                CharacteristicAdvances[i] = 0;
             int advances = 0;
             foreach (Characteristics ch in CareerTemplate.CareerCharacteristics)
             {

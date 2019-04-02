@@ -220,7 +220,7 @@ namespace WFRP_NPC_Creator
             {
                 if (beforeCareer == career)
                     return totalValue;
-                Skill skillAdvanced = career.SkillsAdvanced.Find(sk => sk.Name == skillName);
+                Skill skillAdvanced = beforeCareer.SkillsAdvanced.Find(sk => sk.Name == skillName);
                 if (skillAdvanced != null)
                     totalValue += skillAdvanced.Advances;
             }
