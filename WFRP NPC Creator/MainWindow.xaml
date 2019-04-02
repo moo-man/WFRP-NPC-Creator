@@ -1,4 +1,4 @@
-﻿<Window x:Class="WFRP_NPC_Creator.MainWindow"
+﻿<Window x:Name="___No_Name_" x:Class="WFRP_NPC_Creator.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WFRP_NPC_Creator"
 		xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1200">
+        Title="NCP Creator" Height="450" Width="1200">
 	<DockPanel>
 		<Menu DockPanel.Dock="Top">
 			<MenuItem Header="Options">

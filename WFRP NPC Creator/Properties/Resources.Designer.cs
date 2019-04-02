@@ -95,5 +95,15 @@ namespace WFRP_NPC_Creator.Properties {
                 return ResourceManager.GetString("TalentData", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon whicon__1_ {
+            get {
+                object obj = ResourceManager.GetObject("whicon__1_", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
