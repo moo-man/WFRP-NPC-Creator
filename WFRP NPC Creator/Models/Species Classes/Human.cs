@@ -7,11 +7,14 @@ namespace WFRP_NPC_Creator
     public class Human : Character
     {
 
-        public Human()
+        public Human(bool average)
         {
             species = Species.Human;
             SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
-            RollCharacteristics();
+            if (average)
+                TakeAverageCharacteristics();
+            else
+                RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();
             

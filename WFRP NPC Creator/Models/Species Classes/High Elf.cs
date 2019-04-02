@@ -9,11 +9,14 @@ namespace WFRP_NPC_Creator
     public class HighElf : Character
     {
 
-        public HighElf()
+        public HighElf(bool average)
         {
             species = Species.Helf;
             SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
-            RollCharacteristics();
+            if (average)
+                TakeAverageCharacteristics();
+            else
+                RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();
         }

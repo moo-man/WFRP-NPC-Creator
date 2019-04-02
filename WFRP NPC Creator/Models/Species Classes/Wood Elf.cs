@@ -9,11 +9,14 @@ namespace WFRP_NPC_Creator
     public class WoodElf : Character
     {
 
-        public WoodElf()
+        public WoodElf(bool average)
         {
             species = Species.Welf;
             SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
-            RollCharacteristics();
+            if (average)
+                TakeAverageCharacteristics();
+            else
+                RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();
         }

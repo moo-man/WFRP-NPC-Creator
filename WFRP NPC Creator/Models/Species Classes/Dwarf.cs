@@ -9,11 +9,14 @@ namespace WFRP_NPC_Creator
     public class Dwarf : Character
     {
 
-        public Dwarf()
+        public Dwarf(bool average)
         {
             species = Species.Dwarf;
             SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
-            RollCharacteristics();
+            if (average)
+                TakeAverageCharacteristics();
+            else
+                RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();
         }

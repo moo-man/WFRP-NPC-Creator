@@ -9,11 +9,14 @@ namespace WFRP_NPC_Creator
     public class Halfling : Character
     {
 
-        public Halfling()
+        public Halfling(bool average)
         {
             species = Species.Halfling;
             SpeciesStats.Movement.TryGetValue(species, out BaseMovement);
-            RollCharacteristics();
+            if (average)
+                TakeAverageCharacteristics();
+            else
+                RollCharacteristics();
             AdvanceSpeciesSkills();
             AddSpeciesTalents();
         }

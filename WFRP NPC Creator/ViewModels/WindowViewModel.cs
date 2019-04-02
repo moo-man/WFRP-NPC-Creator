@@ -22,7 +22,7 @@ namespace WFRP_NPC_Creator
             DataGrid.CareerChanged += CareerChange;
             DataGrid.SpeciesChanged += SpeciesChange;
             SVM.SettingsChanged += SettingsChanged;
-            NPC = new Human();
+            NPC = new Human(Settings.UseAverageSpeciesCharacteristics);
             UpdateStatBlock();
         }
 
@@ -80,19 +80,19 @@ namespace WFRP_NPC_Creator
                 switch (speciesArgs.newSpecies)
                 {
                     case Species.Human:
-                        newNPC = new Human();
+                        newNPC = new Human(Settings.UseAverageSpeciesCharacteristics);
                         break;
                      case Species.Dwarf:
-                         newNPC = new Dwarf();
+                         newNPC = new Dwarf(Settings.UseAverageSpeciesCharacteristics);
                          break;
                      case Species.Halfling:
-                         newNPC = new Halfling();
+                         newNPC = new Halfling(Settings.UseAverageSpeciesCharacteristics);
                          break;
                      case Species.Welf:
-                         newNPC = new WoodElf();
+                         newNPC = new WoodElf(Settings.UseAverageSpeciesCharacteristics);
                          break;
                      case Species.Helf:
-                         newNPC = new HighElf();
+                         newNPC = new HighElf(Settings.UseAverageSpeciesCharacteristics);
                          break;
                     default:
                         return;
