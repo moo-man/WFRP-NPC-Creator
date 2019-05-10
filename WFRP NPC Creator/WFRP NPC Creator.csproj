@@ -168,6 +168,18 @@
   <ItemGroup>
     <Resource Include="maltese_cross_logo_1090ce93e0_seeklogo_com_onv_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tier2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tier3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tier4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tier1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterResolveReferences">
     <ItemGroup>

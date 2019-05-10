@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using WFRP_NPC_Creator;
 
 namespace WFRP_NPC_Creator
@@ -26,7 +28,7 @@ namespace WFRP_NPC_Creator
                     CareerItem = new TreeItemViewModel(cPath.PathName);
                     foreach (Career career in cPath.Tiers)
                     {
-                        TierItem = new TreeItemViewModel(career.Name, true);
+                        TierItem = new TreeItemViewModel(career.Name, true, career.Tier);
                         CareerItem.SubItems.Add(TierItem);
                     }
                     ClassItem.SubItems.Add(CareerItem);
@@ -39,16 +41,42 @@ namespace WFRP_NPC_Creator
     public class TreeItemViewModel : BaseViewModel
     {
         public DragCommand DragItemCommand { get; private set; }
-        DependencyObject obj;
         public string Name { get; set; }
         public ObservableCollection<TreeItemViewModel> SubItems { get; set; } = new ObservableCollection<TreeItemViewModel>();
 
         public bool Selectable { get; set; }
 
-        public TreeItemViewModel(string name, bool selectable = false)
+        public string IconPath { get; set; }
+
+   
+       
+
+        public TreeItemViewModel(string name, bool selectable = false, int tier = 0)
         {
             Name = name;
             Selectable = selectable;
+
+           // Icon. = "pack://application:,,,/WFRP_NPC_Creator;component/Resources/tier1";
+
+            switch (tier)
+            {
+                case 1:
+                    IconPath = "/Resources/tier1.png";
+                    break;
+                case 2:
+                    IconPath = "/Resources/tier2.png";
+                    break;
+                case 3:
+                    IconPath = "/Resources/tier3.png";
+                    break;
+                case 4:
+                    IconPath = "/Resources/tier4.png";
+                    break;
+                default:
+                    IconPath = null;
+                    break;
+            }
+
             //DragItemCommand = new DragCommand(BeginDrag);
         }
 

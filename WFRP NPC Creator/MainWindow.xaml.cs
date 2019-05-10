@@ -29,12 +29,26 @@ namespace WFRP_NPC_Creator
 
             this.DataContext = new WindowViewModel();
 
-            foreach (Career career in Career.GetCareerList())
+            //Testing code
+          /*  foreach (Career career in Career.GetCareerList())
             {
                 foreach (string talent in career.CareerTalents)
                     if (Talent.TalentList.Find(t => t.Name == Talent.GenericName(talent)) == null)
                         System.Diagnostics.Debug.WriteLine(talent + " not found");
             }
+
+            int talentCount;
+            foreach (TalentInfo talent in Talent.TalentList)
+            {
+                talentCount = 0;
+                foreach (Career career in Career.GetCareerList())
+                {
+                    if (career.CareerTalents.Contains(talent.Name))
+                        talentCount++;
+                }
+                if (talentCount == 1)
+                    System.Diagnostics.Debug.WriteLine(talent.Name);
+            }*/
         }
 
         // ************************************************************************************************************************************

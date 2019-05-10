@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WFRP_NPC_Creator"
 		xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
-        Title="NCP Creator" Height="450" Width="1200">
+        Title="NPC Creator" Height="450" Width="1200">
 	<DockPanel>
 		<Menu DockPanel.Dock="Top">
 			<MenuItem Header="Options">
@@ -30,8 +30,11 @@
 				</TreeView.ItemContainerStyle>
 				<TreeView.ItemTemplate>
 					<HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
-						<TextBlock Tag="{Binding Selectable}" Text="{Binding Name}" MouseDown="item_MouseLeftButtonDown">
-						</TextBlock>
+						<StackPanel Orientation="Horizontal">
+							<Image Source ="{Binding IconPath}" Stretch="Uniform" Height="12" Margin="2"/>
+							<TextBlock Tag="{Binding Selectable}" Text="{Binding Name}" MouseDown="item_MouseLeftButtonDown">
+							</TextBlock>
+						</StackPanel>
 					</HierarchicalDataTemplate>
 				</TreeView.ItemTemplate>
 			</TreeView>
