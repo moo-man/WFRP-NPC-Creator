@@ -13,6 +13,7 @@
 				<MenuItem Header="Average Species Characteristics" IsChecked="{Binding SVM.AverageCharacteristicsChecked, Mode=TwoWay}" IsCheckable="True"/>
 				<MenuItem Header="Show Only Relevant Skills" IsChecked="{Binding SVM.OnlyRelevantSkillsChecked, Mode=TwoWay}" IsCheckable="True"/>
 				<MenuItem Header="Show Only Relevant Talents" IsChecked="{Binding SVM.OnlyRelevantTalentsChecked, Mode=TwoWay}" IsCheckable="True"/>
+				<MenuItem Header="Alphabetical Class View" IsChecked="{Binding SVM.AlphabeticalClassViewChecked, Mode=TwoWay}" IsCheckable="True"/>
 			</MenuItem>
 		</Menu>
 		<Grid DockPanel.Dock="Bottom">
@@ -31,7 +32,7 @@
 				<TreeView.ItemTemplate>
 					<HierarchicalDataTemplate ItemsSource="{Binding SubItems}">
 						<StackPanel Orientation="Horizontal">
-							<Image Source ="{Binding IconPath}" Stretch="Uniform" Height="12" Margin="2"/>
+							<Image Source ="{Binding IconPath}" Stretch="Uniform" Height="12" Width="12" Margin="0 0 2 0"/>
 							<TextBlock Tag="{Binding Selectable}" Text="{Binding Name}" MouseDown="item_MouseLeftButtonDown">
 							</TextBlock>
 						</StackPanel>

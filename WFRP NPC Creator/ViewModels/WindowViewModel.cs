@@ -33,6 +33,11 @@ namespace WFRP_NPC_Creator
                 case SettingsViewModel.ChangedSetting.AverageCharacteristics:
                     NPC.TakeAverageCharacteristics();
                     break;
+
+                case SettingsViewModel.ChangedSetting.AlphabeticalClassView:
+                    Tree.ChangeTreeViewType(Settings.AlphabeticalClassView);
+                    break;
+                
                 default:
                     break;
             }

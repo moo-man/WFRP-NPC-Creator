@@ -38,7 +38,7 @@
             }
         }
 
-        public bool averageCharacteristicsChecked;
+        private bool averageCharacteristicsChecked;
         public bool AverageCharacteristicsChecked
         {
             get
@@ -54,11 +54,29 @@
             }
         }
 
+
+        private bool alphabeticalClassViewChecked;
+        public bool AlphabeticalClassViewChecked
+        {
+            get
+            {
+                return alphabeticalClassViewChecked;
+            }
+            set
+            {
+                alphabeticalClassViewChecked = value;
+                Settings.AlphabeticalClassView = alphabeticalClassViewChecked;
+                OnPropertyChanged("AlphabeticalClassViewChecked");
+                OnSettingsChanged(ChangedSetting.AlphabeticalClassView);
+            }
+        }
+
         public SettingsViewModel()
         {
             OnlyRelevantSkillsChecked = true;
             OnlyRelevantTalentsChecked = true;
             AverageCharacteristicsChecked = false;
+            AlphabeticalClassViewChecked = false;
         }
 
         protected virtual void OnSettingsChanged(ChangedSetting change)
@@ -71,7 +89,8 @@
         {
             RelevantSkills,
             RelevantTalents,
-            AverageCharacteristics
+            AverageCharacteristics,
+            AlphabeticalClassView
         }
     }
 }

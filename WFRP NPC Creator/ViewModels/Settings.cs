@@ -11,12 +11,14 @@ namespace WFRP_NPC_Creator
         public static bool ShowOnlyRelevantSkills { get; set; }
         public static bool ShowOnlyRelevantTalents { get; set; }
         public static bool UseAverageSpeciesCharacteristics { get; set; }
+        public static bool AlphabeticalClassView { get; set; }
 
         static Settings()
         {
             ShowOnlyRelevantSkills = true;
             ShowOnlyRelevantTalents = true;
             UseAverageSpeciesCharacteristics = false;
+            AlphabeticalClassView = false;
         }
     }
 }

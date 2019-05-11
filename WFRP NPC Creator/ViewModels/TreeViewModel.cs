@@ -17,25 +17,63 @@ namespace WFRP_NPC_Creator
         public ObservableCollection<TreeItemViewModel> Items { get; set; } = new ObservableCollection<TreeItemViewModel>();
         public TreeItemViewModel SelectedItem { get; set; }
 
+        public bool AlphabeticalClassView { get; private set; }
+
         public TreeViewModel()
         {
-            TreeItemViewModel ClassItem, CareerItem, TierItem;
-            foreach (CareerClass cClass in Career.ClassList)
-            {
-                ClassItem = new TreeItemViewModel(cClass.ClassName);
-                foreach (CareerPath cPath in cClass.CareerPaths)
-                {
-                    CareerItem = new TreeItemViewModel(cPath.PathName);
-                    foreach (Career career in cPath.Tiers)
-                    {
-                        TierItem = new TreeItemViewModel(career.Name, true, career.Tier);
-                        CareerItem.SubItems.Add(TierItem);
-                    }
-                    ClassItem.SubItems.Add(CareerItem);
-                }
-                Items.Add(ClassItem);
-            }
+            AlphabeticalClassView = false;
+            PopulateTree();
         }
+
+        public void ChangeTreeViewType(bool newType)
+        {
+            AlphabeticalClassView = newType;
+            PopulateTree();
+        }
+
+        public void PopulateTree()
+        {
+            Items = new ObservableCollection<TreeItemViewModel>();
+            if (!AlphabeticalClassView)
+            {
+                TreeItemViewModel ClassItem, CareerItem, TierItem;
+                foreach (CareerClass cClass in Career.ClassList)
+                {
+                    ClassItem = new TreeItemViewModel(cClass.ClassName);
+                    foreach (CareerPath cPath in cClass.CareerPaths)
+                    {
+                        CareerItem = new TreeItemViewModel(cPath.PathName);
+                        foreach (Career career in cPath.Tiers)
+                        {
+                            TierItem = new TreeItemViewModel(career.Name, true, career.Tier);
+                            CareerItem.SubItems.Add(TierItem);
+                        }
+                        ClassItem.SubItems.Add(CareerItem);
+                    }
+                    Items.Add(ClassItem);
+                }
+            }
+            else
+            {
+                TreeItemViewModel CareerItem;
+                foreach (CareerClass cClass in Career.ClassList)
+                {
+                    foreach (CareerPath cPath in cClass.CareerPaths)
+                    {
+                        CareerItem = new TreeItemViewModel(cPath.PathName, false);
+                        foreach (Career cTier in cPath.Tiers)
+                        {
+                            CareerItem.SubItems.Add(new TreeItemViewModel(cTier.Name, true, cTier.Tier));
+                        }
+                        Items.Add(CareerItem);
+                    }
+                }
+                Items = new ObservableCollection<TreeItemViewModel>(Items.OrderBy(c => c.Name));
+            }
+            OnPropertyChanged("Items");
+        }
+
+
     }
 
     public class TreeItemViewModel : BaseViewModel
