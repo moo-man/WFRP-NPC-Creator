@@ -14,7 +14,7 @@
 				<MenuItem Header="Show Only Relevant Skills" IsChecked="{Binding SVM.OnlyRelevantSkillsChecked, Mode=TwoWay}" IsCheckable="True"/>
 				<MenuItem Header="Show Only Relevant Talents" IsChecked="{Binding SVM.OnlyRelevantTalentsChecked, Mode=TwoWay}" IsCheckable="True"/>
 				<MenuItem Header="Alphabetical Class View" IsChecked="{Binding SVM.AlphabeticalClassViewChecked, Mode=TwoWay}" IsCheckable="True"/>
-				<MenuItem Header="Allow Invalid Careers" IsChecked="{Binding SVM.AlphabeticalClassViewChecked, Mode=TwoWay}" IsCheckable="True"/>
+				<MenuItem Header="Allow Invalid Careers" IsChecked="{Binding SVM.AllowInvalidCareersChecked, Mode=TwoWay}" IsCheckable="True"/>
 			</MenuItem>
 		</Menu>
 		<Grid DockPanel.Dock="Bottom">

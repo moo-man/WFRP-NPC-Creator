@@ -43,6 +43,7 @@ namespace WFRP_NPC_Creator
                     {
                         // Go through and validate careers, correct if invalid
                     }
+                    break;
 
                 default:
                     break;
