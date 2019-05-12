@@ -71,6 +71,23 @@
             }
         }
 
+
+        private bool allowInvalidCareersChecked;
+        public bool AllowInvalidCareersChecked
+        {
+            get
+            {
+                return allowInvalidCareersChecked;
+            }
+            set
+            {
+                allowInvalidCareersChecked = value;
+                Settings.AllowInvalidCareers = value;
+                OnPropertyChanged("AllowInvalidCareersChecked");
+                OnSettingsChanged(ChangedSetting.AllowInvalidCareers);
+            }
+        }
+
         public SettingsViewModel()
         {
             OnlyRelevantSkillsChecked = true;
@@ -90,7 +107,8 @@
             RelevantSkills,
             RelevantTalents,
             AverageCharacteristics,
-            AlphabeticalClassView
+            AlphabeticalClassView,
+            AllowInvalidCareers
         }
     }
 }

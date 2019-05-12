@@ -37,7 +37,13 @@ namespace WFRP_NPC_Creator
                 case SettingsViewModel.ChangedSetting.AlphabeticalClassView:
                     Tree.ChangeTreeViewType(Settings.AlphabeticalClassView);
                     break;
-                
+
+                case SettingsViewModel.ChangedSetting.AllowInvalidCareers:
+                    if (!Settings.AllowInvalidCareers)
+                    {
+                        // Go through and validate careers, correct if invalid
+                    }
+
                 default:
                     break;
             }
