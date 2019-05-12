@@ -13,12 +13,15 @@ namespace WFRP_NPC_Creator
         public static bool UseAverageSpeciesCharacteristics { get; set; }
         public static bool AlphabeticalClassView { get; set; }
 
+        public static bool AllowInvalidCareers { get; set; }
+
         static Settings()
         {
             ShowOnlyRelevantSkills = true;
             ShowOnlyRelevantTalents = true;
             UseAverageSpeciesCharacteristics = false;
             AlphabeticalClassView = false;
+            AllowInvalidCareers = false;
         }
     }
 }

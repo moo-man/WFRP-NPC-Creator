@@ -71,6 +71,18 @@ namespace WFRP_NPC_Creator
                 case RowAction.Add:
                     NPC.AddCareer(careerArgs.careerName, careerArgs.advLevel);
                     break;
+
+                case RowAction.Delete:
+                    NPC.Careers.RemoveAt(careerArgs.careerIndex);
+                    if (!Settings.AllowInvalidCareers) 
+                        for (int i = careerArgs.careerIndex; i < NPC.Careers.Count; i++)
+                        {
+                            NPC.RerollCareerCharacteristics(i);
+                            NPC.RerollCareerSkills(i);
+                            NPC.RerollCareerTalents(i);
+                        }
+                    
+                    break;
             }
             UpdateStatBlock();
         }

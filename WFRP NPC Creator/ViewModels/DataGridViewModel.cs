@@ -12,6 +12,20 @@ namespace WFRP_NPC_Creator
         public List<int> RowIDs { get; set; } = new List<int>();
         private int id = 0;
 
+        /*  CareerRowViewModel currentSelection;
+          public CareerRowViewModel CurrentSelection {
+              get
+              {
+                  System.Diagnostics.Debug.Print(currentSelection.ToString());
+                  return currentSelection; }
+              set {
+                  System.Diagnostics.Debug.Print(currentSelection.ToString());
+                  currentSelection = value;
+              }
+          }*/
+
+        public int CurrentSelection { get; private set; }
+
         public delegate void RowChangedEventHandler(object source, EventArgs e);
 
         public event RowChangedEventHandler CareerChanged;
@@ -22,6 +36,8 @@ namespace WFRP_NPC_Creator
 
         public RemoveCommand RemoveCareer { get; protected set; }
 
+        public DGSelectionChangedCommand ChangeSelection { get; protected set; }
+
 
         public DataGridViewModel()
         {
@@ -29,6 +45,8 @@ namespace WFRP_NPC_Creator
             SpeciesRow[0].RowChanged += SpeciesEdit;
 
             RemoveCareer = new RemoveCommand(RemoveRow);
+
+            ChangeSelection = new DGSelectionChangedCommand(SelectedRowChange);
 
             messageService = new MsgBoxService();
         }
@@ -88,7 +106,30 @@ namespace WFRP_NPC_Creator
 
         private void RemoveRow(int rowID)
         {
+            int rowIndex = -1;
+            for (int i = 0; i < CareerRows.Count; i++)
+                if (CareerRows[i].RowID == rowID)
+                {
+                    rowIndex = i;
+                    break;
+                }
+            
+            if (rowIndex == -1)
+                return;
 
+            CareerChanged(CareerRows[rowIndex], new CareerChangedEventArgs
+            {
+                careerIndex = rowID,
+                change = RowAction.Delete
+            });
+            CareerRows.RemoveAt(rowID);
+
+            System.Diagnostics.Debug.WriteLine("REMOVE {0}\n", rowID);
+        }
+
+        private void SelectedRowChange(int n)
+        {
+            CurrentSelection = n;
         }
 
         public void SpeciesEdit(object source, RowChangeEventArgs e)

@@ -44,7 +44,7 @@ namespace WFRP_NPC_Creator
     {
         public string Name { get; private set; }
 
-        private int RowID;
+        public int RowID { get; private set; }
 
         public AdvanceLevel AdvanceSelection { get; set; } = AdvanceLevel.None;
 

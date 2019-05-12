@@ -41,7 +41,7 @@
 			</TreeView>
 			<StackPanel Grid.Column="1" Orientation="Vertical">
 
-				<DataGrid Name="SpeciesGrid" ItemsSource="{Binding DataGrid.SpeciesRow}" CanUserAddRows="False" AutoGenerateColumns="False">
+				<DataGrid Name="SpeciesGrid" ItemsSource="{Binding DataGrid.SpeciesRow}" CanUserAddRows="False" AutoGenerateColumns="False" SelectedIndex="{Binding CurrentSelection, Mode=TwoWay}">
 					<DataGrid.Resources>
 						<local:EnumToArrayConverter x:Key="SpeciesEnumConverter"/>
 					</DataGrid.Resources>
@@ -95,30 +95,36 @@
 				</DataGrid>
 
 
-				<DataGrid Name ="CareerGrid" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight}" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataGrid.CareerRows}"  AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
+				<DataGrid Name ="DataGrid" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=ActualHeight}" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding DataGrid.CareerRows}" SelectedIndex ="{Binding CurrentSelection, Mode=TwoWay}" AllowDrop="True" Drop="DataGrid_Drop" AutoGenerateColumns="False">
 					<DataGrid.Resources>
 						<local:EnumToArrayConverter x:Key="EnumToArrayConverter"/>
 						<local:EnumToArrayConverter x:Key="EnumToIntConverter"/>
 
-						<!--<ContextMenu x:Key="DGContextMenu"
-									 DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
+						<ContextMenu x:Key="DGContextMenu"
+									 DataContext="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}">
 
 							<ContextMenu.Items>
 								<MenuItem
 									Header="Remove"
-									
 									Command="{Binding DataGrid.RemoveCareer}"
-									CommandParameter="{Binding RowID}"
+									CommandParameter="{Binding DataGrid.CurrentSelection}"
 									/>
 							</ContextMenu.Items>
-						</ContextMenu>-->
+						</ContextMenu>
 					</DataGrid.Resources>
 
-					<!--<DataGrid.RowStyle>
+					<i:Interaction.Triggers>
+						<i:EventTrigger EventName="SelectionChanged">
+							<i:InvokeCommandAction Command="{Binding DataGrid.ChangeSelection}" 
+        CommandParameter="{Binding Path=SelectedIndex, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" />
+						</i:EventTrigger>
+					</i:Interaction.Triggers>
+
+					<DataGrid.RowStyle>
 						<Style TargetType="DataGridRow" BasedOn="{StaticResource {x:Type DataGridRow}}">
 							<Setter Property="ContextMenu" Value="{StaticResource DGContextMenu}"/>
 						</Style>
-					</DataGrid.RowStyle>-->
+					</DataGrid.RowStyle>
 					<DataGrid.Columns>
 						
 						
