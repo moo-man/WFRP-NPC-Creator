@@ -11,9 +11,9 @@ namespace WFRP_NPC_Creator
     {
         public event EventHandler CanExecuteChanged = (sender, e) => { };
 
-        private Action<int> Change;
+        private Action Change;
 
-        public RemoveCommand(Action<int> change)
+        public RemoveCommand(Action change)
         {
             Change = change;
         }
@@ -24,7 +24,7 @@ namespace WFRP_NPC_Creator
 
         public void Execute(object parameter)
         {
-            Change.Invoke((int)parameter);
+            Change.Invoke();
         }
     }
 }

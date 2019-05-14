@@ -104,10 +104,10 @@ namespace WFRP_NPC_Creator
             }
         }
 
-        private void RemoveRow(int rowID)
+        private void RemoveRow()
         {
-            int rowIndex = -1;
-            for (int i = 0; i < CareerRows.Count; i++)
+            int rowIndex = CurrentSelection;
+            /*for (int i = 0; i < CareerRows.Count; i++)
                 if (CareerRows[i].RowID == rowID)
                 {
                     rowIndex = i;
@@ -115,16 +115,25 @@ namespace WFRP_NPC_Creator
                 }
             
             if (rowIndex == -1)
-                return;
+                return;*/
 
             CareerChanged(CareerRows[rowIndex], new CareerChangedEventArgs
             {
-                careerIndex = rowID,
+                careerIndex = rowIndex,
                 change = RowAction.Delete
             });
-            CareerRows.RemoveAt(rowID);
+            CareerRows.RemoveAt(rowIndex);
+            RowIDs.RemoveAt(rowIndex);
+            ResetRowIDs();
 
-            System.Diagnostics.Debug.WriteLine("REMOVE {0}\n", rowID);
+            System.Diagnostics.Debug.WriteLine("REMOVE {0}\n", rowIndex);
+        }
+
+        private void ResetRowIDs()
+        {
+            for (int i = 0; i < RowIDs.Count; i++)
+                RowIDs[i] = i;
+            id = RowIDs.Count;
         }
 
         private void SelectedRowChange(int n)
