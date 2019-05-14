@@ -4132,7 +4132,7 @@
             ]
           },
           {
-            "Name": "Courier",
+            "Name": "Courier-Captain",
             "Status": {
               "Tier": "Silver",
               "Standing": "5"
@@ -5860,7 +5860,7 @@
               "Research",
               "Lore (History)",
               "Pick Lock",
-              "Set Trap,"
+              "Set Trap"
             ],
             "Talents": [
               "Read/Write",
