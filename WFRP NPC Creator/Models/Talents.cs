@@ -136,13 +136,16 @@ namespace WFRP_NPC_Creator
         public string Tests { get; private set; }
         public bool isRelevant { get; private set; }
 
+        public string Description { get; private set; }
 
-        public TalentInfo(string name, string max, string tests, bool relevance)
+
+        public TalentInfo(string name, string max, string tests, bool relevance, string desc = null)
         {
             Name = name;
             Max = max;
             Tests = tests;
             isRelevant = relevance;
+            Description = desc;
         }
 
         public int IntMax(Dictionary<Characteristics, int> characteristics)
@@ -169,7 +172,7 @@ namespace WFRP_NPC_Creator
             Assembly assembly = Assembly.GetExecutingAssembly();
             StreamReader sr = new StreamReader(assembly.GetManifestResourceStream("WFRP_NPC_Creator.Data.TalentData.txt"));
             string[] talentData = sr.ReadToEnd().Split('\n');
-            string max, name, tests;
+            string max, name, tests, description;
             bool relevance;
             for (int i = 0; i < talentData.Length; i++)
             {
@@ -178,11 +181,16 @@ namespace WFRP_NPC_Creator
                     max = talentData[i].Substring(5).Trim();
                     name = talentData[i - 5].Trim();
                     relevance = talentData[i - 4].Trim() == "1";
-                    if (talentData[i+1].Length > 6 && talentData[i + 1].Substring(0, 6) == "Tests:")
-                        tests = talentData[i + 1].Substring(7).Trim();
+                    if (talentData[i+1].Length > 6 && talentData[i + 1].Substring(0, 4) == "Test")
+                        tests = talentData[i + 1].Substring(6).Trim();
                     else
                         tests = "";
-                    Talent.TalentList.Add(new TalentInfo(Talent.GenericName(name), max, tests, relevance));
+                    if (tests == "")
+                        description = talentData[i + 2];
+                    else
+                        description = talentData[i + 3];
+
+                    Talent.TalentList.Add(new TalentInfo(Talent.GenericName(name), max, tests, relevance, description.Trim()));
                 }
             }
             sr.Close();

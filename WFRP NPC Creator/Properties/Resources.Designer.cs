@@ -137,6 +137,38 @@ namespace WFRP_NPC_Creator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Afraid (Target)
+        ///
+        ///Thursday, September 13, 2018
+        ///12:20 AM
+        ///
+        ///The creature is afraid of the Target. See Fear
+        ///
+        ///Amphibious
+        ///
+        ///Thursday, September 13, 2018
+        ///12:20 AM
+        ///
+        ///The creature is at home in water. It can add its Agility Bonus to the SL of all Swim Tests and move at full Movement through water. 
+        ///
+        ///Arboreal
+        ///
+        ///Thursday, September 13, 2018
+        ///12:20 AM
+        ///
+        ///The creature is at home in the forests. In the woodlands, it adds its Agility Bonus to the SL of all Climb and Stealth Tests. 
+        ///
+        ///Animosity (Target)
+        ///
+        ///Thu [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string traits {
+            get {
+                return ResourceManager.GetString("traits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon whicon__1_ {

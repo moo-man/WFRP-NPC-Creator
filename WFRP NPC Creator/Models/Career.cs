@@ -19,10 +19,13 @@ namespace WFRP_NPC_Creator
         public string[] CareerTalents { get; private set; }
         public string[] CareerTrappings { get; private set; }
 
+        public string StatusTier { get; private set; }
+        public int StatusStanding { get; private set; }
+
         // priority skills to focus
         public string[] FocusSkills;
 
-        public Career(string name, int tier, Characteristics[] availableChar, string[] skills, string[] talents, string[] trappings)
+        public Career(string name, int tier, Characteristics[] availableChar, string[] skills, string[] talents, string[] trappings, string sTier, int sStanding)
         {
             Name = name;
             Tier = tier;
@@ -30,6 +33,8 @@ namespace WFRP_NPC_Creator
             CareerSkills = skills;
             CareerTalents = talents;
             CareerTrappings = trappings;
+            StatusTier = sTier;
+            StatusStanding = sStanding;
 
             if (!CareerFocusLookup.ShouldFocus.TryGetValue(Name, out FocusSkills))
                 FocusSkills = new string[0];
@@ -336,12 +341,12 @@ namespace WFRP_NPC_Creator
 
                     int tierCounter = 1;
                     List<string> skillList = new List<string>();
-                    List<string> trappings = new List<string>();
                     foreach (dynamic tier in career.Value["Tiers"])
                         try
                         {
                             string name = tier["Name"];
                             List<string> talentList = new List<string>();
+                            List<string> trappings = new List<string>();
                             Characteristics c  = Characteristics.WS;
                             Characteristics[] characteristicAvailable = new Characteristics[tierCounter + 2];
                             int counter = 0;
@@ -369,7 +374,15 @@ namespace WFRP_NPC_Creator
                             {
                                 trappings.Add(trapping.Value);
                             }
-                            currentTier = new Career(name, tierCounter, characteristicAvailable, skillList.ToArray(), talentList.ToArray(), trappings.ToArray());
+                            string statusTier = null;
+                            int statusStanding = 0;
+                            try
+                            {
+                                statusTier = tier["Status"]["Tier"].Value;
+                                statusStanding = Int32.Parse(tier["Status"]["Standing"].Value);
+                            }
+                            catch { }
+                            currentTier = new Career(name, tierCounter, characteristicAvailable, skillList.ToArray(), talentList.ToArray(), trappings.ToArray(), statusTier, statusStanding);
                             currentPath.AddTier(currentTier);
                             tierCounter++;
                         }

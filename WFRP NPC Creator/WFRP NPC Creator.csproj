@@ -82,6 +82,7 @@
     <Compile Include="Models\Species Classes\Wood Elf.cs" />
     <Compile Include="Models\Species Classes\High Elf.cs" />
     <Compile Include="Models\Species Classes\Halfling.cs" />
+    <Compile Include="Models\Traits.cs" />
     <Compile Include="ViewModels\Settings.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="View\IMsgBoxService.cs" />
@@ -180,6 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\tier1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\traits.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterResolveReferences">
